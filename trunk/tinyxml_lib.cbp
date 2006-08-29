@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_project_file>
-	<FileVersion major="1" minor="4" />
+	<FileVersion major="1" minor="5" />
 	<Project>
 		<Option title="tinyxml_lib" />
-		<Option default_target="-1" />
+		<Option default_target="" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="" />
 		<Build>
 			<Target title="Debug">
 				<Option output="libtinyxmld.a" />
@@ -12,7 +13,6 @@
 				<Option object_output="Debug" />
 				<Option type="2" />
 				<Option compiler="gcc" />
-				<Option includeInTargetAll="1" />
 				<Option createDefFile="1" />
 				<Option projectResourceIncludeDirsRelation="0" />
 				<Compiler>
@@ -32,7 +32,6 @@
 				<Option object_output="Release" />
 				<Option type="2" />
 				<Option compiler="gcc" />
-				<Option includeInTargetAll="1" />
 				<Option createDefFile="1" />
 				<Option projectResourceIncludeDirsRelation="0" />
 				<Compiler>
@@ -55,7 +54,6 @@
 				<Option object_output="Release" />
 				<Option type="2" />
 				<Option compiler="gcc" />
-				<Option includeInTargetAll="1" />
 				<Option createDefFile="1" />
 				<Option projectResourceIncludeDirsRelation="0" />
 				<Compiler>
@@ -73,6 +71,9 @@
 				</Linker>
 			</Target>
 		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="Debug;Release;default;" />
+		</VirtualTargets>
 		<Compiler>
 			<Add option="-DTIXML_USE_STL" />
 		</Compiler>
@@ -146,5 +147,6 @@
 			<Option target="Debug" />
 			<Option target="default" />
 		</Unit>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
