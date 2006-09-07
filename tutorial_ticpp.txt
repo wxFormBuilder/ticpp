@@ -1,11 +1,11 @@
 /** 
-@page ticppTutorial TiCpp Tutorial
+@page ticppTutorial TinyXML++ Tutorial
 Take a look here @subpage ticpp
 
 This is a work in progress.
 
 
-@page ticpp TiCpp
+@page ticpp TinyXML++
 
 <h2> Goals </h2>
 - Simplify the use and interface of TinyXml, using C++ concepts.
@@ -56,7 +56,7 @@ if ( !pElem ) return;
 // do something useful here
 @endcode
 	
-With TiCpp, if there is an error during a function call, it throws an exception.
+With TinyXML++, if there is an error during a function call, it throws an exception.
 This means that a programmer can assume that every function is successful, as 
 long as the functions are enclosed in a try-catch block. 
 
@@ -127,7 +127,7 @@ if ( TIXML_SUCCESS != pElem->QueryFloatAttribute( "myAttribute", &attr4 ) )
 }
 @endcode
 
-TiCpp uses templates for automatic type conversion. 
+TinyXML++ uses templates for automatic type conversion. 
 
 Example:
 @code
@@ -185,7 +185,7 @@ Second Method:
 @endcode
 
 Although both methods work quite well, the syntax is not familiar.
-TiCpp introduces iterators:
+TinyXML++ introduces iterators:
 @code
 ticpp::Iterator< ticpp::Node > child;
 for ( child = parent->FirstChild(); child != child.end(); child++ )

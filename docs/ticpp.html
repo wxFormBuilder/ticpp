@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
-<title>TinyXml: TiCpp</title>
+<title>TinyXml: TinyXML++</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <link href="tabs.css" rel="stylesheet" type="text/css">
 </head><body>
@@ -14,8 +14,8 @@
     <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
   </ul></div>
 <div class="nav">
-<a class="el" href="index.html">index</a>&nbsp;&raquo&nbsp;<a class="el" href="ticppTutorial.html">TiCpp Tutorial</a></div>
-<h1><a class="anchor" name="ticpp">TiCpp</a></h1><h2>Goals </h2>
+<a class="el" href="index.html">index</a>&nbsp;&raquo&nbsp;<a class="el" href="ticppTutorial.html">TinyXML++ Tutorial</a></div>
+<h1><a class="anchor" name="ticpp">TinyXML++</a></h1><h2>Goals </h2>
 <p>
 <ul>
 <li>Simplify the use and interface of TinyXml, using C++ concepts.<ul>
@@ -56,7 +56,7 @@ Example: <div class="fragment"><pre class="fragment"><span class="comment">// Lo
 
 <span class="comment">// do something useful here</span>
 </pre></div><p>
-With TiCpp, if there is an error during a function call, it throws an exception. This means that a programmer can assume that every function is successful, as long as the functions are enclosed in a try-catch block.<p>
+With TinyXML++, if there is an error during a function call, it throws an exception. This means that a programmer can assume that every function is successful, as long as the functions are enclosed in a try-catch block.<p>
 Example: <div class="fragment"><pre class="fragment"><span class="keywordflow">try</span>
 {
     <span class="comment">// Load a document</span>
@@ -115,7 +115,7 @@ pElem = pElem-&gt;<a class="code" href="classTiXmlNode.html#1b94d2f7fa7ab25a5a8e
     <span class="keywordflow">return</span>;
 }
 </pre></div><p>
-TiCpp uses templates for automatic type conversion.<p>
+TinyXML++ uses templates for automatic type conversion.<p>
 Example: <div class="fragment"><pre class="fragment"><span class="keywordflow">try</span>
 {
     <span class="comment">// Load a document</span>
@@ -162,7 +162,7 @@ First Method: <div class="fragment"><pre class="fragment">    <span class="keywo
 Second Method: <div class="fragment"><pre class="fragment">    child = 0;
     <span class="keywordflow">while</span>( child = parent-&gt;IterateChildren( child ) )
 </pre></div><p>
-Although both methods work quite well, the syntax is not familiar. TiCpp introduces iterators: <div class="fragment"><pre class="fragment"><a class="code" href="classticpp_1_1Iterator.html">ticpp::Iterator&lt; ticpp::Node &gt;</a> child;
+Although both methods work quite well, the syntax is not familiar. TinyXML++ introduces iterators: <div class="fragment"><pre class="fragment"><a class="code" href="classticpp_1_1Iterator.html">ticpp::Iterator&lt; ticpp::Node &gt;</a> child;
 <span class="keywordflow">for</span> ( child = parent-&gt;FirstChild(); child != child.<a class="code" href="classticpp_1_1Iterator.html#8ed3f9bf088827f4661613e250d55d58">end</a>(); child++ )
 </pre></div><p>
 Iterators have the added advantage of filtering by type: <div class="fragment"><pre class="fragment"><span class="comment">// Only iterates through Element nodes</span>
@@ -175,7 +175,7 @@ Iterators have the added advantage of filtering by type: <div class="fragment"><
 </pre></div><p>
 Finally, Iterators also work with Attributes <div class="fragment"><pre class="fragment"><a class="code" href="classticpp_1_1Iterator.html">ticpp::Iterator&lt; ticpp::Attribute &gt;</a> attribute;
 <span class="keywordflow">for</span> ( attribute = element-&gt;FirstAttribute(); attribute != attribute.<a class="code" href="classticpp_1_1Iterator.html#8ed3f9bf088827f4661613e250d55d58">end</a>(); attribute++ )
-</pre></div> <hr size="1"><address style="align: right;"><small>Generated on Mon Jul 24 12:51:12 2006 for TinyXml by&nbsp;
+</pre></div> <hr size="1"><address style="align: right;"><small>Generated on Thu Sep 7 14:23:32 2006 for TinyXml by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7 </small></address>
 </body>
