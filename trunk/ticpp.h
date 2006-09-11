@@ -508,6 +508,7 @@ namespace ticpp
 		Simple wrapper for TiXmlNode::IterateChildren.
 
 		@param previous The previous Node* that was returned from IterateChildren.
+		@return NULL When there are no more children.
 		*/
 		Node* IterateChildren( Node* previous );
 
@@ -517,6 +518,7 @@ namespace ticpp
 
 		@param value	The value you want to search for.
 		@param previous The previous Node* that was returned from IterateChildren.
+		@return NULL When there are no more children.
 		*/
 		Node* IterateChildren( const std::string& value, Node* previous );
 
