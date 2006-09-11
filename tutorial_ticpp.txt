@@ -1,4 +1,4 @@
-/** 
+/**
 @page ticppTutorial TinyXML++ Tutorial
 Take a look here @subpage ticpp
 
@@ -6,13 +6,20 @@ This is a work in progress.
 
 
 @page ticpp TinyXML++
+<h2> General Concepts </h2>
+The TinyXML++ classes are all wrappers around the corresponding classes within TinyXML.
+
+There is no reason to create TinyXML++ objects on the heap, using @p new, because the memory is managed for you. If you choose
+to use @p new to create TinyXML++ objects, you will @b always need to use @p delete to clean up.
+
+Basically, TinyXML++ objects are just wrappers around TinyXML pointers.
 
 <h2> Goals </h2>
 - Simplify the use and interface of TinyXml, using C++ concepts.
 	- Use exceptions for error handling, so there are no return codes to check
 	- Use templates for automatic type conversion
 	- Use STL style iterators to move through nodes and attributes
-	
+
 <h2> Details </h2>
 <h3> Use exceptions for error handling </h3>
 When using the original TinyXML, every function returns a value indicating
@@ -36,7 +43,7 @@ if ( !pElem ) return;
 // do something useful here
 @endcode
 
-An alternative was to use TiXmlHandle, which allows for function chaining by 
+An alternative was to use TiXmlHandle, which allows for function chaining by
 checking the intermediate function return values:
 
 Example:
@@ -55,10 +62,10 @@ if ( !pElem ) return;
 
 // do something useful here
 @endcode
-	
+
 With TinyXML++, if there is an error during a function call, it throws an exception.
-This means that a programmer can assume that every function is successful, as 
-long as the functions are enclosed in a try-catch block. 
+This means that a programmer can assume that every function is successful, as
+long as the functions are enclosed in a try-catch block.
 
 Example:
 @code
@@ -67,10 +74,10 @@ try
 	// Load a document
 	ticpp::Document doc( pFilename );
 	doc.LoadFile();
-	
+
 	// Get an element by chaining calls - no return values to check, no TiXmlHandle
 	ticpp::Element* pElem = doc.FirstChildElement()->NextSibling();
-	
+
 	// do something useful here
 }
 catch( ticpp::Exception& ex )
@@ -127,7 +134,7 @@ if ( TIXML_SUCCESS != pElem->QueryFloatAttribute( "myAttribute", &attr4 ) )
 }
 @endcode
 
-TinyXML++ uses templates for automatic type conversion. 
+TinyXML++ uses templates for automatic type conversion.
 
 Example:
 @code
@@ -136,32 +143,32 @@ try
 	// Load a document
 	ticpp::Document doc( pFilename );
 	doc.LoadFile();
-	
+
 	// Get an element by chaining calls - no return values to check, no TiXmlHandle
 	ticpp::Element* pElem = doc.FirstChildElement()->NextSibling();
-	
+
 	// GetAttribute can determine the type of the pointer, and convert automatically
-	
+
 	// Get the attribute as a string
 	std::string attr;
 	pElem->GetAttribute( "myAttribute", &attr );
-	
+
 	// Get the attribute as an int
 	int attr2;
 	pElem->GetAttribute( "myAttribute", &attr2 );
-	
+
 	// Get the attribute as an float
 	float attr3;
 	pElem->GetAttribute( "myAttribute", &attr3 );
-	
+
 	// Get the attribute as an double
 	double attr4;
 	pElem->GetAttribute( "myAttribute", &attr4 );
-	
+
 	// Get the attribute as an bool
 	bool attr5;
 	pElem->GetAttribute( "myAttribute", &attr5 );
-	
+
 }
 catch( ticpp::Exception& ex )
 {
@@ -172,10 +179,10 @@ catch( ticpp::Exception& ex )
 @endcode
 <h3> Use STL style iterators to move through nodes and attributes </h3>
 TinyXML has two ways to iterate:
-	
+
 First Method:
 @code
-	for( child = parent->FirstChild(); child; child = child->NextSibling() )
+	for( child = parent->FirstChild( false ); child; child = child->NextSibling( false ) )
 @endcode
 
 Second Method:
