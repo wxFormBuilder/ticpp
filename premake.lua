@@ -1,25 +1,29 @@
-package.name = "TinyXML"
+package.name = "TiCPP"
 package.kind = "lib"
 package.language = "c++"
 package.files = { matchfiles( "*.h", "*.cpp" ) }
 package.excludes = { "xmltest.cpp" }
 -- Change the default lib extention to .a instead of .lib
-package.targetextension = "a"
+--package.targetextension = "a"
 -- Set object output directory.
 package.config["Debug"].objdir = ".objsd"
 package.config["Debug (Unicode)"].objdir = ".objsud"
 package.config["Release"].objdir = ".objs"
 package.config["Release (Unicode)"].objdir = ".objsu"
 -- Set the targets.
-package.config["Debug"].target = "tinyxmld"
-package.config["Debug (Unicode)"].target = "tinyxmld"
-package.config["Release"].target = "tinyxml"
-package.config["Release (Unicode)"].target = "tinyxml"
+package.config["Debug"].target = "ticppd"
+package.config["Debug (Unicode)"].target = "ticppd"
+package.config["Release"].target = "ticpp"
+package.config["Release (Unicode)"].target = "ticpp"
+
 -- Set the build options for the Unicode build Targets.
+package.buildflags = { "extra-warnings" }
 package.config["Debug (Unicode)"].buildflags = { "unicode" }
-package.config["Release (Unicode)"].buildflags = { "no-symbols", "optimize", "unicode" }
+package.config["Release"].buildflags = { "no-symbols", "optimize-speed" }
+package.config["Release (Unicode)"].buildflags = { "unicode", "no-symbols", "optimize-speed" }
+
 -- Set include paths
---package.includepaths = { "$(#WX.include)", "../tinyxml" }
+--package.includepaths = { "../tinyxml" }
 -- Set defines.
 package.config["Debug"].defines = 
 {
@@ -27,9 +31,6 @@ package.config["Debug"].defines =
 	"WIN32",
 	"_WINDOWS",
 	"HAVE_W32API_H",
-	"__WX__",
-	"__WXMSW__",
-	"__WXDEBUG__",	
 	"TIXML_USE_TICPP"
 }
 package.config["Debug (Unicode)"].defines = 
@@ -38,13 +39,9 @@ package.config["Debug (Unicode)"].defines =
 	"WIN32",
 	"_WINDOWS",
 	"HAVE_W32API_H",
-	"__WX__",
-	"__WXMSW__",
-	"__WXDEBUG__",	
 	"TIXML_USE_TICPP",
 	"UNICODE",
-	"_UNICODE",
-	"wxUSE_UNICODE"
+	"_UNICODE"
 }
 package.config["Release"].defines = 
 {
@@ -52,8 +49,6 @@ package.config["Release"].defines =
 	"WIN32",
 	"_WINDOWS",
 	"HAVE_W32API_H",
-	"__WX__",
-	"__WXMSW__",
 	"TIXML_USE_TICPP"
 }
 package.config["Release (Unicode)"].defines = 
@@ -62,10 +57,7 @@ package.config["Release (Unicode)"].defines =
 	"WIN32",
 	"_WINDOWS",
 	"HAVE_W32API_H",
-	"__WX__",
-	"__WXMSW__",
 	"TIXML_USE_TICPP",
 	"UNICODE",
-	"_UNICODE",
-	"wxUSE_UNICODE"
+	"_UNICODE"
 }
