@@ -1,4 +1,5 @@
 package.name = "TiCPP"
+package.libdir = "../lib"
 package.kind = "lib"
 package.language = "c++"
 package.files = { matchfiles( "*.h", "*.cpp" ) }
