@@ -25,18 +25,19 @@ supports creatation of build scripts for:
   # Place the Premake executable in the root directory of TiCPP or somewhere in your path.
   # To create the needed build files navigate to the TinyXML++ directory (ticpp) and type:
     * Code::Blocks Projects and workspace:
-    || Windows || `premake --target cb-gcc [--unicode]` ||
-    || Linux   || `premake --target cb-gcc [--unicode]` ||
+    Windows ||`premake --target cb-gcc [--unicode]`||
+    Linux   ||`premake --target cb-gcc [--unicode]`||
     * GNU makefiles:
-    || Windows || `premake-win32 --target gnu [--unicode]` ||
-    || Linux   || `premake-linux --target gnu [--unicode]` ||
+    Windows ||`premake-win32 --target gnu [--unicode]`||
+    Linux   ||`premake-linux --target gnu [--unicode]`||
     * Visual Studio 2005 (8.0) [*Windows ONLY*]
-    || Windows || `premake-win32 --target vs2005 [--unicode]` ||
+    Windows ||`premake-win32 --target vs2005 [--unicode]`||
   # Now use the build system of your choice.
     * For Code::Blocks, use the generated .cbp/.workspace to build TinyXML++ as a static
 library.
     * For GNU makefiles type: (Assumes you have properly setup your system to build with
 gcc or MinGW)
+    ||||||
     ||Release||`make CONFIG=Release`||
     ||Debug||`make`||
     * For Visual Studio, use the generated .vcproj/.sln to build TinyXML++ as a static
