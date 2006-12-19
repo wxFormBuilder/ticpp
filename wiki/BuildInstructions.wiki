@@ -37,7 +37,8 @@ supports creatation of build scripts for:
 library.
     * For GNU makefiles type: (Assumes you have properly setup your system to build with
 gcc or MinGW)
-    || Release || `make CONFIG=Release` || Debug   || `make`                ||
+    ||Release||`make CONFIG=Release`||
+    ||Debug||`make`||
     * For Visual Studio, use the generated .vcproj/.sln to build TinyXML++ as a static
 library.
 
