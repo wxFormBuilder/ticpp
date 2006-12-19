@@ -25,10 +25,8 @@ supports creatation of build scripts for:
   # Place the Premake executable in the root directory of TiCPP or somewhere in your path.
   # To create the needed build files navigate to the TinyXML++ directory (ticpp) and type:
     * Code::Blocks Projects and workspace:
-    Windows:
-    `premake --target cb-gcc [--unicode]`
-    Linux:
-    `premake --target cb-gcc [--unicode]`
+    :Windows:`premake --target cb-gcc [--unicode]`
+    :Linux:`premake --target cb-gcc [--unicode]`
     * GNU makefiles:
     Windows:
 `premake-win32 --target gnu [--unicode]`
