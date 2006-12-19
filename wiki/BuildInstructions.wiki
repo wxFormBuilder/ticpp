@@ -33,13 +33,12 @@ supports creatation of build scripts for:
     * Visual Studio 2005 (8.0) [*Windows ONLY*]
     _Windows_ ||`premake-win32 --target vs2005 [--unicode]`||
   # Now use the build system of your choice.
-    * For Code::Blocks, use the generated .cbp/.workspace to build TinyXML++ as a static
-library.
-    ** For GNU makefiles type: (Assumes you have properly setup your system to build with
+    * For Code::Blocks, use the generated .cbp/.workspace
+    * For GNU makefiles type: (Assumes you have properly setup your system to build with
 gcc or MinGW)
     _Release_ ||`make CONFIG=Release`||
     _Debug_ ||`make`||
-    ** For Visual Studio, use the generated .vcproj/.sln to build TinyXML++ as a static
+    * For Visual Studio, use the generated .vcproj/.sln to build TinyXML++ as a static
 library.
 
 =Notes=
