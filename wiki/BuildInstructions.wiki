@@ -47,13 +47,13 @@ library.
 - For Visual Studio, use the generated .vcproj/.sln to build TinyXML++ as a
   static library.
 
-= Notes =	  
-- Premake can be found here:
-  http://premake.sourceforge.net
+=Notes=	  
+  - Premake can be found here:
+    http://premake.sourceforge.net
 
-- Subversion is a great free cross-platform version control manager.
-  It can be found here:
-  http://subversion.tigris.org
+  - Subversion is a great free cross-platform version control manager.
+    It can be found here:
+    http://subversion.tigris.org
 
-- Code::Blocks is a free cross-platform IDE and it can be found here:
-  http://codeblocks.org
+  - Code::Blocks is a free cross-platform IDE and it can be found here:
+    http://codeblocks.org
