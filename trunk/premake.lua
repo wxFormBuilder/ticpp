@@ -1,64 +1,94 @@
+--*****************************************************************************
+--*	Author:		RJP Computing <rjpcomputing@gmail.com>
+--*	Date:		12/15/2006
+--*	Version:	1.00-beta
+--*	
+--*	NOTES:
+--*		- use the '/' slash for all paths.
+--*****************************************************************************
+
+-- wxWidgets version
+local wx_ver = "27"
+
+--******* Initial Setup ************
+--*	Most of the setting are set here.
+--**********************************
+
+-- Set the name of your package.
 package.name = "TiCPP"
-package.libdir = "../lib"
+-- Set this if you want a different name for your target than the package's name.
+local targetName = "ticpp"
+-- Set the kind of package you want to create.
+--		Options: exe | winexe | lib | dll
 package.kind = "lib"
-package.language = "c++"
-package.files = { matchfiles( "*.h", "*.cpp" ) }
+-- Set the files to include.
+package.files = { matchfiles( "*.cpp", "*.h" ) }
+-- Set the include paths.
+package.includepaths = { "../tinyxml" }
+-- Set the libraries it links to.
+package.links = { "" }
+-- Setup the output directory options.
+--		Note: Use 'libdir' for "lib" kind only.
+--package.bindir = "../../bin/plugins/additional"
+package.libdir = "../lib"
+-- Set the defines.
+package.defines = { "TIXML_USE_TICPP" }
+
+
+-- Hack the dll output to prefix 'lib' to the begining of the dll.
+package.targetprefix = "lib"
+
 package.excludes = { "xmltest.cpp" }
--- Change the default lib extention to .a instead of .lib
---package.targetextension = "a"
+
+--------------------------- DO NOT EDIT BELOW ----------------------------------
+
+--******* GENAERAL SETUP **********
+--*	Settings that are not dependant
+--*	on the operating system.
+--*********************************
+-- Package options
+addoption( "unicode", "Use the Unicode character set" )
+
+-- Common setup
+package.language = "c++"
+
 -- Set object output directory.
 package.config["Debug"].objdir = ".objsd"
-package.config["Debug (Unicode)"].objdir = ".objsud"
 package.config["Release"].objdir = ".objs"
-package.config["Release (Unicode)"].objdir = ".objsu"
+
+-- Set the default targetName if none is specified.
+if ( string.len( targetName ) == 0 ) then
+	targetName = package.name
+end
+
 -- Set the targets.
-package.config["Debug"].target = "ticppd"
-package.config["Debug (Unicode)"].target = "ticppd"
-package.config["Release"].target = "ticpp"
-package.config["Release (Unicode)"].target = "ticpp"
+package.config["Release"].target = targetName
+package.config["Debug"].target = targetName.."d"
 
--- Set the build options for the Unicode build Targets.
+-- Set the build options.
 package.buildflags = { "extra-warnings" }
-package.config["Debug (Unicode)"].buildflags = { "unicode" }
 package.config["Release"].buildflags = { "no-symbols", "optimize-speed" }
-package.config["Release (Unicode)"].buildflags = { "unicode", "no-symbols", "optimize-speed" }
+if ( options["unicode"] ) then
+	table.insert( package.buildflags, "unicode" )
+end
 
--- Set include paths
---package.includepaths = { "../tinyxml" }
--- Set defines.
-package.config["Debug"].defines = 
-{
-	"DEBUG",
-	"WIN32",
-	"_WINDOWS",
-	"HAVE_W32API_H",
-	"TIXML_USE_TICPP"
-}
-package.config["Debug (Unicode)"].defines = 
-{
-	"DEBUG",
-	"WIN32",
-	"_WINDOWS",
-	"HAVE_W32API_H",
-	"TIXML_USE_TICPP",
-	"UNICODE",
-	"_UNICODE"
-}
-package.config["Release"].defines = 
-{
-	"NDEBUG",
-	"WIN32",
-	"_WINDOWS",
-	"HAVE_W32API_H",
-	"TIXML_USE_TICPP"
-}
-package.config["Release (Unicode)"].defines = 
-{
-	"NDEBUG",
-	"WIN32",
-	"_WINDOWS",
-	"HAVE_W32API_H",
-	"TIXML_USE_TICPP",
-	"UNICODE",
-	"_UNICODE"
-}
+-- Set the defines.
+if ( options["unicode"] ) then
+	table.insert( package.defines, { "UNICODE", "_UNICODE" } )
+end
+table.insert( package.config["Debug"].defines, { "DEBUG", "_DEBUG" } )
+table.insert( package.config["Release"].defines, "NDEBUG" )
+
+if ( OS == "windows" ) then
+--******* WINDOWS SETUP ***********
+--*	Settings that are Windows specific.
+--*********************************	
+	-- Set the Windows defines.
+	table.insert( package.defines, { "WIN32", "_WINDOWS" } )
+else
+--******* LINUX SETUP *************
+--*	Settings that are Linux specific.
+--*********************************
+	-- Ignore resource files in Linux.
+	table.insert( package.excludes, matchrecursive( "*.rc" ) )
+end
