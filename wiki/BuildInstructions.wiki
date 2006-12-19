@@ -38,8 +38,7 @@ supports creatation of build scripts for:
 gcc or MinGW)
     _Release_ ||`make CONFIG=Release`||
     _Debug_ ||`make`||
-    * For Visual Studio, use the generated .vcproj/.sln to build TinyXML++ as a static
-library.
+    * For Visual Studio, use the generated .vcproj/.sln.
 
 =Notes=
 
