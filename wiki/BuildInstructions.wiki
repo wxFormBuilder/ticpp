@@ -46,9 +46,7 @@ library.
 
   * Premake can be found here:
   http://premake.sourceforge.net
-  * Subversion is a great free cross-platform version control manager. It can be found
-here:
+  * Subversion is a great free cross-platform version control manager. It can be found here:
   http://subversion.tigris.org
-  * Code::Blocks is a free cross-platform IDE and it can be found
-here:
+  * Code::Blocks is a free cross-platform IDE and it can be found here:
   http://codeblocks.org
