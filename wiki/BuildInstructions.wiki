@@ -1,5 +1,5 @@
 #summary Instruction on how to build TinyXML++ as a static library.
-#labels Phase-Design
+#labels Phase-Deploy,Phase-Implementation
 
 =Introduction=
 'TiCPP' is short for the official name TinyXML++. It is a completely new interface to
