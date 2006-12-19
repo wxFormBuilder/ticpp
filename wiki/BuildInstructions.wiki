@@ -43,6 +43,8 @@ supports creatation of build scripts for:
 
   * Premake can be found here:
   http://premake.sourceforge.net
+  * For GNU makefiles they assume you have properly setup your system to build with gcc or
+MinGW.
   * Subversion is a great free cross-platform version control manager. It can be found here:
   http://subversion.tigris.org
   * Code::Blocks is a free cross-platform IDE and it can be found here:
