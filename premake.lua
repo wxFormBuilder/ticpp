@@ -71,6 +71,9 @@ package.config["Release"].buildflags = { "no-symbols", "optimize-speed" }
 if ( options["unicode"] ) then
 	table.insert( package.buildflags, "unicode" )
 end
+if ( target == "cb-gcc" or target == "gnu" ) then
+	table.insert( package.config["Debug"].buildoptions, "-O0" )
+end
 
 -- Set the defines.
 if ( options["unicode"] ) then
