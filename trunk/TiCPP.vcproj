@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="TiCPP"
-	ProjectGUID="{B88D36F7-122F-F741-B705-D461B1D4B130}"
+	ProjectGUID="{D1B77071-13F4-9842-941E-D5E0A1E85A75}"
 	RootNamespace="TiCPP"
 	Keyword="Win32Proj"
 	>
@@ -70,9 +70,6 @@
 				Name="VCALinkTool"
 			/>
 			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
 				Name="VCXDCMakeTool"
 			/>
 			<Tool
@@ -80,12 +77,6 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -145,9 +136,6 @@
 				Name="VCALinkTool"
 			/>
 			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
 				Name="VCXDCMakeTool"
 			/>
 			<Tool
@@ -155,12 +143,6 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -171,31 +153,40 @@
 	</References>
 	<Files>
 		<File
-			RelativePath=".\ticpp.cpp">
+			RelativePath=".\ticpp.cpp"
+			>
 		</File>
 		<File
-			RelativePath=".\tinystr.cpp">
+			RelativePath=".\ticpp.h"
+			>
 		</File>
 		<File
-			RelativePath=".\tinyxml.cpp">
+			RelativePath=".\ticpprc.h"
+			>
 		</File>
 		<File
-			RelativePath=".\tinyxmlerror.cpp">
+			RelativePath=".\tinystr.cpp"
+			>
 		</File>
 		<File
-			RelativePath=".\tinyxmlparser.cpp">
+			RelativePath=".\tinystr.h"
+			>
 		</File>
 		<File
-			RelativePath=".\ticpp.h">
+			RelativePath=".\tinyxml.cpp"
+			>
 		</File>
 		<File
-			RelativePath=".\ticpprc.h">
+			RelativePath=".\tinyxml.h"
+			>
 		</File>
 		<File
-			RelativePath=".\tinystr.h">
+			RelativePath=".\tinyxmlerror.cpp"
+			>
 		</File>
 		<File
-			RelativePath=".\tinyxml.h">
+			RelativePath=".\tinyxmlparser.cpp"
+			>
 		</File>
 	</Files>
 	<Globals>
