@@ -37,9 +37,6 @@ if ( target == "vs2005" ) then
 	table.insert( package.defines, "_CRT_SECURE_NO_DEPRECATE" )
 end
 
--- set the build flags
-package.buildflags = { "static-runtime" }
-
 -- Hack the dll output to prefix 'lib' to the begining of the dll.
 package.targetprefix = "lib"
 
@@ -71,7 +68,7 @@ package.config["Release"].target = targetName
 package.config["Debug"].target = targetName.."d"
 
 -- Set the build options.
-package.buildflags = { "extra-warnings" }
+package.buildflags = { "static-runtime", "extra-warnings" }
 package.config["Release"].buildflags = { "no-symbols", "optimize-speed" }
 if ( options["unicode"] ) then
 	table.insert( package.buildflags, "unicode" )
