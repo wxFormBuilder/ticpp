@@ -37,6 +37,9 @@ if ( target == "vs2005" ) then
 	table.insert( package.defines, "_CRT_SECURE_NO_DEPRECATE" )
 end
 
+-- set the build flags
+package.buildflags = { "static-runtime" }
+
 -- Hack the dll output to prefix 'lib' to the begining of the dll.
 package.targetprefix = "lib"
 
