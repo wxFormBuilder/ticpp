@@ -33,7 +33,9 @@ package.links = { "" }
 package.libdir = "../lib"
 -- Set the defines.
 package.defines = { "TIXML_USE_TICPP" }
-
+if ( target == "vs2005" ) then
+	table.insert( package.defines, "_CRT_SECURE_NO_DEPRECATE" )
+end
 
 -- Hack the dll output to prefix 'lib' to the begining of the dll.
 package.targetprefix = "lib"
