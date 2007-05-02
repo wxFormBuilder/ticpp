@@ -1319,6 +1319,9 @@ public:
 	@return the document as a formatted standard string.
 	*/
 	std::string GetAsString();
+
+	/** Load the document from a string. */
+	bool LoadFromString( const std::string& document, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );
 	#endif
 
 	/** Write the document to a string using formatted printing ("pretty print").
@@ -1328,6 +1331,9 @@ public:
 	@return True if the document could be copied into @p buffer, else false.
 	*/
 	bool GetAsCharBuffer( char* buffer, size_t bufferSize );
+
+	/** Load the document from a string. */
+	bool LoadFromString( const char* document, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );
 
 	/** Parse the given null terminated block of xml data. Passing in an encoding to this
 		method (either TIXML_ENCODING_LEGACY or TIXML_ENCODING_UTF8 will force TinyXml

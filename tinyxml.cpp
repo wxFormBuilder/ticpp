@@ -1097,6 +1097,12 @@ std::string TiXmlDocument::GetAsString()
 	FormattedStreamOut( &out, 0 );
 	return out.str();
 }
+
+/** Load the document from a string. */
+bool TiXmlDocument::LoadFromString( const std::string& document, TiXmlEncoding encoding )
+{
+	return LoadFromString( document.c_str(), encoding );
+}
 #endif
 
 bool TiXmlDocument::GetAsCharBuffer( char* buffer, size_t bufferSize )
@@ -1117,6 +1123,23 @@ bool TiXmlDocument::GetAsCharBuffer( char* buffer, size_t bufferSize )
 		strcpy( buffer, data.c_str() );
 		return true;
 	}
+}
+
+/** Load the document from a string. */
+bool TiXmlDocument::LoadFromString( const char* document, TiXmlEncoding encoding )
+{
+	// Copy string to temporary FILE buffer
+	FILE* fileBuf = tmpfile();
+	size_t length = strlen( document );
+	size_t written = fwrite( document, sizeof( char ), length, fileBuf );
+	if ( (size_t)written < length )
+	{
+		return false;
+	}
+	rewind( fileBuf );
+
+	// Load FILE into TiXmlDocument
+	return LoadFile( fileBuf, encoding );
 }
 
 bool TiXmlDocument::LoadFile( const char* filename, TiXmlEncoding encoding )

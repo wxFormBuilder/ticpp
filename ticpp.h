@@ -163,7 +163,7 @@ namespace ticpp
 	protected:
 		TiCppRCImp* m_impRC;	/**< Holds status of internal TiXmlPointer - use this to determine if object has been deleted already */
 
-		std::vector< Base* > m_spawnedWrappers; /**< Remember all wrappers that we've created with 'new' - ( e.g. NodeFactory, FirstChildElement, etc. )*/
+		mutable std::vector< Base* > m_spawnedWrappers; /**< Remember all wrappers that we've created with 'new' - ( e.g. NodeFactory, FirstChildElement, etc. )*/
 
 		/**
 		@internal
@@ -176,7 +176,7 @@ namespace ticpp
 			m_impRC = node->m_tiRC;
 		}
 
-		void ValidatePointer()
+		void ValidatePointer() const
 		{
 			if ( m_impRC->IsNull() )
 			{
@@ -861,15 +861,14 @@ namespace ticpp
 		@endcode
 		@return Pointer the duplicate node.
 		*/
-		std::auto_ptr< Node > Clone();
-
+		std::auto_ptr< Node > Clone() const;
 
 	protected:
 		/**
 		@internal
 		Allows NodeImp to use Node*'s.
 		*/
-		virtual TiXmlNode* GetTiXmlPointer() = 0;
+		virtual TiXmlNode* GetTiXmlPointer() const = 0;
 
 		TiXmlBase* GetBasePointer()
 		{
@@ -880,7 +879,7 @@ namespace ticpp
 		@internal
 		Constructs the correct child of Node, based on the Type of the TiXmlNode*.
 		*/
-		Node* NodeFactory( TiXmlNode* tiXmlNode, bool throwIfNull = true, bool rememberSpawnedWrapper = true );
+		Node* NodeFactory( TiXmlNode* tiXmlNode, bool throwIfNull = true, bool rememberSpawnedWrapper = true ) const;
 
 	};
 
@@ -1020,7 +1019,7 @@ namespace ticpp
 
 		@returns The internal TiXmlNode*.
 		*/
-		TiXmlNode* GetTiXmlPointer()
+		TiXmlNode* GetTiXmlPointer() const
 		{
 			ValidatePointer();
 			return m_tiXmlPointer;
@@ -1199,6 +1198,10 @@ namespace ticpp
 		@return the document as a formatted standard string.
 		*/
 		std::string GetAsString();
+
+		void LoadFromString( const char* document, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );
+
+		void LoadFromString( const std::string& document, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );
 
 		/**
 		Load a file using the current document value. Throws if load is unsuccessful.
