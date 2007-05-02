@@ -156,7 +156,7 @@ void Attribute::SetTiXmlPointer( TiXmlAttribute* newPointer )
 
 //*****************************************************************************
 
-Node* Node::NodeFactory( TiXmlNode* tiXmlNode, bool throwIfNull, bool rememberSpawnedWrapper )
+Node* Node::NodeFactory( TiXmlNode* tiXmlNode, bool throwIfNull, bool rememberSpawnedWrapper ) const
 {
 	if ( NULL == tiXmlNode )
 	{
@@ -653,7 +653,7 @@ Declaration* Node::ToDeclaration()
 	return temp;
 }
 
-std::auto_ptr< Node > Node::Clone()
+std::auto_ptr< Node > Node::Clone() const
 {
 	TiXmlNode* node = GetTiXmlPointer()->Clone();
 	if ( NULL == node )
@@ -737,6 +737,19 @@ Document::Document( const std::string& documentName )
 std::string Document::GetAsString()
 {
 	return m_tiXmlPointer->GetAsString();
+}
+
+void Document::LoadFromString( const char* document, TiXmlEncoding encoding )
+{
+	if ( !m_tiXmlPointer->LoadFromString( document, encoding ) )
+	{
+		THROW( "Couldn't load document from string" )
+	}
+}
+
+void Document::LoadFromString( const std::string& document, TiXmlEncoding encoding )
+{
+	LoadFromString( document.c_str(), encoding );
 }
 
 void Document::LoadFile( TiXmlEncoding encoding )
