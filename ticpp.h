@@ -1254,6 +1254,11 @@ namespace ticpp
 		Element( const std::string& value );
 
 		/**
+		Default	Constructor. Initializes all the variables.
+		*/
+		Element( const char* value );
+
+		/**
 		Constructor.
 		*/
 		Element( TiXmlElement* element );
