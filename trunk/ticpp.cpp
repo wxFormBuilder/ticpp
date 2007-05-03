@@ -798,6 +798,12 @@ Element::Element( const std::string& value )
 	m_impRC->InitRef();
 }
 
+Element::Element( const char* value )
+: NodeImp< TiXmlElement >( new TiXmlElement( value ) )
+{
+	m_impRC->InitRef();
+}
+
 Element::Element( TiXmlElement* element )
 : NodeImp< TiXmlElement >( element )
 {
