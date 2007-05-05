@@ -776,6 +776,14 @@ void Document::LoadFile( const std::string& filename, TiXmlEncoding encoding )
 	}
 }
 
+void Document::LoadFile( const char* filename, TiXmlEncoding encoding )
+{
+	if ( !m_tiXmlPointer->LoadFile( filename, encoding ) )
+	{
+		THROW( "Couldn't load " << filename );
+	}
+}
+
 void Document::SaveFile( const std::string& filename ) const
 {
 	if ( !m_tiXmlPointer->SaveFile( filename.c_str() ) )
@@ -861,6 +869,21 @@ Attribute* Element::LastAttribute( bool throwIfNoAttributes )
 	m_spawnedWrappers.push_back( temp );
 
 	return temp;
+}
+
+std::string Element::GetAttributeOrDefault( const std::string& name, const std::string& defaultValue )
+{
+	std::string value;
+	if ( !GetAttributeImp( name, &value ) )
+	{
+		return defaultValue;
+	}
+	return value;
+}
+
+std::string Element::GetAttribute( const std::string& name )
+{
+	return GetAttributeOrDefault( name, std::string() );
 }
 
 bool Element::GetAttributeImp( const std::string& name, std::string* value )

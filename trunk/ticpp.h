@@ -1230,6 +1230,11 @@ namespace ticpp
 		void LoadFile( const std::string& filename, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );
 
 		/**
+		overload
+		*/
+		void LoadFile( const char* filename, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );
+
+		/**
 		Save a file using the given filename. Throws if it can't save the file.
 
 		@param filename File to save.
@@ -1468,6 +1473,16 @@ namespace ticpp
 		}
 
 		/**
+		Gets an attribute of @a name from an element, if it doesn't exist it will return the defaultValue.
+
+		@param name			The name of the attribute you are querying.
+		@param defaultValue	What to put in @a value if there is no attribute in this element.
+
+		@see GetAttribute
+		*/
+		std::string GetAttributeOrDefault( const std::string& name, const std::string& defaultValue );
+
+		/**
 		Gets an attribute of @a name from an element.
 		Uses FromString to convert the string to the type of choice.
 
@@ -1498,6 +1513,17 @@ namespace ticpp
 			// Stream the value from the string to T
 			FromString( temp, value );
 		}
+
+		/**
+		Gets an attribute of @a name from an element.
+		Returns an empty string if the attribute does not exist.
+
+		@param name	The name of the attribute you are querying.
+		@return The value of the attribute, or an empty string if it does not exist.
+
+		@see GetAttributeOrDefault
+		*/
+		std::string GetAttribute( const std::string& name );
 
 	private:
 
