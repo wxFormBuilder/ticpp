@@ -51,6 +51,14 @@ distribution.
 	#endif
 #endif
 
+#if defined(_WIN32) || defined(__WIN32__)
+	#define PLATFORM_ENDL	"\r\n"
+#elif defined(__MACOSX__) || defined(__APPLE__) || defined(DARWIN)
+	#define PLATFORM_ENDL	"\r"
+#else
+	#define PLATFORM_ENDL	"\n"
+#endif
+
 #ifdef TIXML_USE_STL
 	#include <string>
  	#include <iostream>
@@ -58,12 +66,12 @@ distribution.
 	#define TIXML_STRING	std::string
 	#define TIXML_ISTREAM	std::istream
 	#define TIXML_OSTREAM	std::ostream
-	#define TIXML_ENDL		std::endl
+	#define TIXML_ENDL		PLATFORM_ENDL << std::flush
 #else
 	#include "tinystr.h"
 	#define TIXML_STRING	TiXmlString
 	#define TIXML_OSTREAM	TiXmlOutStream
-	#define TIXML_ENDL		"\n"
+	#define TIXML_ENDL		PLATFORM_ENDL
 #endif
 
 // Deprecated library function hell. Compilers want to use the
