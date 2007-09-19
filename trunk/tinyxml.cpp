@@ -1726,6 +1726,96 @@ TiXmlNode* TiXmlDeclaration::Clone() const
 	return clone;
 }
 
+TiXmlStylesheetReference::TiXmlStylesheetReference( const char * _type,
+													const char * _href )
+	: TiXmlNode( TiXmlNode::STYLESHEETREFERENCE )
+{
+	type = _type;
+	href = _href;
+}
+
+
+#ifdef TIXML_USE_STL
+TiXmlStylesheetReference::TiXmlStylesheetReference(	const std::string& _type,
+													const std::string& _href )
+	: TiXmlNode( TiXmlNode::STYLESHEETREFERENCE )
+{
+	type = _type;
+	href = _href;
+}
+#endif
+
+
+TiXmlStylesheetReference::TiXmlStylesheetReference( const TiXmlStylesheetReference& copy )
+	: TiXmlNode( TiXmlNode::STYLESHEETREFERENCE )
+{
+	copy.CopyTo( this );
+}
+
+
+void TiXmlStylesheetReference::operator=( const TiXmlStylesheetReference& copy )
+{
+	Clear();
+	copy.CopyTo( this );
+}
+
+
+void TiXmlStylesheetReference::Print( FILE* cfile, int /*depth*/ ) const
+{
+	fprintf (cfile, "<?xml-stylesheet ");
+
+	if ( !type.empty() )
+		fprintf (cfile, "type=\"%s\" ", type.c_str ());
+	if ( !href.empty() )
+		fprintf (cfile, "href=\"%s\" ", href.c_str ());
+	fprintf (cfile, "?>");
+}
+
+void TiXmlStylesheetReference::StreamOut( TIXML_OSTREAM * stream ) const
+{
+	(*stream) << "<?xml-stylesheet ";
+
+	if ( !type.empty() )
+	{
+		(*stream) << "type=\"";
+		PutString( type, stream );
+		(*stream) << "\" ";
+	}
+	if ( !href.empty() )
+	{
+		(*stream) << "href=\"";
+		PutString( href, stream );
+		(*stream ) << "\" ";
+	}
+	(*stream) << "?>";
+}
+
+void TiXmlStylesheetReference::FormattedStreamOut( TIXML_OSTREAM * stream, int depth ) const
+{
+	StreamDepth( stream, depth );
+	StreamOut( stream );
+	(*stream) << TIXML_ENDL;
+}
+
+void TiXmlStylesheetReference::CopyTo( TiXmlStylesheetReference* target ) const
+{
+	TiXmlNode::CopyTo( target );
+
+	target->type = type;
+	target->href = href;
+}
+
+
+TiXmlNode* TiXmlStylesheetReference::Clone() const
+{
+	TiXmlStylesheetReference* clone = new TiXmlStylesheetReference();
+
+	if ( !clone )
+		return 0;
+
+	CopyTo( clone );
+	return clone;
+}
 
 void TiXmlUnknown::Print( FILE* cfile, int depth ) const
 {

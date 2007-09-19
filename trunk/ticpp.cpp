@@ -193,6 +193,10 @@ Node* Node::NodeFactory( TiXmlNode* tiXmlNode, bool throwIfNull, bool rememberSp
 			temp = new Declaration( tiXmlNode->ToDeclaration() );
 			break;
 
+		case TiXmlNode::STYLESHEETREFERENCE:
+			temp = new StylesheetReference( tiXmlNode->ToStylesheetReference() );
+			break;
+
 		default:
 			THROW( "Type is unsupported" )
 	}
@@ -653,6 +657,19 @@ Declaration* Node::ToDeclaration()
 	return temp;
 }
 
+StylesheetReference* Node::ToStylesheetReference()
+{
+	TiXmlStylesheetReference* doc = GetTiXmlPointer()->ToStylesheetReference();
+	if ( NULL == doc )
+	{
+		THROW( "This node (" << Value() << ") is not a StylesheetReference" )
+	}
+	StylesheetReference* temp = new StylesheetReference( doc );
+	m_spawnedWrappers.push_back( temp );
+
+	return temp;
+}
+
 std::auto_ptr< Node > Node::Clone() const
 {
 	TiXmlNode* node = GetTiXmlPointer()->Clone();
@@ -956,6 +973,35 @@ std::string Declaration::Encoding( void )
 std::string Declaration::Standalone( void )
 {
 	return m_tiXmlPointer->Standalone();
+}
+
+//*****************************************************************************
+
+StylesheetReference::StylesheetReference()
+: NodeImp< TiXmlStylesheetReference >( new TiXmlStylesheetReference() )
+{
+	m_impRC->InitRef();
+}
+
+StylesheetReference::StylesheetReference( TiXmlStylesheetReference* stylesheetReference )
+: NodeImp< TiXmlStylesheetReference >( stylesheetReference )
+{
+}
+
+StylesheetReference::StylesheetReference( const std::string& type, const std::string& href )
+: NodeImp< TiXmlStylesheetReference >( new TiXmlStylesheetReference( type, href ) )
+{
+	m_impRC->InitRef();
+}
+
+std::string StylesheetReference::Type( void )
+{
+	return m_tiXmlPointer->Type();
+}
+
+std::string StylesheetReference::Href( void )
+{
+	return m_tiXmlPointer->Href();
 }
 
 //*****************************************************************************
