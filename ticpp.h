@@ -378,6 +378,7 @@ namespace ticpp
 	class Text;
 	class Comment;
 	class Declaration;
+	class StylesheetReference;
 
 	/**
 	Wrapper around TiXmlNode
@@ -843,6 +844,13 @@ namespace ticpp
 		@throws Exception When this node is not a Declaration.
 		*/
 		Declaration* ToDeclaration();
+
+		/**
+		Pointer conversion - replaces TiXmlNode::ToStylesheetReference.
+
+		@throws Exception When this node is not a StylesheetReference.
+		*/
+		StylesheetReference* ToStylesheetReference();
 
 		/**
 		Create an exact duplicate of this node and return it.
@@ -1573,6 +1581,36 @@ namespace ticpp
 		StandAlone. Is this a standalone document?
 		*/
 		std::string Standalone( void );
+	};
+
+	/** Wrapper around TiXmlStylesheetReference */
+	class StylesheetReference : public NodeImp< TiXmlStylesheetReference >
+	{
+	public:
+		/**
+		Default	Constructor. Construct an empty declaration.
+		*/
+		StylesheetReference( void );
+
+		/**
+		Constructor.
+		*/
+		StylesheetReference( TiXmlStylesheetReference* stylesheetReference );
+
+		/**
+		Constructor.
+		*/
+		StylesheetReference( const std::string& type, const std::string& href );
+
+		/**
+		Type. Will return an empty string if none was found.
+		*/
+		std::string Type( void );
+
+		/**
+		Href. Will return an empty string if none was found.
+		*/
+		std::string Href( void );
 	};
 }
 
