@@ -27,6 +27,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 @author		Ryan Mulder
 @date		04/11/2006
 
+@version	0.04a by edam@waxworlds.org: based Exception based on std::exception; added stream
+					<< and >> support; added Document::Parse(); bug fix; improved THROW() macro.
 @version	0.04 Added NodeImp class. Also made all the classes inherit from NodeImp.
 @version	0.03 Added Declaration class
 @version	0.02 Added Element class
@@ -46,6 +48,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include <sstream>
 #include <vector>
 #include <memory>
+#include <exception>
 
 /**
 @subpage ticpp is a TinyXML wrapper that uses a lot more C++ ideals.
@@ -62,10 +65,17 @@ namespace ticpp
     /**
 	This is a ticpp exception class
 	*/
-	class Exception
+	class Exception : public std::exception
 	{
 	public:
+		/**
+		Construct an exception with a message
+		*/
 		Exception( const std::string& details );
+		~Exception() throw();
+
+		/// Override std::exception::what() to return m_details
+		const char* what() const throw();
 
 		std::string m_details; /**< Exception Details */
 	};
@@ -74,12 +84,14 @@ namespace ticpp
 	This allows you to stream your exceptions in.
 	It will take care of the conversion	and throwing the exception.
 	*/
-	#define THROW( message )																					\
-		std::stringstream hopefullyThisNameWontConflictWithOtherVariables;										\
-		std::string file( __FILE__ );																			\
-		file = file.substr( file.find_last_of( "\\/" ) + 1 );													\
-		hopefullyThisNameWontConflictWithOtherVariables << message << " <" << file << "@" << __LINE__ << ">";	\
-		throw Exception( hopefullyThisNameWontConflictWithOtherVariables.str() );
+	#define TICPPTHROW( message ) 											\
+	{																		\
+		std::ostringstream full_message;									\
+		std::string file( __FILE__ );										\
+		file = file.substr( file.find_last_of( "\\/" ) + 1 );				\
+		full_message << message << " <" << file << "@" << __LINE__ << ">";	\
+		throw Exception( full_message.str() );								\
+	}
 
 	/** Wrapper around TiXmlBase */
 	class Base
@@ -98,7 +110,7 @@ namespace ticpp
 			convert << value;
 			if ( convert.fail() )
 			{
-				THROW( "Could not convert value to text" );
+				TICPPTHROW( "Could not convert value to text" );
 			}
 			return convert.str();
 		}
@@ -122,7 +134,7 @@ namespace ticpp
 
 			if ( val.fail() )
 			{
-				THROW( "Could not convert \"" << temp << "\" to target type" );
+				TICPPTHROW( "Could not convert \"" << temp << "\" to target type" );
 			}
 		}
 
@@ -180,7 +192,7 @@ namespace ticpp
 		{
 			if ( m_impRC->IsNull() )
 			{
-				THROW( "Internal TiXml Pointer is NULL" );
+				TICPPTHROW( "Internal TiXml Pointer is NULL" );
 			}
 		}
 
@@ -804,7 +816,7 @@ namespace ticpp
 				std::string thisType = typeid( this ).name();
 				std::string targetType = typeid( T ).name();
 				std::string thatType = typeid( *this ).name();
-				THROW( "The " << thisType.substr( 6 ) << " could not be casted to a " << targetType.substr( 6 )
+				TICPPTHROW( "The " << thisType.substr( 6 ) << " could not be casted to a " << targetType.substr( 6 )
 					<< " *, because the target object is not a " << targetType.substr( 6 ) << ". (It is a " << thatType.substr( 6 ) << ")" );
 			}
 			return pointer;
@@ -870,6 +882,24 @@ namespace ticpp
 		@return Pointer the duplicate node.
 		*/
 		std::auto_ptr< Node > Clone() const;
+
+		/**
+ 		Stream input operator.
+ 		*/
+ 		friend std::istream& operator >>( std::istream& in, Node& base )
+ 		{
+ 			in >> *base.GetTiXmlPointer();
+ 			return in;
+ 		}
+
+ 		/**
+ 		Stream output operator.
+ 		*/
+ 		friend std::ostream& operator <<( std::ostream& out, Node& base )
+ 		{
+ 			out << *base.GetTiXmlPointer();
+ 			return out;
+ 		}
 
 	protected:
 		/**
@@ -1055,7 +1085,7 @@ namespace ticpp
 			// Check for NULL pointers
 			if ( NULL == tiXmlPointer )
 			{
-				THROW( "Can not create a " << typeid( T ).name() );
+				TICPPTHROW( "Can not create a " << typeid( T ).name() );
 			}
 			SetTiXmlPointer( tiXmlPointer );
 			m_impRC->IncRef();
@@ -1085,13 +1115,8 @@ namespace ticpp
 		Updates the reference count for the old and new pointers.
 		In addition, the spawnedWrappers must be cleared out before a new TiXml object is loaded in
 		*/
-		NodeImp( const NodeImp<T>& copy ) : Node()
+		NodeImp( const NodeImp<T>& copy ) : Node( copy )
 		{
-			DeleteSpawnedWrappers();
-
-			// Dropping the reference to the old object
-			this->m_impRC->DecRef();
-
 			// Pointing to the new Object
 			SetTiXmlPointer( copy.m_tiXmlPointer );
 
@@ -1207,10 +1232,6 @@ namespace ticpp
 		*/
 		std::string GetAsString();
 
-		void LoadFromString( const char* document, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );
-
-		void LoadFromString( const std::string& document, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );
-
 		/**
 		Load a file using the current document value. Throws if load is unsuccessful.
 
@@ -1250,6 +1271,15 @@ namespace ticpp
 		*/
 		void SaveFile( const std::string& filename ) const;
 
+		/**
+		Parse the given xml data.
+
+		@param xml Xml to parse.
+		@param throwIfParseError [DEF] If true, throws when there is a parse error.
+		@param encoding Sets the documents encoding.
+		@throws Exception
+		*/
+		void Parse( const std::string& xml, bool throwIfParseError = true, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );
 	};
 
 	/** Wrapper around TiXmlElement */
@@ -1275,6 +1305,19 @@ namespace ticpp
 		Constructor.
 		*/
 		Element( TiXmlElement* element );
+
+		/**
+		Constructor that allows you to set the element text
+
+		@param text The text to set.
+		*/
+		template < class T >
+			Element( const std::string& value, const T& text )
+			: NodeImp< TiXmlElement >( new TiXmlElement( value ) )
+		{
+			m_impRC->InitRef();
+			SetText( text );
+		}
 
 		/**
 		Access the first attribute in this element.
@@ -1326,7 +1369,7 @@ namespace ticpp
 			{
 				if ( throwIfNotFound )
 				{
-					THROW( "Text does not exists in the current element" );
+					TICPPTHROW( "Text does not exists in the current element" );
 				}
 			}
 
@@ -1410,7 +1453,7 @@ namespace ticpp
 			{
 				if ( throwIfNotFound )
 				{
-					THROW( "Text does not exists in the current element" );
+					TICPPTHROW( "Text does not exists in the current element" );
 				}
 				else
 				{
@@ -1510,7 +1553,7 @@ namespace ticpp
 			{
 				if ( throwIfNotFound )
 				{
-					THROW( "Attribute does not exist" );
+					TICPPTHROW( "Attribute does not exist" );
 				}
 				else
 				{
