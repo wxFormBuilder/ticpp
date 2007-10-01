@@ -679,6 +679,32 @@ namespace ticpp
 		Just for Iterator<>
 
 		@param value The value of nodes to iterate through
+		@param next [OUT] The pointer to the first valid node
+		*/
+		template < class T >
+			void IterateFirst( const std::string& value, T** first )
+		{
+			*first = 0;
+			for( Node* child = FirstChild( value, false ); child; child = child->NextSibling( value, false ) )
+			{
+				*first = dynamic_cast< T* >( child );
+				if ( 0 != *first )
+				{
+					return;
+				}
+			}
+		}
+
+		virtual	void IterateFirst( const std::string& value, Attribute** first )
+		{
+			TICPPTHROW( "Attributes can only be iterated with Elements." )
+		}
+
+		/**
+		@internal
+		Just for Iterator<>
+
+		@param value The value of nodes to iterate through
 		@param next [OUT] The pointer to the next valid node
 		*/
 		template < class T >
@@ -687,7 +713,7 @@ namespace ticpp
 			Node* sibling = NextSibling( value, false );
 			*next = dynamic_cast< T* >( sibling );
 
-			while ( ( NULL != sibling ) && ( NULL == *next ) )
+			while ( ( 0 != sibling ) && ( 0 == *next ) )
 			{
 				sibling = sibling->NextSibling( value, false );
 				*next = dynamic_cast< T* >( sibling );
@@ -707,7 +733,7 @@ namespace ticpp
 			Node* sibling = PreviousSibling( value, false );
 			*previous = dynamic_cast< T* >( sibling );
 
-			while ( ( NULL != sibling ) && ( NULL == *previous ) )
+			while ( ( 0 != sibling ) && ( 0 == *previous ) )
 			{
 				sibling = sibling->PreviousSibling( value, false );
 				*previous = dynamic_cast< T* >( sibling );
@@ -811,7 +837,7 @@ namespace ticpp
 			T* To()
 		{
 			T* pointer = dynamic_cast< T* >( this );
-			if ( NULL == pointer )
+			if ( 0 == pointer )
 			{
 				std::string thisType = typeid( this ).name();
 				std::string targetType = typeid( T ).name();
@@ -933,15 +959,27 @@ namespace ticpp
 
 		/**
 		For for loop comparisons.
+
+		@return the first child of type T.
+		*/
+		T* begin( Node* parent )
+		{
+			T* pointer;
+			parent->IterateFirst( m_value, &pointer );
+			return pointer;
+		}
+
+		/**
+		For for loop comparisons.
 		*/
 		T* end()
 		{
-			return NULL;
+			return 0;
 		}
 
 		/** Constructor */
 		Iterator( const std::string& value = "" )
-			: m_p( NULL ), m_value( value )
+			: m_p( 0 ), m_value( value )
 		{
 		}
 
@@ -1083,7 +1121,7 @@ namespace ticpp
 		NodeImp( T* tiXmlPointer )
 		{
 			// Check for NULL pointers
-			if ( NULL == tiXmlPointer )
+			if ( 0 == tiXmlPointer )
 			{
 				TICPPTHROW( "Can not create a " << typeid( T ).name() );
 			}
@@ -1336,6 +1374,26 @@ namespace ticpp
 		Attribute* LastAttribute( bool throwIfNoAttributes = true );
 
 		/**
+		@internal
+		Just for Iterator<>
+
+		@param value The value of nodes to iterate through
+		@param next [OUT] The pointer to the first valid node
+		*/
+		void IterateFirst( const std::string& value, Attribute** first )
+		{
+			*first = 0;
+			for( Attribute* child = FirstAttribute( false ); child; child = child->Next( false ) )
+			{
+				*first = dynamic_cast< Attribute* >( child );
+				if ( 0 != *first )
+				{
+					return;
+				}
+			}
+		}
+
+		/**
 		Sets an attribute of name to a given value.
 		The attribute will be created if it does not exist, or changed if it does.
 		Uses ToString to convert the @a value to a string, so there is no need to use any other SetAttribute methods.
@@ -1484,7 +1542,7 @@ namespace ticpp
 			}
 			else
 			{
-				if ( NULL == m_tiXmlPointer->GetText() )
+				if ( 0 == m_tiXmlPointer->GetText() )
 				{
 					m_tiXmlPointer->InsertBeforeChild( m_tiXmlPointer->FirstChild(), TiXmlText( temp ) );
 				}
