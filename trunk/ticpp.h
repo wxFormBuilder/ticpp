@@ -695,7 +695,7 @@ namespace ticpp
 			}
 		}
 
-		virtual	void IterateFirst( const std::string& value, Attribute** first )
+		virtual	void IterateFirst( const std::string&, Attribute** )
 		{
 			TICPPTHROW( "Attributes can only be iterated with Elements." )
 		}
@@ -1380,7 +1380,7 @@ namespace ticpp
 		@param value The value of nodes to iterate through
 		@param next [OUT] The pointer to the first valid node
 		*/
-		void IterateFirst( const std::string& value, Attribute** first )
+		void IterateFirst( const std::string&, Attribute** first )
 		{
 			*first = 0;
 			for( Attribute* child = FirstAttribute( false ); child; child = child->Next( false ) )
