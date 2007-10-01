@@ -36,7 +36,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 @todo add UNKNOWN support. See ticpp::NodeFactory.
 @todo add TYPECOUNT support. See ticpp::NodeFactory.
-@todo Add better documentation to explain the different constructors in the ticpp::Iterator class.
 @todo Add a quick reference
 */
 #ifdef TIXML_USE_TICPP
@@ -947,7 +946,32 @@ namespace ticpp
 
 	};
 
-	/** Iterator for conveniently stepping through Nodes and Attributes */
+	/** Iterator for conveniently stepping through Nodes and Attributes.
+	TinyXML++ introduces iterators:
+	@code
+	ticpp::Iterator< ticpp::Node > child;
+	for ( child = child.begin( parent ); child != child.end(); child++ )
+	@endcode
+
+	Iterators have the added advantage of filtering by type:
+	@code
+	// Only iterates through Comment nodes
+	ticpp::Iterator< ticpp::Comment > child;
+	for ( child = child.begin( parent ); child != child.end(); child++ )
+	@endcode
+
+	@code
+	// Only iterates through Element nodes with value "ElementValue"
+	ticpp::Iterator< ticpp::Element > child( "ElementValue" );
+	for ( child = child.begin( parent ); child != child.end(); child++ )
+	@endcode
+
+	Finally, Iterators also work with Attributes
+	@code
+	ticpp::Iterator< ticpp::Attribute > attribute;
+	for ( attribute = attribute.begin( element ); attribute != attribute.end(); attribute++ )
+	@endcode
+	*/
 	template < class T = Node >
 		class Iterator
 	{
@@ -959,8 +983,12 @@ namespace ticpp
 
 		/**
 		For for loop comparisons.
-
-		@return the first child of type T.
+		@param parent The parent of the nodes to iterate.
+		@return The first child of type T.
+		@code
+		ticpp::Iterator< ticpp::Node > child;
+		for ( child = child.begin( parent ); child != child.end(); child++ )
+		@endcode
 		*/
 		T* begin( Node* parent )
 		{
@@ -971,25 +999,37 @@ namespace ticpp
 
 		/**
 		For for loop comparisons.
+		@return NULL
+		@code
+		ticpp::Iterator< ticpp::Node > child;
+		for ( child = child.begin( parent ); child != child.end(); child++ )
+		@endcode
 		*/
 		T* end()
 		{
 			return 0;
 		}
 
-		/** Constructor */
+		/** Constructor.
+		@param value If not empty, this iterator will only visit nodes with matching value.
+		@code
+		// Only iterates through Element nodes with value "ElementValue"
+		ticpp::Iterator< ticpp::Element > child( "ElementValue" );
+		for ( child = child.begin( parent ); child != child.end(); child++ )
+		@endcode
+		*/
 		Iterator( const std::string& value = "" )
 			: m_p( 0 ), m_value( value )
 		{
 		}
 
-		/** Constructor */
+		/// Constructor
 		Iterator( T* node, const std::string& value = "" )
 			: m_p( node ), m_value( value )
 		{
 		}
 
-		/** Constructor */
+		/// Constructor
 		Iterator( const Iterator& it, const std::string& value  = "" )
 			: m_p( it.m_p ), m_value( value )
 		{
@@ -1297,7 +1337,7 @@ namespace ticpp
 		void LoadFile( const std::string& filename, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );
 
 		/**
-		overload
+		@copydoc Document::LoadFile( const std::string&, TiXmlEncoding )
 		*/
 		void LoadFile( const char* filename, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );
 
@@ -1331,11 +1371,13 @@ namespace ticpp
 
 		/**
 		Default	Constructor. Initializes all the variables.
+		@param value The value of the element.
 		*/
 		Element( const std::string& value );
 
 		/**
 		Default	Constructor. Initializes all the variables.
+		@param value The value of the element.
 		*/
 		Element( const char* value );
 
@@ -1346,7 +1388,7 @@ namespace ticpp
 
 		/**
 		Constructor that allows you to set the element text
-
+		@param value The value of the element.
 		@param text The text to set.
 		*/
 		template < class T >

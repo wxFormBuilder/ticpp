@@ -84,7 +84,7 @@ catch( ticpp::Exception& ex )
 {
 	// If any function has an error, execution will enter here.
 	// Report the error
-	std::cout << ex.m_details;
+	std::cout << ex.what();
 }
 @endcode
 
@@ -174,7 +174,7 @@ catch( ticpp::Exception& ex )
 {
 	// If any function has an error, execution will enter here.
 	// Report the error
-	std::cout << ex.m_details;
+	std::cout << ex.what();
 }
 @endcode
 <h3> Use STL style iterators to move through nodes and attributes </h3>
@@ -195,27 +195,26 @@ Although both methods work quite well, the syntax is not familiar.
 TinyXML++ introduces iterators:
 @code
 ticpp::Iterator< ticpp::Node > child;
-for ( child = parent->FirstChild(); child != child.end(); child++ )
+for ( child = child.begin( parent ); child != child.end(); child++ )
 @endcode
 
 Iterators have the added advantage of filtering by type:
 @code
-// Only iterates through Element nodes
-ticpp::Iterator< ticpp::Element > child;
-for ( child = parent->FirstChild(); child != child.end(); child++ )
+// Only iterates through Comment nodes
+ticpp::Iterator< ticpp::Comment > child;
+for ( child = child.begin( parent ); child != child.end(); child++ )
 @endcode
 
 @code
-// Only iterates through Comment nodes
-ticpp::Iterator< ticpp::Comment > child;
-for ( child = parent->FirstChild(); child != child.end(); child++ )
+// Only iterates through Element nodes with value "ElementValue"
+ticpp::Iterator< ticpp::Element > child( "ElementValue" );
+for ( child = child.begin( parent ); child != child.end(); child++ )
 @endcode
 
 Finally, Iterators also work with Attributes
 @code
 ticpp::Iterator< ticpp::Attribute > attribute;
-for ( attribute = element->FirstAttribute(); attribute != attribute.end(); attribute++ )
+for ( attribute = attribute.begin( element ); attribute != attribute.end(); attribute++ )
 @endcode
-
 
 */
