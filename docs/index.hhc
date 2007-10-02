@@ -6,9 +6,6 @@
 <UL>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Main Page"><param name="Local" value="index.html"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="TinyXML++"><param name="Local" value="ticpp.html"><param name="ImageNumber" value="11"></OBJECT>
-    <UL>
-    </UL>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="TinyXML++ Tutorial"><param name="Local" value="ticppTutorial.html"><param name="ImageNumber" value="1"></OBJECT>
     <UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="TinyXML++"><param name="Local" value="ticpp.html"><param name="ImageNumber" value="11"></OBJECT>
@@ -16,6 +13,9 @@
       </UL>
     </UL>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="TinyXML Tutorial"><param name="Local" value="tutorial0.html"><param name="ImageNumber" value="11"></OBJECT>
+    <UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="TinyXML++"><param name="Local" value="ticpp.html"><param name="ImageNumber" value="11"></OBJECT>
     <UL>
     </UL>
   </UL>
@@ -42,9 +42,12 @@
   <LI><OBJECT type="text/sitemap"><param name="Name" value="TiXmlElement"><param name="Local" value="classTiXmlElement.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="TiXmlHandle"><param name="Local" value="classTiXmlHandle.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="TiXmlNode"><param name="Local" value="classTiXmlNode.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="TiXmlPrinter"><param name="Local" value="classTiXmlPrinter.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="TiXmlStylesheetReference"><param name="Local" value="classTiXmlStylesheetReference.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="TiXmlText"><param name="Local" value="classTiXmlText.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="TiXmlUnknown"><param name="Local" value="classTiXmlUnknown.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="TiXmlVisitor"><param name="Local" value="classTiXmlVisitor.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="ticpp::Visitor"><param name="Local" value="classticpp_1_1Visitor.html"><param name="ImageNumber" value="11"></OBJECT>
   </UL>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Class Hierarchy"><param name="Local" value="hierarchy.html"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
@@ -98,6 +101,11 @@
       </UL>
     </UL>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="TiXmlHandle"><param name="Local" value="classTiXmlHandle.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="TiXmlVisitor"><param name="Local" value="classTiXmlVisitor.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="ticpp::Visitor"><param name="Local" value="classticpp_1_1Visitor.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="TiXmlPrinter"><param name="Local" value="classTiXmlPrinter.html"><param name="ImageNumber" value="11"></OBJECT>
+    </UL>
   </UL>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Class Members"><param name="Local" value="functions.html"><param name="ImageNumber" value="11"></OBJECT>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Namespace List"><param name="Local" value="namespaces.html"><param name="ImageNumber" value="1"></OBJECT>
@@ -113,6 +121,9 @@
   </UL>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Related Pages"><param name="Local" value="pages.html"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Deprecated List"><param name="Local" value="deprecated.html"><param name="ImageNumber" value="11"></OBJECT>
+    <UL>
+    </UL>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="Todo List"><param name="Local" value="todo.html"><param name="ImageNumber" value="11"></OBJECT>
     <UL>
     </UL>

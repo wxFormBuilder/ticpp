@@ -1,5 +1,5 @@
 [OPTIONS]
-Compiled file=TinyXMLHelp_v2.4.4.chm
+Compiled file=TinyXMLHelp_v2.5.3.chm
 Compatibility=1.1
 Full-text search=Yes
 Contents file=index.hhc
@@ -22,6 +22,7 @@ ticpp_8h.html
 tutorial0.html
 ticppTutorial.html
 ticpp.html
+deprecated.html
 todo.html
 annotated.html
 hierarchy.html
@@ -89,16 +90,22 @@ classTiXmlHandle.html
 classTiXmlHandle-members.html
 classTiXmlNode.html
 classTiXmlNode-members.html
+classTiXmlPrinter.html
+classTiXmlPrinter-members.html
 classTiXmlStylesheetReference.html
 classTiXmlStylesheetReference-members.html
 classTiXmlText.html
 classTiXmlText-members.html
 classTiXmlUnknown.html
 classTiXmlUnknown-members.html
+classTiXmlVisitor.html
+classTiXmlVisitor-members.html
 namespaces.html
 namespaceticpp.html
 classticpp_1_1Exception.html
 classticpp_1_1Exception-members.html
+classticpp_1_1Visitor.html
+classticpp_1_1Visitor-members.html
 classticpp_1_1Base.html
 classticpp_1_1Base-members.html
 classticpp_1_1Attribute.html

@@ -62,48 +62,48 @@ Inheritance diagram for ticpp::Element:</div>
 <tr><td class="memTemplItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#a303d3d95f39accb56827fb1ee613859">Element</a> (const std::string &amp;value, const T &amp;text)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor that allows you to set the element text.  <a href="#a303d3d95f39accb56827fb1ee613859"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Attribute.html">Attribute</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#b4a256c25ba6da0c358bf0b9c6d211b5">FirstAttribute</a> (bool throwIfNoAttributes=true)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Attribute.html">Attribute</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#f7d63b6421100ce7a06e9226b52ce0fb">FirstAttribute</a> (bool throwIfNoAttributes=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Access the first attribute in this element.  <a href="#b4a256c25ba6da0c358bf0b9c6d211b5"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Attribute.html">Attribute</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#b4f8268779f1fb9aeda7d392ffed90c2">LastAttribute</a> (bool throwIfNoAttributes=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Access the first attribute in this element.  <a href="#f7d63b6421100ce7a06e9226b52ce0fb"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Attribute.html">Attribute</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#0a354d237841013bdd9e5c23d7207b26">LastAttribute</a> (bool throwIfNoAttributes=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Access the last attribute in this element.  <a href="#b4f8268779f1fb9aeda7d392ffed90c2"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Access the last attribute in this element.  <a href="#0a354d237841013bdd9e5c23d7207b26"></a><br></td></tr>
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;class T&gt; </td></tr>
 <tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#c63f47767bdbb973c3ae34be09c41fc5">SetAttribute</a> (const std::string &amp;name, const T &amp;value)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets an attribute of name to a given value.  <a href="#c63f47767bdbb973c3ae34be09c41fc5"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#737a40a6842df08e3012d15ff169bdc2">GetText</a> (bool throwIfNotFound=true)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#a7fb4ab5815dda1007bf377217515c60">GetText</a> (bool throwIfNotFound=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the text of an <a class="el" href="classticpp_1_1Element.html" title="Wrapper around TiXmlElement.">Element</a>.  <a href="#737a40a6842df08e3012d15ff169bdc2"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#9568e5dc928c7f50a62dbe5c8309194f">GetTextOrDefault</a> (const std::string &amp;defaultValue)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the text of an <a class="el" href="classticpp_1_1Element.html" title="Wrapper around TiXmlElement.">Element</a>.  <a href="#a7fb4ab5815dda1007bf377217515c60"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#f1798f0095163153a94e34b4c4ea67b7">GetTextOrDefault</a> (const std::string &amp;defaultValue) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the text of an <a class="el" href="classticpp_1_1Element.html" title="Wrapper around TiXmlElement.">Element</a>, if it doesn't exist it will return the defaultValue.  <a href="#9568e5dc928c7f50a62dbe5c8309194f"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the text of an <a class="el" href="classticpp_1_1Element.html" title="Wrapper around TiXmlElement.">Element</a>, if it doesn't exist it will return the defaultValue.  <a href="#f1798f0095163153a94e34b4c4ea67b7"></a><br></td></tr>
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;class T, class DefaultT&gt; </td></tr>
-<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#2de0e682af11f89a3aa802f8a922cfa2">GetTextOrDefault</a> (T *value, const DefaultT &amp;defaultValue)</td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#6112412425c71c0e17add7704dfbb812">GetTextOrDefault</a> (T *value, const DefaultT &amp;defaultValue) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the text value of an <a class="el" href="classticpp_1_1Element.html" title="Wrapper around TiXmlElement.">Element</a>, if it doesn't exist it will return the defaultValue.  <a href="#2de0e682af11f89a3aa802f8a922cfa2"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the text value of an <a class="el" href="classticpp_1_1Element.html" title="Wrapper around TiXmlElement.">Element</a>, if it doesn't exist it will return the defaultValue.  <a href="#6112412425c71c0e17add7704dfbb812"></a><br></td></tr>
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;class T&gt; </td></tr>
-<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#936e19319781daddde8956bb522b68ad">GetText</a> (T *value, bool throwIfNotFound=true)</td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#9cfb9d43c1db509fdcccc674f7b4b911">GetText</a> (T *value, bool throwIfNotFound=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the text of an <a class="el" href="classticpp_1_1Element.html" title="Wrapper around TiXmlElement.">Element</a>.  <a href="#936e19319781daddde8956bb522b68ad"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the text of an <a class="el" href="classticpp_1_1Element.html" title="Wrapper around TiXmlElement.">Element</a>.  <a href="#9cfb9d43c1db509fdcccc674f7b4b911"></a><br></td></tr>
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;class T&gt; </td></tr>
 <tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#95c5240166c5c52e859a7c2f42cc76fa">SetText</a> (const T &amp;value)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Convenience function to set the text of an element.  <a href="#95c5240166c5c52e859a7c2f42cc76fa"></a><br></td></tr>
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;class T, class DefaulT&gt; </td></tr>
-<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#5fabcff51c5b1006087f5fda4cbd5f9a">GetAttributeOrDefault</a> (const std::string &amp;name, T *value, const DefaulT &amp;defaultValue)</td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#6e85dc761941e267ee46b209ba947f77">GetAttributeOrDefault</a> (const std::string &amp;name, T *value, const DefaulT &amp;defaultValue) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets an attribute of <em>name</em> from an element, if it doesn't exist it will return the defaultValue.  <a href="#5fabcff51c5b1006087f5fda4cbd5f9a"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#8dbf2de47d0e224b2f29d1cd4f329329">GetAttributeOrDefault</a> (const std::string &amp;name, const std::string &amp;defaultValue)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets an attribute of <em>name</em> from an element, if it doesn't exist it will return the defaultValue.  <a href="#6e85dc761941e267ee46b209ba947f77"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#39efe08dfaa55d553c78aefcf7d3bc38">GetAttributeOrDefault</a> (const std::string &amp;name, const std::string &amp;defaultValue) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets an attribute of <em>name</em> from an element, if it doesn't exist it will return the defaultValue.  <a href="#8dbf2de47d0e224b2f29d1cd4f329329"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets an attribute of <em>name</em> from an element, if it doesn't exist it will return the defaultValue.  <a href="#39efe08dfaa55d553c78aefcf7d3bc38"></a><br></td></tr>
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;class T&gt; </td></tr>
-<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#a82b252ee03f4d99a30000e07e3d8d14">GetAttribute</a> (const std::string &amp;name, T *value, bool throwIfNotFound=true)</td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#f82f0d5592883303a2ccc99438360178">GetAttribute</a> (const std::string &amp;name, T *value, bool throwIfNotFound=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets an attribute of <em>name</em> from an element.  <a href="#a82b252ee03f4d99a30000e07e3d8d14"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#a062d610b89b740f6ef28196cea7b7bf">GetAttribute</a> (const std::string &amp;name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets an attribute of <em>name</em> from an element.  <a href="#f82f0d5592883303a2ccc99438360178"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Element.html#b2ab81d5598b5449506a28a121221cc0">GetAttribute</a> (const std::string &amp;name) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets an attribute of <em>name</em> from an element.  <a href="#a062d610b89b740f6ef28196cea7b7bf"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets an attribute of <em>name</em> from an element.  <a href="#b2ab81d5598b5449506a28a121221cc0"></a><br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 Wrapper around <a class="el" href="classTiXmlElement.html" title="The element is a container class.">TiXmlElement</a>. <hr><h2>Constructor &amp; Destructor Documentation</h2>
@@ -201,7 +201,7 @@ Constructor that allows you to set the element text.
 </div>
 </div><p>
 <hr><h2>Member Function Documentation</h2>
-<a class="anchor" name="b4a256c25ba6da0c358bf0b9c6d211b5"></a><!-- doxytag: member="ticpp::Element::FirstAttribute" ref="b4a256c25ba6da0c358bf0b9c6d211b5" args="(bool throwIfNoAttributes=true)" -->
+<a class="anchor" name="f7d63b6421100ce7a06e9226b52ce0fb"></a><!-- doxytag: member="ticpp::Element::FirstAttribute" ref="f7d63b6421100ce7a06e9226b52ce0fb" args="(bool throwIfNoAttributes=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -211,7 +211,7 @@ Constructor that allows you to set the element text.
           <td class="paramtype">bool&nbsp;</td>
           <td class="paramname"> <em>throwIfNoAttributes</em> = <code>true</code>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -229,7 +229,7 @@ Access the first attribute in this element.
 
 </div>
 </div><p>
-<a class="anchor" name="b4f8268779f1fb9aeda7d392ffed90c2"></a><!-- doxytag: member="ticpp::Element::LastAttribute" ref="b4f8268779f1fb9aeda7d392ffed90c2" args="(bool throwIfNoAttributes=true)" -->
+<a class="anchor" name="0a354d237841013bdd9e5c23d7207b26"></a><!-- doxytag: member="ticpp::Element::LastAttribute" ref="0a354d237841013bdd9e5c23d7207b26" args="(bool throwIfNoAttributes=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -239,7 +239,7 @@ Access the first attribute in this element.
           <td class="paramtype">bool&nbsp;</td>
           <td class="paramname"> <em>throwIfNoAttributes</em> = <code>true</code>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -288,11 +288,11 @@ template&lt;class T&gt; </div>
 Sets an attribute of name to a given value. 
 <p>
 The attribute will be created if it does not exist, or changed if it does. Uses ToString to convert the <em>value</em> to a string, so there is no need to use any other SetAttribute methods.<p>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#a82b252ee03f4d99a30000e07e3d8d14" title="Gets an attribute of name from an element.">GetAttribute</a> </dd></dl>
+<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#f82f0d5592883303a2ccc99438360178" title="Gets an attribute of name from an element.">GetAttribute</a> </dd></dl>
 
 </div>
 </div><p>
-<a class="anchor" name="737a40a6842df08e3012d15ff169bdc2"></a><!-- doxytag: member="ticpp::Element::GetText" ref="737a40a6842df08e3012d15ff169bdc2" args="(bool throwIfNotFound=true)" -->
+<a class="anchor" name="a7fb4ab5815dda1007bf377217515c60"></a><!-- doxytag: member="ticpp::Element::GetText" ref="a7fb4ab5815dda1007bf377217515c60" args="(bool throwIfNotFound=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -302,7 +302,7 @@ The attribute will be created if it does not exist, or changed if it does. Uses 
           <td class="paramtype">bool&nbsp;</td>
           <td class="paramname"> <em>throwIfNotFound</em> = <code>true</code>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"><code> [inline]</code></td>
+          <td width="100%"> const<code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -322,14 +322,14 @@ Gets the text of an <a class="el" href="classticpp_1_1Element.html" title="Wrapp
     <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classticpp_1_1Exception.html" title="This is a ticpp exception class.">Exception</a></em>&nbsp;</td><td>When there is no text and throwIfNotFound is true</td></tr>
   </table>
 </dl>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#737a40a6842df08e3012d15ff169bdc2" title="Gets the text of an Element.">GetText</a>( T* value, bool throwIfNotFound = false ) <p>
-<a class="el" href="classticpp_1_1Element.html#9568e5dc928c7f50a62dbe5c8309194f" title="Gets the text of an Element, if it doesn&#39;t exist it will return the defaultValue...">GetTextOrDefault</a> <p>
-<a class="el" href="classticpp_1_1Element.html#2de0e682af11f89a3aa802f8a922cfa2" title="Gets the text value of an Element, if it doesn&#39;t exist it will return the defaultValue...">GetTextOrDefault( T* value, const DefaultT&amp; defaultValue )</a> <p>
+<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#a7fb4ab5815dda1007bf377217515c60" title="Gets the text of an Element.">GetText</a>( T* value, bool throwIfNotFound = false ) <p>
+<a class="el" href="classticpp_1_1Element.html#f1798f0095163153a94e34b4c4ea67b7" title="Gets the text of an Element, if it doesn&#39;t exist it will return the defaultValue...">GetTextOrDefault</a> <p>
+GetTextOrDefault( T* value, const DefaultT&amp; defaultValue ) <p>
 <a class="el" href="classTiXmlElement.html#f3282294986cdb216646ea1f67af2c87" title="Convenience function for easy access to the text inside an element.">TiXmlElement::GetText</a> </dd></dl>
 
 </div>
 </div><p>
-<a class="anchor" name="9568e5dc928c7f50a62dbe5c8309194f"></a><!-- doxytag: member="ticpp::Element::GetTextOrDefault" ref="9568e5dc928c7f50a62dbe5c8309194f" args="(const std::string &amp;defaultValue)" -->
+<a class="anchor" name="f1798f0095163153a94e34b4c4ea67b7"></a><!-- doxytag: member="ticpp::Element::GetTextOrDefault" ref="f1798f0095163153a94e34b4c4ea67b7" args="(const std::string &amp;defaultValue) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -339,7 +339,7 @@ Gets the text of an <a class="el" href="classticpp_1_1Element.html" title="Wrapp
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>defaultValue</em>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"><code> [inline]</code></td>
+          <td width="100%"> const<code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -354,14 +354,14 @@ Gets the text of an <a class="el" href="classticpp_1_1Element.html" title="Wrapp
   </table>
 </dl>
 <dl class="note" compact><dt><b>Note:</b></dt><dd>This only works if the <a class="el" href="classticpp_1_1Text.html" title="Wrapper around TiXmlText.">Text</a> is the FirstChild node</dd></dl>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#737a40a6842df08e3012d15ff169bdc2" title="Gets the text of an Element.">GetText</a> <p>
-<a class="el" href="classticpp_1_1Element.html#737a40a6842df08e3012d15ff169bdc2" title="Gets the text of an Element.">GetText</a>( T* value, bool throwIfNotFound = false ) <p>
-<a class="el" href="classticpp_1_1Element.html#2de0e682af11f89a3aa802f8a922cfa2" title="Gets the text value of an Element, if it doesn&#39;t exist it will return the defaultValue...">GetTextOrDefault( T* value, const DefaultT&amp; defaultValue )</a> <p>
+<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#a7fb4ab5815dda1007bf377217515c60" title="Gets the text of an Element.">GetText</a> <p>
+<a class="el" href="classticpp_1_1Element.html#a7fb4ab5815dda1007bf377217515c60" title="Gets the text of an Element.">GetText</a>( T* value, bool throwIfNotFound = false ) <p>
+GetTextOrDefault( T* value, const DefaultT&amp; defaultValue ) <p>
 <a class="el" href="classTiXmlElement.html#f3282294986cdb216646ea1f67af2c87" title="Convenience function for easy access to the text inside an element.">TiXmlElement::GetText</a> </dd></dl>
 
 </div>
 </div><p>
-<a class="anchor" name="2de0e682af11f89a3aa802f8a922cfa2"></a><!-- doxytag: member="ticpp::Element::GetTextOrDefault" ref="2de0e682af11f89a3aa802f8a922cfa2" args="(T *value, const DefaultT &amp;defaultValue)" -->
+<a class="anchor" name="6112412425c71c0e17add7704dfbb812"></a><!-- doxytag: member="ticpp::Element::GetTextOrDefault" ref="6112412425c71c0e17add7704dfbb812" args="(T *value, const DefaultT &amp;defaultValue) const " -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -382,7 +382,7 @@ template&lt;class T, class DefaultT&gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td width="100%"><code> [inline]</code></td>
+          <td></td><td></td><td width="100%"> const<code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -398,16 +398,16 @@ Uses FromString to convert the string to the type of choice<p>
     <tr><td valign="top"></td><td valign="top"><em>defaultValue</em>&nbsp;</td><td>What to put in 'value' if there is no text in this element </td></tr>
   </table>
 </dl>
-<dl class="note" compact><dt><b>Note:</b></dt><dd>This is different than <a class="el" href="classticpp_1_1Element.html#737a40a6842df08e3012d15ff169bdc2" title="Gets the text of an Element.">GetText()</a> in that it will covert the text to what ever type you want. <p>
+<dl class="note" compact><dt><b>Note:</b></dt><dd>This is different than <a class="el" href="classticpp_1_1Element.html#a7fb4ab5815dda1007bf377217515c60" title="Gets the text of an Element.">GetText()</a> in that it will covert the text to what ever type you want. <p>
 This only works if the <a class="el" href="classticpp_1_1Text.html" title="Wrapper around TiXmlText.">Text</a> is the FirstChild node</dd></dl>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#737a40a6842df08e3012d15ff169bdc2" title="Gets the text of an Element.">GetText</a> <p>
-<a class="el" href="classticpp_1_1Element.html#737a40a6842df08e3012d15ff169bdc2" title="Gets the text of an Element.">GetText</a>( T* value, bool throwIfNotFound = false ) <p>
-<a class="el" href="classticpp_1_1Element.html#9568e5dc928c7f50a62dbe5c8309194f" title="Gets the text of an Element, if it doesn&#39;t exist it will return the defaultValue...">GetTextOrDefault( const std::string&amp; defaultValue )</a> <p>
+<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#a7fb4ab5815dda1007bf377217515c60" title="Gets the text of an Element.">GetText</a> <p>
+<a class="el" href="classticpp_1_1Element.html#a7fb4ab5815dda1007bf377217515c60" title="Gets the text of an Element.">GetText</a>( T* value, bool throwIfNotFound = false ) <p>
+GetTextOrDefault( const std::string&amp; defaultValue ) <p>
 <a class="el" href="classTiXmlElement.html#f3282294986cdb216646ea1f67af2c87" title="Convenience function for easy access to the text inside an element.">TiXmlElement::GetText</a> </dd></dl>
 
 </div>
 </div><p>
-<a class="anchor" name="936e19319781daddde8956bb522b68ad"></a><!-- doxytag: member="ticpp::Element::GetText" ref="936e19319781daddde8956bb522b68ad" args="(T *value, bool throwIfNotFound=true)" -->
+<a class="anchor" name="9cfb9d43c1db509fdcccc674f7b4b911"></a><!-- doxytag: member="ticpp::Element::GetText" ref="9cfb9d43c1db509fdcccc674f7b4b911" args="(T *value, bool throwIfNotFound=true) const " -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -428,7 +428,7 @@ template&lt;class T&gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td width="100%"><code> [inline]</code></td>
+          <td></td><td></td><td width="100%"> const<code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -444,16 +444,16 @@ Uses FromString to convert the string to the type of choice.<p>
     <tr><td valign="top"></td><td valign="top"><em>throwIfNotFound</em>&nbsp;</td><td>[DEF] If true, will throw an exception if there is no text in this element </td></tr>
   </table>
 </dl>
-<dl class="note" compact><dt><b>Note:</b></dt><dd>This is different than <a class="el" href="classticpp_1_1Element.html#737a40a6842df08e3012d15ff169bdc2" title="Gets the text of an Element.">GetText()</a> in that it will covert the text to what ever type you want <p>
+<dl class="note" compact><dt><b>Note:</b></dt><dd>This is different than <a class="el" href="classticpp_1_1Element.html#a7fb4ab5815dda1007bf377217515c60" title="Gets the text of an Element.">GetText()</a> in that it will covert the text to what ever type you want <p>
 This only works if the <a class="el" href="classticpp_1_1Text.html" title="Wrapper around TiXmlText.">Text</a> is the FirstChild node </dd></dl>
 <dl compact><dt><b>Exceptions:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classticpp_1_1Exception.html" title="This is a ticpp exception class.">Exception</a></em>&nbsp;</td><td>When there is no text and throwIfNotFound is true</td></tr>
   </table>
 </dl>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#737a40a6842df08e3012d15ff169bdc2" title="Gets the text of an Element.">GetText</a> <p>
-<a class="el" href="classticpp_1_1Element.html#9568e5dc928c7f50a62dbe5c8309194f" title="Gets the text of an Element, if it doesn&#39;t exist it will return the defaultValue...">GetTextOrDefault</a> <p>
-<a class="el" href="classticpp_1_1Element.html#2de0e682af11f89a3aa802f8a922cfa2" title="Gets the text value of an Element, if it doesn&#39;t exist it will return the defaultValue...">GetTextOrDefault( T* value, const DefaultT&amp; defaultValue )</a> <p>
+<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#a7fb4ab5815dda1007bf377217515c60" title="Gets the text of an Element.">GetText</a> <p>
+<a class="el" href="classticpp_1_1Element.html#f1798f0095163153a94e34b4c4ea67b7" title="Gets the text of an Element, if it doesn&#39;t exist it will return the defaultValue...">GetTextOrDefault</a> <p>
+GetTextOrDefault( T* value, const DefaultT&amp; defaultValue ) <p>
 <a class="el" href="classTiXmlElement.html#f3282294986cdb216646ea1f67af2c87" title="Convenience function for easy access to the text inside an element.">TiXmlElement::GetText</a> </dd></dl>
 
 </div>
@@ -488,7 +488,7 @@ Creates a <a class="el" href="classticpp_1_1Text.html" title="Wrapper around TiX
 
 </div>
 </div><p>
-<a class="anchor" name="5fabcff51c5b1006087f5fda4cbd5f9a"></a><!-- doxytag: member="ticpp::Element::GetAttributeOrDefault" ref="5fabcff51c5b1006087f5fda4cbd5f9a" args="(const std::string &amp;name, T *value, const DefaulT &amp;defaultValue)" -->
+<a class="anchor" name="6e85dc761941e267ee46b209ba947f77"></a><!-- doxytag: member="ticpp::Element::GetAttributeOrDefault" ref="6e85dc761941e267ee46b209ba947f77" args="(const std::string &amp;name, T *value, const DefaulT &amp;defaultValue) const " -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -515,7 +515,7 @@ template&lt;class T, class DefaulT&gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td width="100%"><code> [inline]</code></td>
+          <td></td><td></td><td width="100%"> const<code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -537,11 +537,11 @@ Uses FromString to convert the string to the type of choice.<p>
     <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classticpp_1_1Exception.html" title="This is a ticpp exception class.">Exception</a></em>&nbsp;</td><td></td></tr>
   </table>
 </dl>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#a82b252ee03f4d99a30000e07e3d8d14" title="Gets an attribute of name from an element.">GetAttribute</a> </dd></dl>
+<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#f82f0d5592883303a2ccc99438360178" title="Gets an attribute of name from an element.">GetAttribute</a> </dd></dl>
 
 </div>
 </div><p>
-<a class="anchor" name="8dbf2de47d0e224b2f29d1cd4f329329"></a><!-- doxytag: member="ticpp::Element::GetAttributeOrDefault" ref="8dbf2de47d0e224b2f29d1cd4f329329" args="(const std::string &amp;name, const std::string &amp;defaultValue)" -->
+<a class="anchor" name="39efe08dfaa55d553c78aefcf7d3bc38"></a><!-- doxytag: member="ticpp::Element::GetAttributeOrDefault" ref="39efe08dfaa55d553c78aefcf7d3bc38" args="(const std::string &amp;name, const std::string &amp;defaultValue) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -560,7 +560,7 @@ Uses FromString to convert the string to the type of choice.<p>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td width="100%"></td>
+          <td></td><td></td><td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -575,11 +575,11 @@ Gets an attribute of <em>name</em> from an element, if it doesn't exist it will 
     <tr><td valign="top"></td><td valign="top"><em>defaultValue</em>&nbsp;</td><td>What to put in <em>value</em> if there is no attribute in this element.</td></tr>
   </table>
 </dl>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#a82b252ee03f4d99a30000e07e3d8d14" title="Gets an attribute of name from an element.">GetAttribute</a> </dd></dl>
+<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#f82f0d5592883303a2ccc99438360178" title="Gets an attribute of name from an element.">GetAttribute</a> </dd></dl>
 
 </div>
 </div><p>
-<a class="anchor" name="a82b252ee03f4d99a30000e07e3d8d14"></a><!-- doxytag: member="ticpp::Element::GetAttribute" ref="a82b252ee03f4d99a30000e07e3d8d14" args="(const std::string &amp;name, T *value, bool throwIfNotFound=true)" -->
+<a class="anchor" name="f82f0d5592883303a2ccc99438360178"></a><!-- doxytag: member="ticpp::Element::GetAttribute" ref="f82f0d5592883303a2ccc99438360178" args="(const std::string &amp;name, T *value, bool throwIfNotFound=true) const " -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -606,7 +606,7 @@ template&lt;class T&gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td width="100%"><code> [inline]</code></td>
+          <td></td><td></td><td width="100%"> const<code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -628,11 +628,11 @@ Uses FromString to convert the string to the type of choice.<p>
     <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classticpp_1_1Exception.html" title="This is a ticpp exception class.">Exception</a></em>&nbsp;</td><td>When the attribute doesn't exist and throwIfNotFound is true</td></tr>
   </table>
 </dl>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#5fabcff51c5b1006087f5fda4cbd5f9a" title="Gets an attribute of name from an element, if it doesn&#39;t exist it will return...">GetAttributeOrDefault</a> </dd></dl>
+<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#6e85dc761941e267ee46b209ba947f77" title="Gets an attribute of name from an element, if it doesn&#39;t exist it will return...">GetAttributeOrDefault</a> </dd></dl>
 
 </div>
 </div><p>
-<a class="anchor" name="a062d610b89b740f6ef28196cea7b7bf"></a><!-- doxytag: member="ticpp::Element::GetAttribute" ref="a062d610b89b740f6ef28196cea7b7bf" args="(const std::string &amp;name)" -->
+<a class="anchor" name="b2ab81d5598b5449506a28a121221cc0"></a><!-- doxytag: member="ticpp::Element::GetAttribute" ref="b2ab81d5598b5449506a28a121221cc0" args="(const std::string &amp;name) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -642,7 +642,7 @@ Uses FromString to convert the string to the type of choice.<p>
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>name</em>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -658,13 +658,13 @@ Returns an empty string if the attribute does not exist.<p>
   </table>
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>The value of the attribute, or an empty string if it does not exist.</dd></dl>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#5fabcff51c5b1006087f5fda4cbd5f9a" title="Gets an attribute of name from an element, if it doesn&#39;t exist it will return...">GetAttributeOrDefault</a> </dd></dl>
+<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Element.html#6e85dc761941e267ee46b209ba947f77" title="Gets an attribute of name from an element, if it doesn&#39;t exist it will return...">GetAttributeOrDefault</a> </dd></dl>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="ticpp_8h-source.html">ticpp.h</a></ul>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Oct 1 10:13:30 2007 for TinyXml by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue Oct 2 10:39:50 2007 for TinyXml by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.3 </small></address>
 </body>

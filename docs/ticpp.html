@@ -33,90 +33,90 @@ Basically, TinyXML++ objects are just wrappers around TinyXML pointers.<p>
 <h3>Use exceptions for error handling </h3>
 <p>
 When using the original TinyXML, every function returns a value indicating success or failure. A programmer would have to check that value to ensure the function succeeded.<p>
-Example: <div class="fragment"><pre class="fragment"><span class="comment">// Load a document</span>
+Example: <div class="fragment"><pre class="fragment"> Load a document
 <a class="code" href="classTiXmlDocument.html" title="Always the top level node.">TiXmlDocument</a> doc( pFilename );
 <span class="keywordflow">if</span> ( !doc.LoadFile() ) <span class="keywordflow">return</span>;
 
-<span class="comment">// Get a node</span>
+ Get a node
 <a class="code" href="classTiXmlElement.html" title="The element is a container class.">TiXmlElement</a>* pElem = doc.FirstChildElement();
 <span class="keywordflow">if</span> ( !pElem ) <span class="keywordflow">return</span>;
 
-<span class="comment">// Get the node we want</span>
-pElem = pElem-&gt;<a class="code" href="classTiXmlNode.html#1b94d2f7fa7ab25a5a8e8d4340c449c9" title="STL std::string form.">NextSibling</a>();
+ Get the node we want
+pElem = pElem-&gt;NextSibling();
 <span class="keywordflow">if</span> ( !pElem ) <span class="keywordflow">return</span>;
 
-<span class="comment">// do something useful here</span>
+ <span class="keywordflow">do</span> something useful here
 </pre></div><p>
 An alternative was to use <a class="el" href="classTiXmlHandle.html" title="A TiXmlHandle is a class that wraps a node pointer with null checks; this is an incredibly...">TiXmlHandle</a>, which allows for function chaining by checking the intermediate function return values:<p>
-Example: <div class="fragment"><pre class="fragment"><span class="comment">// Load a document</span>
+Example: <div class="fragment"><pre class="fragment"> Load a document
 <a class="code" href="classTiXmlDocument.html" title="Always the top level node.">TiXmlDocument</a> doc(pFilename);
 <span class="keywordflow">if</span> (!doc.LoadFile()) <span class="keywordflow">return</span>;
 
-<span class="comment">// Make a document handle</span>
+ Make a document handle
 <a class="code" href="classTiXmlHandle.html" title="A TiXmlHandle is a class that wraps a node pointer with null checks; this is an incredibly...">TiXmlHandle</a> hDoc(&amp;doc);
 
-<span class="comment">// Get an element by using the handle to chain calls</span>
-<span class="comment">// Note the conversion of the TiXmlHandle to the TiXmlElement* - .Element()</span>
-<a class="code" href="classTiXmlElement.html" title="The element is a container class.">TiXmlElement</a>* pElem = hDoc.<a class="code" href="classTiXmlNode.html#f4fb652f6bd79ae0d5ce7d0f7d3c0fba" title="Convenience function to get through elements.">FirstChildElement</a>().<a class="code" href="classTiXmlNode.html#1b94d2f7fa7ab25a5a8e8d4340c449c9" title="STL std::string form.">NextSibling</a>().Element();
+ Get an element by <span class="keyword">using</span> the handle to chain calls
+ Note the conversion of the <a class="code" href="classTiXmlHandle.html" title="A TiXmlHandle is a class that wraps a node pointer with null checks; this is an incredibly...">TiXmlHandle</a> to the <a class="code" href="classTiXmlElement.html" title="The element is a container class.">TiXmlElement</a>* - .Element()
+<a class="code" href="classTiXmlElement.html" title="The element is a container class.">TiXmlElement</a>* pElem = hDoc.FirstChildElement().NextSibling().Element();
 <span class="keywordflow">if</span> ( !pElem ) <span class="keywordflow">return</span>;
 
-<span class="comment">// do something useful here</span>
+ <span class="keywordflow">do</span> something useful here
 </pre></div><p>
 With TinyXML++, if there is an error during a function call, it throws an exception. This means that a programmer can assume that every function is successful, as long as the functions are enclosed in a try-catch block.<p>
 Example: <div class="fragment"><pre class="fragment"><span class="keywordflow">try</span>
 {
-    <span class="comment">// Load a document</span>
+ Load a document
     <a class="code" href="classticpp_1_1Document.html" title="Wrapper around TiXmlDocument.">ticpp::Document</a> doc( pFilename );
     doc.LoadFile();
 
-    <span class="comment">// Get an element by chaining calls - no return values to check, no TiXmlHandle</span>
+ Get an element by chaining calls - no <span class="keywordflow">return</span> values to check, no <a class="code" href="classTiXmlHandle.html" title="A TiXmlHandle is a class that wraps a node pointer with null checks; this is an incredibly...">TiXmlHandle</a>
     <a class="code" href="classticpp_1_1Element.html" title="Wrapper around TiXmlElement.">ticpp::Element</a>* pElem = doc.<a class="code" href="classTiXmlNode.html#f4fb652f6bd79ae0d5ce7d0f7d3c0fba" title="Convenience function to get through elements.">FirstChildElement</a>()-&gt;<a class="code" href="classTiXmlNode.html#1b94d2f7fa7ab25a5a8e8d4340c449c9" title="STL std::string form.">NextSibling</a>();
 
-    <span class="comment">// do something useful here</span>
+ <span class="keywordflow">do</span> something useful here
 }
 <span class="keywordflow">catch</span>( <a class="code" href="classticpp_1_1Exception.html" title="This is a ticpp exception class.">ticpp::Exception</a>&amp; ex )
 {
-    <span class="comment">// If any function has an error, execution will enter here.</span>
-    <span class="comment">// Report the error</span>
+ If any function has an error, execution will enter here.
+ Report the error
     std::cout &lt;&lt; ex.<a class="code" href="classticpp_1_1Exception.html#eac1f13b96eb4e1f2a3659dc9080edd6" title="Override std::exception::what() to return m_details.">what</a>();
 }
 </pre></div><p>
 <h3>Use templates for automatic type conversion </h3>
 <p>
 When using TinyXML, a programmer either needs to convert values to and from strings, or choose from one of many overloads to get the value in the desired type.<p>
-Example: <div class="fragment"><pre class="fragment"><span class="comment">// Load a document</span>
+Example: <div class="fragment"><pre class="fragment"> Load a document
 <a class="code" href="classTiXmlDocument.html" title="Always the top level node.">TiXmlDocument</a> doc( pFilename );
 <span class="keywordflow">if</span> ( !doc.LoadFile() ) <span class="keywordflow">return</span>;
 
-<span class="comment">// Get a node</span>
-<a class="code" href="classTiXmlElement.html" title="The element is a container class.">TiXmlElement</a>* pElem = doc.<a class="code" href="classticpp_1_1Node.html#78fede114cf3c4608162891411db0c56" title="The first child element of this node.">FirstChildElement</a>();
+ Get a node
+<a class="code" href="classTiXmlElement.html" title="The element is a container class.">TiXmlElement</a>* pElem = doc.FirstChildElement();
 <span class="keywordflow">if</span> ( !pElem ) <span class="keywordflow">return</span>;
 
-<span class="comment">// Get the node we want</span>
-pElem = pElem-&gt;<a class="code" href="classTiXmlNode.html#1b94d2f7fa7ab25a5a8e8d4340c449c9" title="STL std::string form.">NextSibling</a>();
+ Get the node we want
+pElem = pElem-&gt;NextSibling();
 <span class="keywordflow">if</span> ( !pElem ) <span class="keywordflow">return</span>;
 
-<span class="comment">// Get the attribute as a string, convert to int</span>
-<span class="keyword">const</span> <span class="keywordtype">char</span>* pszAttr = pElem-&gt;<a class="code" href="classTiXmlElement.html#e419a442a9701a62b0c3d8fd1cbdd12d" title="Given an attribute name, Attribute() returns the value for the attribute of that...">Attribute</a>( <span class="stringliteral">"myAttribute"</span> );
+ Get the attribute as a string, convert to <span class="keywordtype">int</span>
+<span class="keyword">const</span> <span class="keywordtype">char</span>* pszAttr = pElem-&gt;Attribute( <span class="stringliteral">"myAttribute"</span> );
 <span class="keywordtype">int</span> attr = atoi( pszAttr );
 
-<span class="comment">// Get the attribute as an int</span>
+ Get the attribute as an <span class="keywordtype">int</span>
 <span class="keywordtype">int</span> attr2;
-<span class="keywordflow">if</span> ( TIXML_SUCCESS != pElem-&gt;<a class="code" href="classTiXmlElement.html#ea0bfe471380f281c5945770ddbf52b9" title="QueryIntAttribute examines the attribute - it is an alternative to the Attribute()...">QueryIntAttribute</a>( <span class="stringliteral">"myAttribute"</span>, &amp;attr2 ) )
+<span class="keywordflow">if</span> ( TIXML_SUCCESS != pElem-&gt;QueryIntAttribute( <span class="stringliteral">"myAttribute"</span>, &amp;attr2 ) )
 {
     <span class="keywordflow">return</span>;
 }
 
-<span class="comment">// Get the attribute as a double</span>
+ Get the attribute as a <span class="keywordtype">double</span>
 <span class="keywordtype">double</span> attr3;
-<span class="keywordflow">if</span> ( TIXML_SUCCESS != pElem-&gt;<a class="code" href="classTiXmlElement.html#898d7730ecc341f0bffc7a9dadbf1ce7" title="QueryDoubleAttribute examines the attribute - see QueryIntAttribute().">QueryDoubleAttribute</a>( <span class="stringliteral">"myAttribute"</span>, &amp;attr3 ) )
+<span class="keywordflow">if</span> ( TIXML_SUCCESS != pElem-&gt;QueryDoubleAttribute( <span class="stringliteral">"myAttribute"</span>, &amp;attr3 ) )
 {
     <span class="keywordflow">return</span>;
 }
 
-<span class="comment">// Get the attribute as a float</span>
+ Get the attribute as a <span class="keywordtype">float</span>
 <span class="keywordtype">float</span> attr4;
-<span class="keywordflow">if</span> ( TIXML_SUCCESS != pElem-&gt;<a class="code" href="classTiXmlElement.html#a04d3af11601ef5a5f88295203a843be" title="QueryFloatAttribute examines the attribute - see QueryIntAttribute().">QueryFloatAttribute</a>( <span class="stringliteral">"myAttribute"</span>, &amp;attr4 ) )
+<span class="keywordflow">if</span> ( TIXML_SUCCESS != pElem-&gt;QueryFloatAttribute( <span class="stringliteral">"myAttribute"</span>, &amp;attr4 ) )
 {
     <span class="keywordflow">return</span>;
 }
@@ -124,40 +124,40 @@ pElem = pElem-&gt;<a class="code" href="classTiXmlNode.html#1b94d2f7fa7ab25a5a8e
 TinyXML++ uses templates for automatic type conversion.<p>
 Example: <div class="fragment"><pre class="fragment"><span class="keywordflow">try</span>
 {
-    <span class="comment">// Load a document</span>
+ Load a document
     <a class="code" href="classticpp_1_1Document.html" title="Wrapper around TiXmlDocument.">ticpp::Document</a> doc( pFilename );
     doc.LoadFile();
 
-    <span class="comment">// Get an element by chaining calls - no return values to check, no TiXmlHandle</span>
-    <a class="code" href="classticpp_1_1Element.html" title="Wrapper around TiXmlElement.">ticpp::Element</a>* pElem = doc.<a class="code" href="classTiXmlNode.html#f4fb652f6bd79ae0d5ce7d0f7d3c0fba" title="Convenience function to get through elements.">FirstChildElement</a>()-&gt;<a class="code" href="classTiXmlNode.html#1b94d2f7fa7ab25a5a8e8d4340c449c9" title="STL std::string form.">NextSibling</a>();
+ Get an element by chaining calls - no <span class="keywordflow">return</span> values to check, no <a class="code" href="classTiXmlHandle.html" title="A TiXmlHandle is a class that wraps a node pointer with null checks; this is an incredibly...">TiXmlHandle</a>
+    <a class="code" href="classticpp_1_1Element.html" title="Wrapper around TiXmlElement.">ticpp::Element</a>* pElem = doc.FirstChildElement()-&gt;NextSibling();
 
-    <span class="comment">// GetAttribute can determine the type of the pointer, and convert automatically</span>
+ GetAttribute can determine the type of the pointer, and convert automatically
 
-    <span class="comment">// Get the attribute as a string</span>
+ Get the attribute as a <span class="keywordtype">string</span>
     std::string attr;
-    pElem-&gt;<a class="code" href="classticpp_1_1Element.html#a82b252ee03f4d99a30000e07e3d8d14" title="Gets an attribute of name from an element.">GetAttribute</a>( <span class="stringliteral">"myAttribute"</span>, &amp;attr );
+    pElem-&gt;GetAttribute( <span class="stringliteral">"myAttribute"</span>, &amp;attr );
 
-    <span class="comment">// Get the attribute as an int</span>
+ Get the attribute as an <span class="keywordtype">int</span>
     <span class="keywordtype">int</span> attr2;
-    pElem-&gt;<a class="code" href="classticpp_1_1Element.html#a82b252ee03f4d99a30000e07e3d8d14" title="Gets an attribute of name from an element.">GetAttribute</a>( <span class="stringliteral">"myAttribute"</span>, &amp;attr2 );
+    pElem-&gt;GetAttribute( <span class="stringliteral">"myAttribute"</span>, &amp;attr2 );
 
-    <span class="comment">// Get the attribute as an float</span>
+ Get the attribute as an <span class="keywordtype">float</span>
     <span class="keywordtype">float</span> attr3;
-    pElem-&gt;<a class="code" href="classticpp_1_1Element.html#a82b252ee03f4d99a30000e07e3d8d14" title="Gets an attribute of name from an element.">GetAttribute</a>( <span class="stringliteral">"myAttribute"</span>, &amp;attr3 );
+    pElem-&gt;GetAttribute( <span class="stringliteral">"myAttribute"</span>, &amp;attr3 );
 
-    <span class="comment">// Get the attribute as an double</span>
+ Get the attribute as an <span class="keywordtype">double</span>
     <span class="keywordtype">double</span> attr4;
-    pElem-&gt;<a class="code" href="classticpp_1_1Element.html#a82b252ee03f4d99a30000e07e3d8d14" title="Gets an attribute of name from an element.">GetAttribute</a>( <span class="stringliteral">"myAttribute"</span>, &amp;attr4 );
+    pElem-&gt;GetAttribute( <span class="stringliteral">"myAttribute"</span>, &amp;attr4 );
 
-    <span class="comment">// Get the attribute as an bool</span>
+ Get the attribute as an <span class="keywordtype">bool</span>
     <span class="keywordtype">bool</span> attr5;
-    pElem-&gt;<a class="code" href="classticpp_1_1Element.html#a82b252ee03f4d99a30000e07e3d8d14" title="Gets an attribute of name from an element.">GetAttribute</a>( <span class="stringliteral">"myAttribute"</span>, &amp;attr5 );
+    pElem-&gt;GetAttribute( <span class="stringliteral">"myAttribute"</span>, &amp;attr5 );
 
 }
 <span class="keywordflow">catch</span>( <a class="code" href="classticpp_1_1Exception.html" title="This is a ticpp exception class.">ticpp::Exception</a>&amp; ex )
 {
-    <span class="comment">// If any function has an error, execution will enter here.</span>
-    <span class="comment">// Report the error</span>
+ If any function has an error, execution will enter here.
+ Report the error
     std::cout &lt;&lt; ex.<a class="code" href="classticpp_1_1Exception.html#eac1f13b96eb4e1f2a3659dc9080edd6" title="Override std::exception::what() to return m_details.">what</a>();
 }
 </pre></div> <h3>Use STL style iterators to move through nodes and attributes </h3>
@@ -169,19 +169,19 @@ Second Method: <div class="fragment"><pre class="fragment">    child = 0;
     <span class="keywordflow">while</span>( child = parent-&gt;IterateChildren( child ) )
 </pre></div><p>
 Although both methods work quite well, the syntax is not familiar. TinyXML++ introduces iterators: <div class="fragment"><pre class="fragment"><a class="code" href="classticpp_1_1Iterator.html" title="Iterator for conveniently stepping through Nodes and Attributes.">ticpp::Iterator&lt; ticpp::Node &gt;</a> child;
-<span class="keywordflow">for</span> ( child = child.<a class="code" href="classticpp_1_1Iterator.html#9e0c291db7904e69db16c54632ecaf24" title="For for loop comparisons.">begin</a>( parent ); child != child.<a class="code" href="classticpp_1_1Iterator.html#8ed3f9bf088827f4661613e250d55d58" title="For for loop comparisons.">end</a>(); child++ )
+<span class="keywordflow">for</span> ( child = child.<a class="code" href="classticpp_1_1Iterator.html#056e73d1bed641f43114b9d4e9f0f29e" title="For for loop comparisons.">begin</a>( parent ); child != child.<a class="code" href="classticpp_1_1Iterator.html#7b4a49c16cff8c8470cc5c9a63810cd5" title="For for loop comparisons.">end</a>(); child++ )
 </pre></div><p>
-Iterators have the added advantage of filtering by type: <div class="fragment"><pre class="fragment"><span class="comment">// Only iterates through Comment nodes</span>
+Iterators have the added advantage of filtering by type: <div class="fragment"><pre class="fragment"> Only iterates through Comment nodes
 <a class="code" href="classticpp_1_1Iterator.html" title="Iterator for conveniently stepping through Nodes and Attributes.">ticpp::Iterator&lt; ticpp::Comment &gt;</a> child;
-<span class="keywordflow">for</span> ( child = child.<a class="code" href="classticpp_1_1Iterator.html#9e0c291db7904e69db16c54632ecaf24" title="For for loop comparisons.">begin</a>( parent ); child != child.<a class="code" href="classticpp_1_1Iterator.html#8ed3f9bf088827f4661613e250d55d58" title="For for loop comparisons.">end</a>(); child++ )
+<span class="keywordflow">for</span> ( child = child.begin( parent ); child != child.end(); child++ )
 </pre></div><p>
-<div class="fragment"><pre class="fragment"><span class="comment">// Only iterates through Element nodes with value "ElementValue"</span>
+<div class="fragment"><pre class="fragment"> Only iterates through Element nodes with value <span class="stringliteral">"ElementValue"</span>
 <a class="code" href="classticpp_1_1Iterator.html" title="Iterator for conveniently stepping through Nodes and Attributes.">ticpp::Iterator&lt; ticpp::Element &gt;</a> child( <span class="stringliteral">"ElementValue"</span> );
-<span class="keywordflow">for</span> ( child = child.<a class="code" href="classticpp_1_1Iterator.html#9e0c291db7904e69db16c54632ecaf24" title="For for loop comparisons.">begin</a>( parent ); child != child.<a class="code" href="classticpp_1_1Iterator.html#8ed3f9bf088827f4661613e250d55d58" title="For for loop comparisons.">end</a>(); child++ )
+<span class="keywordflow">for</span> ( child = child.begin( parent ); child != child.end(); child++ )
 </pre></div><p>
 Finally, Iterators also work with Attributes <div class="fragment"><pre class="fragment"><a class="code" href="classticpp_1_1Iterator.html" title="Iterator for conveniently stepping through Nodes and Attributes.">ticpp::Iterator&lt; ticpp::Attribute &gt;</a> attribute;
-<span class="keywordflow">for</span> ( attribute = attribute.<a class="code" href="classticpp_1_1Iterator.html#9e0c291db7904e69db16c54632ecaf24" title="For for loop comparisons.">begin</a>( element ); attribute != attribute.<a class="code" href="classticpp_1_1Iterator.html#8ed3f9bf088827f4661613e250d55d58" title="For for loop comparisons.">end</a>(); attribute++ )
-</pre></div> <hr size="1"><address style="text-align: right;"><small>Generated on Mon Oct 1 10:13:29 2007 for TinyXml by&nbsp;
+<span class="keywordflow">for</span> ( attribute = attribute.<a class="code" href="classticpp_1_1Iterator.html#056e73d1bed641f43114b9d4e9f0f29e" title="For for loop comparisons.">begin</a>( element ); attribute != attribute.<a class="code" href="classticpp_1_1Iterator.html#7b4a49c16cff8c8470cc5c9a63810cd5" title="For for loop comparisons.">end</a>(); attribute++ )
+</pre></div> <hr size="1"><address style="text-align: right;"><small>Generated on Tue Oct 2 10:39:49 2007 for TinyXml by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.3 </small></address>
 </body>

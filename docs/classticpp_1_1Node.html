@@ -56,12 +56,12 @@ Inheritance diagram for ticpp::Node:</div>
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;class T&gt; </td></tr>
-<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#5df1e938a2feb8b31edf527befdcf43c">GetValue</a> (T *value)</td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#747160dc04b1e06eba230c20b60e8df6">GetValue</a> (T *value) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the value of this node Uses <a class="el" href="classticpp_1_1Base.html#24dd413d4a13d7367f7584b85759c1e5" title="Converts a std::string to any class with a proper overload of the &gt;&gt; opertor...">Base::FromString</a> to convert <a class="el" href="classTiXmlNode.html#6d9e505619d39bf50bfd9609c9169ea5" title="Return Value() as a std::string.">TiXmlNode::ValueStr</a> from a std::string, and puts it in the passed pointer.  <a href="#5df1e938a2feb8b31edf527befdcf43c"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#ec5c4605288d43b2fc98252f061cb1ff">Value</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the value of this node Uses <a class="el" href="classticpp_1_1Base.html#2b923a8ea0ed4182d5ba38ca09265256" title="Converts a std::string to any class with a proper overload of the &gt;&gt; opertor...">Base::FromString</a> to convert <a class="el" href="classTiXmlNode.html#6d9e505619d39bf50bfd9609c9169ea5" title="Return Value() as a std::string.">TiXmlNode::ValueStr</a> from a std::string, and puts it in the passed pointer.  <a href="#747160dc04b1e06eba230c20b60e8df6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#3fb913455df783e6ecd71c93362cca55">Value</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the value of this node.  <a href="#ec5c4605288d43b2fc98252f061cb1ff"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the value of this node.  <a href="#3fb913455df783e6ecd71c93362cca55"></a><br></td></tr>
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;class T&gt; </td></tr>
 <tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#95cdeaa19f9a8a93d38d1dd87d3e19b1">SetValue</a> (const T &amp;value)</td></tr>
 
@@ -69,27 +69,27 @@ Inheritance diagram for ticpp::Node:</div>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#1466688331bba2e59ae547a6af04bb33">Clear</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Clear all Nodes below this.  <a href="#1466688331bba2e59ae547a6af04bb33"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#3600dc64b0a8a72b505d467b4cadae0f">Parent</a> (bool throwIfNoParent=true)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#0a8a36d6c2345d25d0747f44aa5842e9">Parent</a> (bool throwIfNoParent=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The Parent of this <a class="el" href="classticpp_1_1Node.html" title="Wrapper around TiXmlNode.">Node</a>.  <a href="#3600dc64b0a8a72b505d467b4cadae0f"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#782363515dcd6adc9a15d27affab9539">FirstChild</a> (bool throwIfNoChildren=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The Parent of this <a class="el" href="classticpp_1_1Node.html" title="Wrapper around TiXmlNode.">Node</a>.  <a href="#0a8a36d6c2345d25d0747f44aa5842e9"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#294dfb91eb14702d202aa7bcf1b2c53d">FirstChild</a> (bool throwIfNoChildren=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The first child of this node.  <a href="#782363515dcd6adc9a15d27affab9539"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#7d8c57b8cb698f5cccb3b4cde1b4f1d1">FirstChild</a> (const std::string &amp;value, bool throwIfNoChildren=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The first child of this node.  <a href="#294dfb91eb14702d202aa7bcf1b2c53d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#f3fe3487df28c1ec1cdbad9380a7152b">FirstChild</a> (const std::string &amp;value, bool throwIfNoChildren=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The first child of this node with the matching <em>value</em>.  <a href="#7d8c57b8cb698f5cccb3b4cde1b4f1d1"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#20d385a1c28dc172d6d85e1aa5734907">LastChild</a> (bool throwIfNoChildren=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The first child of this node with the matching <em>value</em>.  <a href="#f3fe3487df28c1ec1cdbad9380a7152b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#ae4f22f43f4907b5dbec1f78e076901f">LastChild</a> (bool throwIfNoChildren=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The last child of this node.  <a href="#20d385a1c28dc172d6d85e1aa5734907"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#94ed10184fe44dc36ea44d93e9bb4708">LastChild</a> (const std::string &amp;value, bool throwIfNoChildren=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The last child of this node.  <a href="#ae4f22f43f4907b5dbec1f78e076901f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#8c48bfa6822a31aa96dfd8bca7a30d85">LastChild</a> (const std::string &amp;value, bool throwIfNoChildren=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The last child of this node with the matching <em>value</em>.  <a href="#94ed10184fe44dc36ea44d93e9bb4708"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#c767a5f9ad0294d58fb9512234182b6b">IterateChildren</a> (<a class="el" href="classticpp_1_1Node.html">Node</a> *previous)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The last child of this node with the matching <em>value</em>.  <a href="#8c48bfa6822a31aa96dfd8bca7a30d85"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#f94910943a2c044f6b64670ecee9c79a">IterateChildren</a> (<a class="el" href="classticpp_1_1Node.html">Node</a> *previous) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">An alternate way to walk the children of a node.  <a href="#c767a5f9ad0294d58fb9512234182b6b"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#a9a3cd2334c878e1124276608c55d5d3">IterateChildren</a> (const std::string &amp;value, <a class="el" href="classticpp_1_1Node.html">Node</a> *previous)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">An alternate way to walk the children of a node.  <a href="#f94910943a2c044f6b64670ecee9c79a"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#530a0f50c502b75e4aca0eede333a5bb">IterateChildren</a> (const std::string &amp;value, <a class="el" href="classticpp_1_1Node.html">Node</a> *previous) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This flavor of IterateChildren searches for children with a particular <em>value</em>.  <a href="#a9a3cd2334c878e1124276608c55d5d3"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This flavor of IterateChildren searches for children with a particular <em>value</em>.  <a href="#530a0f50c502b75e4aca0eede333a5bb"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#58575e8eb445e0e3f7d5de7812e4f141">InsertEndChild</a> (<a class="el" href="classticpp_1_1Node.html">Node</a> &amp;addThis)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds a child past the LastChild.  <a href="#58575e8eb445e0e3f7d5de7812e4f141"></a><br></td></tr>
@@ -108,65 +108,68 @@ Inheritance diagram for ticpp::Node:</div>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#b41ad204b1ca5874e6c888a30d1481bd">RemoveChild</a> (<a class="el" href="classticpp_1_1Node.html">Node</a> *removeThis)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Delete a child of this node.  <a href="#b41ad204b1ca5874e6c888a30d1481bd"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#3db394d57ff5e882c45707e512ecd219">PreviousSibling</a> (bool throwIfNoSiblings=true)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#eb0587416c7cfc9819dd0d4f94a8705e">PreviousSibling</a> (bool throwIfNoSiblings=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Navigate to a sibling node.  <a href="#3db394d57ff5e882c45707e512ecd219"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#843c9e42cc2a5c79e86f04155301c557">PreviousSibling</a> (const std::string &amp;value, bool throwIfNoSiblings=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Navigate to a sibling node.  <a href="#eb0587416c7cfc9819dd0d4f94a8705e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#1ac357b16510b36a90e6d9d773730555">PreviousSibling</a> (const std::string &amp;value, bool throwIfNoSiblings=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Navigate to a sibling node with the given <em>value</em>.  <a href="#843c9e42cc2a5c79e86f04155301c557"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#fd4316181ca9ca6da61f44f8db915ba3">NextSibling</a> (bool throwIfNoSiblings=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Navigate to a sibling node with the given <em>value</em>.  <a href="#1ac357b16510b36a90e6d9d773730555"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#bfee10e781aa9316e96db76571e40775">NextSibling</a> (bool throwIfNoSiblings=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Navigate to a sibling node.  <a href="#fd4316181ca9ca6da61f44f8db915ba3"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#b70315c534111536bba9d0d33f0501dc">NextSibling</a> (const std::string &amp;value, bool throwIfNoSiblings=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Navigate to a sibling node.  <a href="#bfee10e781aa9316e96db76571e40775"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#545421f33645502f77e263e566449c14">NextSibling</a> (const std::string &amp;value, bool throwIfNoSiblings=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Navigate to a sibling node with the given <em>value</em>.  <a href="#b70315c534111536bba9d0d33f0501dc"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Element.html">Element</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#3a56de862f7010fdd58e6cf73d7bf726">NextSiblingElement</a> (bool throwIfNoSiblings=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Navigate to a sibling node with the given <em>value</em>.  <a href="#545421f33645502f77e263e566449c14"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Element.html">Element</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#ef8f6a65cb8fe69ef24145953473d737">NextSiblingElement</a> (bool throwIfNoSiblings=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Navigate to a sibling element.  <a href="#3a56de862f7010fdd58e6cf73d7bf726"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Element.html">Element</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#92125bd82b04e1356cd48d6b257a5595">NextSiblingElement</a> (const std::string &amp;value, bool throwIfNoSiblings=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Navigate to a sibling element.  <a href="#ef8f6a65cb8fe69ef24145953473d737"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Element.html">Element</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#affbacd8204fc8a1d86df59dc425adc3">NextSiblingElement</a> (const std::string &amp;value, bool throwIfNoSiblings=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Navigate to a sibling element with the given <em>value</em>.  <a href="#92125bd82b04e1356cd48d6b257a5595"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Element.html">Element</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#78fede114cf3c4608162891411db0c56">FirstChildElement</a> (bool throwIfNoChildren=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Navigate to a sibling element with the given <em>value</em>.  <a href="#affbacd8204fc8a1d86df59dc425adc3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Element.html">Element</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#138ee39e8b946412603bb39d6a7047cd">FirstChildElement</a> (bool throwIfNoChildren=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The first child element of this node.  <a href="#78fede114cf3c4608162891411db0c56"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Element.html">Element</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#d58152decbd0f980f32c5d3453834cb6">FirstChildElement</a> (const std::string &amp;value, bool throwIfNoChildren=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The first child element of this node.  <a href="#138ee39e8b946412603bb39d6a7047cd"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Element.html">Element</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#93b41d1dfe94d4f7c62858cae67c9fe7">FirstChildElement</a> (const std::string &amp;value, bool throwIfNoChildren=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The first child element of this node with the matching <em>value</em>.  <a href="#d58152decbd0f980f32c5d3453834cb6"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c77e0641f192123b5ba1e4730ea78516"></a><!-- doxytag: member="ticpp::Node::Type" ref="c77e0641f192123b5ba1e4730ea78516" args="()" -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#c77e0641f192123b5ba1e4730ea78516">Type</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The first child element of this node with the matching <em>value</em>.  <a href="#93b41d1dfe94d4f7c62858cae67c9fe7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="4d3f057d95f8a47125f18c8fe2171ee3"></a><!-- doxytag: member="ticpp::Node::Type" ref="4d3f057d95f8a47125f18c8fe2171ee3" args="() const " -->
+int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#4d3f057d95f8a47125f18c8fe2171ee3">Type</a> () const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Query the type (as <a class="el" href="classTiXmlNode.html#836eded4920ab9e9ef28496f48cd95a2" title="The types of XML nodes supported by TinyXml.">TiXmlNode::NodeType</a> ) of this node. <br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Document.html">Document</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#0c8756a10a6ce7ea8bcadbb616433cc5">GetDocument</a> (bool throwIfNoDocument=true)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Document.html">Document</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#d7ada2a5c33f33d6454c24239bda8e1d">GetDocument</a> (bool throwIfNoDocument=true) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return a pointer to the <a class="el" href="classticpp_1_1Document.html" title="Wrapper around TiXmlDocument.">Document</a> this node lives in.  <a href="#0c8756a10a6ce7ea8bcadbb616433cc5"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#674ee8739b63d7584783a4043a916fde">NoChildren</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return a pointer to the <a class="el" href="classticpp_1_1Document.html" title="Wrapper around TiXmlDocument.">Document</a> this node lives in.  <a href="#d7ada2a5c33f33d6454c24239bda8e1d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#0cba2335c5b03a617154237f4b4ed433">NoChildren</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check if this node has no children.  <a href="#674ee8739b63d7584783a4043a916fde"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check if this node has no children.  <a href="#0cba2335c5b03a617154237f4b4ed433"></a><br></td></tr>
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;class T&gt; </td></tr>
-<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">T *&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#240c4f81eb424bc89e08aece992a0643">To</a> ()</td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">T *&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#d72e8212eec3829ae3ad7916ca86c35c">To</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointer conversion ( NOT OBJECT CONVERSION ) - replaces <a class="el" href="classTiXmlNode.html#72abed96dc9667ab9e0a2a275301bb1c" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToElement</a>, <a class="el" href="classTiXmlNode.html#8a4cda4b15c29f64cff419309aebed08" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToDocument</a>, <a class="el" href="classTiXmlNode.html#a0a5086f9eaee910bbfdc7f975e26574" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToComment</a>, etc.  <a href="#240c4f81eb424bc89e08aece992a0643"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Document.html">Document</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#31e872b8730d04c118d17fbe32c5a6bf">ToDocument</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointer conversion ( NOT OBJECT CONVERSION ) - replaces <a class="el" href="classTiXmlNode.html#72abed96dc9667ab9e0a2a275301bb1c" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToElement</a>, <a class="el" href="classTiXmlNode.html#8a4cda4b15c29f64cff419309aebed08" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToDocument</a>, <a class="el" href="classTiXmlNode.html#a0a5086f9eaee910bbfdc7f975e26574" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToComment</a>, etc.  <a href="#d72e8212eec3829ae3ad7916ca86c35c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Document.html">Document</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#b3a00d9f53aa80deef8e7989e38f4f69">ToDocument</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#8a4cda4b15c29f64cff419309aebed08" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToDocument</a>.  <a href="#31e872b8730d04c118d17fbe32c5a6bf"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Element.html">Element</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#94a6905d63524337ce785eefbad17b71">ToElement</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#8a4cda4b15c29f64cff419309aebed08" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToDocument</a>.  <a href="#b3a00d9f53aa80deef8e7989e38f4f69"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Element.html">Element</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#ce4841203b8c290705ab4d0e5a4175b5">ToElement</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#72abed96dc9667ab9e0a2a275301bb1c" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToElement</a>.  <a href="#94a6905d63524337ce785eefbad17b71"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Comment.html">Comment</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#07760643d0de3b6cf3a93eca34353700">ToComment</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#72abed96dc9667ab9e0a2a275301bb1c" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToElement</a>.  <a href="#ce4841203b8c290705ab4d0e5a4175b5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Comment.html">Comment</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#e00b3aadd1fc783c129061c1a1262cd0">ToComment</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#a0a5086f9eaee910bbfdc7f975e26574" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToComment</a>.  <a href="#07760643d0de3b6cf3a93eca34353700"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Text.html">Text</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#d6102382660a85e189bb64cccddbfc4a">ToText</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#a0a5086f9eaee910bbfdc7f975e26574" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToComment</a>.  <a href="#e00b3aadd1fc783c129061c1a1262cd0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Text.html">Text</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#1629b80782f9f2fce869b814e07ca670">ToText</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#95a46a52c525992d6b4ee08beb14cd69" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToText</a>.  <a href="#d6102382660a85e189bb64cccddbfc4a"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Declaration.html">Declaration</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#04a7f6b96d767a0230ed96685cef928e">ToDeclaration</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#95a46a52c525992d6b4ee08beb14cd69" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToText</a>.  <a href="#1629b80782f9f2fce869b814e07ca670"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1Declaration.html">Declaration</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#a04a236fe3f03869ccb6e42119a6cc36">ToDeclaration</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#9f43e6984fc7d4afd6eb32714c6b7b72" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToDeclaration</a>.  <a href="#04a7f6b96d767a0230ed96685cef928e"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1StylesheetReference.html">StylesheetReference</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#d8e77c805c8a47a34a7e6542aabf3058">ToStylesheetReference</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#9f43e6984fc7d4afd6eb32714c6b7b72" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToDeclaration</a>.  <a href="#a04a236fe3f03869ccb6e42119a6cc36"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classticpp_1_1StylesheetReference.html">StylesheetReference</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#ccff2b3358553f7281839928d232e544">ToStylesheetReference</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#daae9aab50ab8a66751774c1f1f685bd" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToStylesheetReference</a>.  <a href="#d8e77c805c8a47a34a7e6542aabf3058"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#daae9aab50ab8a66751774c1f1f685bd" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToStylesheetReference</a>.  <a href="#ccff2b3358553f7281839928d232e544"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::auto_ptr&lt; <a class="el" href="classticpp_1_1Node.html">Node</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#d0a99a2695aa8ea8f3d9cde03acad20c">Clone</a> () const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create an exact duplicate of this node and return it.  <a href="#d0a99a2695aa8ea8f3d9cde03acad20c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#2c824efce23cbacff9cff249414b9db2">Accept</a> (<a class="el" href="classTiXmlVisitor.html">TiXmlVisitor</a> *visitor) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Accept a hierchical visit the nodes in the TinyXML DOM.  <a href="#2c824efce23cbacff9cff249414b9db2"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Friends</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="f545c8ca3e4671b7517a16c6e84448f0"></a><!-- doxytag: member="ticpp::Node::operator&gt;&gt;" ref="f545c8ca3e4671b7517a16c6e84448f0" args="(std::istream &amp;in, Node &amp;base)" -->
 std::istream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Node.html#f545c8ca3e4671b7517a16c6e84448f0">operator&gt;&gt;</a> (std::istream &amp;in, <a class="el" href="classticpp_1_1Node.html">Node</a> &amp;base)</td></tr>
@@ -179,7 +182,7 @@ std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 Wrapper around <a class="el" href="classTiXmlNode.html" title="The parent class for everything in the Document Object Model.">TiXmlNode</a>. <hr><h2>Member Function Documentation</h2>
-<a class="anchor" name="5df1e938a2feb8b31edf527befdcf43c"></a><!-- doxytag: member="ticpp::Node::GetValue" ref="5df1e938a2feb8b31edf527befdcf43c" args="(T *value)" -->
+<a class="anchor" name="747160dc04b1e06eba230c20b60e8df6"></a><!-- doxytag: member="ticpp::Node::GetValue" ref="747160dc04b1e06eba230c20b60e8df6" args="(T *value) const " -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -191,14 +194,14 @@ template&lt;class T&gt; </div>
           <td class="paramtype">T *&nbsp;</td>
           <td class="paramname"> <em>value</em>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"><code> [inline]</code></td>
+          <td width="100%"> const<code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>
-Get the value of this node Uses <a class="el" href="classticpp_1_1Base.html#24dd413d4a13d7367f7584b85759c1e5" title="Converts a std::string to any class with a proper overload of the &gt;&gt; opertor...">Base::FromString</a> to convert <a class="el" href="classTiXmlNode.html#6d9e505619d39bf50bfd9609c9169ea5" title="Return Value() as a std::string.">TiXmlNode::ValueStr</a> from a std::string, and puts it in the passed pointer. 
+Get the value of this node Uses <a class="el" href="classticpp_1_1Base.html#2b923a8ea0ed4182d5ba38ca09265256" title="Converts a std::string to any class with a proper overload of the &gt;&gt; opertor...">Base::FromString</a> to convert <a class="el" href="classTiXmlNode.html#6d9e505619d39bf50bfd9609c9169ea5" title="Return Value() as a std::string.">TiXmlNode::ValueStr</a> from a std::string, and puts it in the passed pointer. 
 <p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
@@ -208,7 +211,7 @@ Get the value of this node Uses <a class="el" href="classticpp_1_1Base.html#24dd
 
 </div>
 </div><p>
-<a class="anchor" name="ec5c4605288d43b2fc98252f061cb1ff"></a><!-- doxytag: member="ticpp::Node::Value" ref="ec5c4605288d43b2fc98252f061cb1ff" args="()" -->
+<a class="anchor" name="3fb913455df783e6ecd71c93362cca55"></a><!-- doxytag: member="ticpp::Node::Value" ref="3fb913455df783e6ecd71c93362cca55" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -217,7 +220,7 @@ Get the value of this node Uses <a class="el" href="classticpp_1_1Base.html#24dd
           <td>(</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -227,7 +230,7 @@ Get the value of this node Uses <a class="el" href="classticpp_1_1Base.html#24dd
 Get the value of this node. 
 <p>
 Simple wrapper for <a class="el" href="classTiXmlNode.html#6d9e505619d39bf50bfd9609c9169ea5" title="Return Value() as a std::string.">TiXmlNode::ValueStr</a>.<p>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Node.html#5df1e938a2feb8b31edf527befdcf43c" title="Get the value of this node Uses Base::FromString to convert TiXmlNode::ValueStr from...">GetValue</a> </dd></dl>
+<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Node.html#747160dc04b1e06eba230c20b60e8df6" title="Get the value of this node Uses Base::FromString to convert TiXmlNode::ValueStr from...">GetValue</a> </dd></dl>
 
 </div>
 </div><p>
@@ -252,7 +255,7 @@ template&lt;class T&gt; </div>
 <p>
 Set the value of this node. 
 <p>
-Uses <a class="el" href="classticpp_1_1Base.html#bc9d7966ac6660cc4217f9deca1c9ad2" title="Converts any class with a proper overload of the &lt;&lt; opertor to a std::string...">Base::ToString</a> to convert value to a std::string, then calls <a class="el" href="classTiXmlNode.html#2a38329ca5d3f28f98ce932b8299ae90" title="Changes the value of the node.">TiXmlNode::SetValue</a>.<p>
+Uses <a class="el" href="classticpp_1_1Base.html#a338c3a707c523b6c9a75e13b21cd951" title="Converts any class with a proper overload of the &lt;&lt; opertor to a std::string...">Base::ToString</a> to convert value to a std::string, then calls <a class="el" href="classTiXmlNode.html#2a38329ca5d3f28f98ce932b8299ae90" title="Changes the value of the node.">TiXmlNode::SetValue</a>.<p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>The value to set </td></tr>
@@ -282,7 +285,7 @@ Clear all Nodes below this.
 Simple wrapper for <a class="el" href="classTiXmlNode.html#708e7f953df61d4d2d12f73171550a4b" title="Delete all the children of this node. Does not affect &#39;this&#39;.">TiXmlNode::Clear</a>. 
 </div>
 </div><p>
-<a class="anchor" name="3600dc64b0a8a72b505d467b4cadae0f"></a><!-- doxytag: member="ticpp::Node::Parent" ref="3600dc64b0a8a72b505d467b4cadae0f" args="(bool throwIfNoParent=true)" -->
+<a class="anchor" name="0a8a36d6c2345d25d0747f44aa5842e9"></a><!-- doxytag: member="ticpp::Node::Parent" ref="0a8a36d6c2345d25d0747f44aa5842e9" args="(bool throwIfNoParent=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -292,7 +295,7 @@ Simple wrapper for <a class="el" href="classTiXmlNode.html#708e7f953df61d4d2d12f
           <td class="paramtype">bool&nbsp;</td>
           <td class="paramname"> <em>throwIfNoParent</em> = <code>true</code>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -316,7 +319,7 @@ Simple wrapper for <a class="el" href="classTiXmlNode.html#b643043132ffd794f8602
 
 </div>
 </div><p>
-<a class="anchor" name="782363515dcd6adc9a15d27affab9539"></a><!-- doxytag: member="ticpp::Node::FirstChild" ref="782363515dcd6adc9a15d27affab9539" args="(bool throwIfNoChildren=true)" -->
+<a class="anchor" name="294dfb91eb14702d202aa7bcf1b2c53d"></a><!-- doxytag: member="ticpp::Node::FirstChild" ref="294dfb91eb14702d202aa7bcf1b2c53d" args="(bool throwIfNoChildren=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -326,7 +329,7 @@ Simple wrapper for <a class="el" href="classTiXmlNode.html#b643043132ffd794f8602
           <td class="paramtype">bool&nbsp;</td>
           <td class="paramname"> <em>throwIfNoChildren</em> = <code>true</code>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -350,7 +353,7 @@ The first child of this node.
 
 </div>
 </div><p>
-<a class="anchor" name="7d8c57b8cb698f5cccb3b4cde1b4f1d1"></a><!-- doxytag: member="ticpp::Node::FirstChild" ref="7d8c57b8cb698f5cccb3b4cde1b4f1d1" args="(const std::string &amp;value, bool throwIfNoChildren=true)" -->
+<a class="anchor" name="f3fe3487df28c1ec1cdbad9380a7152b"></a><!-- doxytag: member="ticpp::Node::FirstChild" ref="f3fe3487df28c1ec1cdbad9380a7152b" args="(const std::string &amp;value, bool throwIfNoChildren=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -369,7 +372,7 @@ The first child of this node.
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td width="100%"></td>
+          <td></td><td></td><td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -384,11 +387,11 @@ This is an overloaded member function, provided for convenience. It differs from
     <tr><td valign="top"></td><td valign="top"><em>throwIfNoChildren</em>&nbsp;</td><td>[DEF] If true, will throw an exception if there are no children.</td></tr>
   </table>
 </dl>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Node.html#782363515dcd6adc9a15d27affab9539" title="The first child of this node.">FirstChild</a>( const char* value, bool throwIfNoChildren = true ) </dd></dl>
+<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Node.html#294dfb91eb14702d202aa7bcf1b2c53d" title="The first child of this node.">FirstChild</a>( const char* value, bool throwIfNoChildren = true ) </dd></dl>
 
 </div>
 </div><p>
-<a class="anchor" name="20d385a1c28dc172d6d85e1aa5734907"></a><!-- doxytag: member="ticpp::Node::LastChild" ref="20d385a1c28dc172d6d85e1aa5734907" args="(bool throwIfNoChildren=true)" -->
+<a class="anchor" name="ae4f22f43f4907b5dbec1f78e076901f"></a><!-- doxytag: member="ticpp::Node::LastChild" ref="ae4f22f43f4907b5dbec1f78e076901f" args="(bool throwIfNoChildren=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -398,7 +401,7 @@ This is an overloaded member function, provided for convenience. It differs from
           <td class="paramtype">bool&nbsp;</td>
           <td class="paramname"> <em>throwIfNoChildren</em> = <code>true</code>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -422,7 +425,7 @@ The last child of this node.
 
 </div>
 </div><p>
-<a class="anchor" name="94ed10184fe44dc36ea44d93e9bb4708"></a><!-- doxytag: member="ticpp::Node::LastChild" ref="94ed10184fe44dc36ea44d93e9bb4708" args="(const std::string &amp;value, bool throwIfNoChildren=true)" -->
+<a class="anchor" name="8c48bfa6822a31aa96dfd8bca7a30d85"></a><!-- doxytag: member="ticpp::Node::LastChild" ref="8c48bfa6822a31aa96dfd8bca7a30d85" args="(const std::string &amp;value, bool throwIfNoChildren=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -441,7 +444,7 @@ The last child of this node.
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td width="100%"></td>
+          <td></td><td></td><td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -456,11 +459,11 @@ This is an overloaded member function, provided for convenience. It differs from
     <tr><td valign="top"></td><td valign="top"><em>throwIfNoChildren</em>&nbsp;</td><td>[DEF] If true, will throw an exception if there are no children.</td></tr>
   </table>
 </dl>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Node.html#20d385a1c28dc172d6d85e1aa5734907" title="The last child of this node.">LastChild</a>( const char* value, bool throwIfNoChildren = true ) </dd></dl>
+<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Node.html#ae4f22f43f4907b5dbec1f78e076901f" title="The last child of this node.">LastChild</a>( const char* value, bool throwIfNoChildren = true ) </dd></dl>
 
 </div>
 </div><p>
-<a class="anchor" name="c767a5f9ad0294d58fb9512234182b6b"></a><!-- doxytag: member="ticpp::Node::IterateChildren" ref="c767a5f9ad0294d58fb9512234182b6b" args="(Node *previous)" -->
+<a class="anchor" name="f94910943a2c044f6b64670ecee9c79a"></a><!-- doxytag: member="ticpp::Node::IterateChildren" ref="f94910943a2c044f6b64670ecee9c79a" args="(Node *previous) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -470,7 +473,7 @@ This is an overloaded member function, provided for convenience. It differs from
           <td class="paramtype"><a class="el" href="classticpp_1_1Node.html">Node</a> *&nbsp;</td>
           <td class="paramname"> <em>previous</em>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -489,7 +492,7 @@ Simple wrapper for <a class="el" href="classTiXmlNode.html#8621196ba3705fa226bef
 
 </div>
 </div><p>
-<a class="anchor" name="a9a3cd2334c878e1124276608c55d5d3"></a><!-- doxytag: member="ticpp::Node::IterateChildren" ref="a9a3cd2334c878e1124276608c55d5d3" args="(const std::string &amp;value, Node *previous)" -->
+<a class="anchor" name="530a0f50c502b75e4aca0eede333a5bb"></a><!-- doxytag: member="ticpp::Node::IterateChildren" ref="530a0f50c502b75e4aca0eede333a5bb" args="(const std::string &amp;value, Node *previous) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -508,7 +511,7 @@ Simple wrapper for <a class="el" href="classTiXmlNode.html#8621196ba3705fa226bef
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td width="100%"></td>
+          <td></td><td></td><td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -766,7 +769,7 @@ Delete a child of this node.
 
 </div>
 </div><p>
-<a class="anchor" name="3db394d57ff5e882c45707e512ecd219"></a><!-- doxytag: member="ticpp::Node::PreviousSibling" ref="3db394d57ff5e882c45707e512ecd219" args="(bool throwIfNoSiblings=true)" -->
+<a class="anchor" name="eb0587416c7cfc9819dd0d4f94a8705e"></a><!-- doxytag: member="ticpp::Node::PreviousSibling" ref="eb0587416c7cfc9819dd0d4f94a8705e" args="(bool throwIfNoSiblings=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -776,7 +779,7 @@ Delete a child of this node.
           <td class="paramtype">bool&nbsp;</td>
           <td class="paramname"> <em>throwIfNoSiblings</em> = <code>true</code>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -800,7 +803,7 @@ Wrapper around <a class="el" href="classTiXmlNode.html#c2cd892768726270e511b2ab3
 
 </div>
 </div><p>
-<a class="anchor" name="843c9e42cc2a5c79e86f04155301c557"></a><!-- doxytag: member="ticpp::Node::PreviousSibling" ref="843c9e42cc2a5c79e86f04155301c557" args="(const std::string &amp;value, bool throwIfNoSiblings=true)" -->
+<a class="anchor" name="1ac357b16510b36a90e6d9d773730555"></a><!-- doxytag: member="ticpp::Node::PreviousSibling" ref="1ac357b16510b36a90e6d9d773730555" args="(const std::string &amp;value, bool throwIfNoSiblings=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -819,7 +822,7 @@ Wrapper around <a class="el" href="classTiXmlNode.html#c2cd892768726270e511b2ab3
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td width="100%"></td>
+          <td></td><td></td><td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -834,11 +837,11 @@ This is an overloaded member function, provided for convenience. It differs from
     <tr><td valign="top"></td><td valign="top"><em>throwIfNoSiblings</em>&nbsp;</td><td>[DEF] If true, will throw an exception if there are no siblings.</td></tr>
   </table>
 </dl>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Node.html#3db394d57ff5e882c45707e512ecd219" title="Navigate to a sibling node.">PreviousSibling( bool throwIfNoSiblings )</a> </dd></dl>
+<dl class="see" compact><dt><b>See also:</b></dt><dd>PreviousSibling( bool throwIfNoSiblings ) </dd></dl>
 
 </div>
 </div><p>
-<a class="anchor" name="fd4316181ca9ca6da61f44f8db915ba3"></a><!-- doxytag: member="ticpp::Node::NextSibling" ref="fd4316181ca9ca6da61f44f8db915ba3" args="(bool throwIfNoSiblings=true)" -->
+<a class="anchor" name="bfee10e781aa9316e96db76571e40775"></a><!-- doxytag: member="ticpp::Node::NextSibling" ref="bfee10e781aa9316e96db76571e40775" args="(bool throwIfNoSiblings=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -848,7 +851,7 @@ This is an overloaded member function, provided for convenience. It differs from
           <td class="paramtype">bool&nbsp;</td>
           <td class="paramname"> <em>throwIfNoSiblings</em> = <code>true</code>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -872,7 +875,7 @@ Wrapper around <a class="el" href="classTiXmlNode.html#1b94d2f7fa7ab25a5a8e8d434
 
 </div>
 </div><p>
-<a class="anchor" name="b70315c534111536bba9d0d33f0501dc"></a><!-- doxytag: member="ticpp::Node::NextSibling" ref="b70315c534111536bba9d0d33f0501dc" args="(const std::string &amp;value, bool throwIfNoSiblings=true)" -->
+<a class="anchor" name="545421f33645502f77e263e566449c14"></a><!-- doxytag: member="ticpp::Node::NextSibling" ref="545421f33645502f77e263e566449c14" args="(const std::string &amp;value, bool throwIfNoSiblings=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -891,7 +894,7 @@ Wrapper around <a class="el" href="classTiXmlNode.html#1b94d2f7fa7ab25a5a8e8d434
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td width="100%"></td>
+          <td></td><td></td><td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -906,11 +909,11 @@ This is an overloaded member function, provided for convenience. It differs from
     <tr><td valign="top"></td><td valign="top"><em>throwIfNoSiblings</em>&nbsp;</td><td>[DEF] If true, will throw an exception if there are no siblings.</td></tr>
   </table>
 </dl>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Node.html#fd4316181ca9ca6da61f44f8db915ba3" title="Navigate to a sibling node.">NextSibling( bool throwIfNoSiblings )</a> </dd></dl>
+<dl class="see" compact><dt><b>See also:</b></dt><dd>NextSibling( bool throwIfNoSiblings ) </dd></dl>
 
 </div>
 </div><p>
-<a class="anchor" name="3a56de862f7010fdd58e6cf73d7bf726"></a><!-- doxytag: member="ticpp::Node::NextSiblingElement" ref="3a56de862f7010fdd58e6cf73d7bf726" args="(bool throwIfNoSiblings=true)" -->
+<a class="anchor" name="ef8f6a65cb8fe69ef24145953473d737"></a><!-- doxytag: member="ticpp::Node::NextSiblingElement" ref="ef8f6a65cb8fe69ef24145953473d737" args="(bool throwIfNoSiblings=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -920,7 +923,7 @@ This is an overloaded member function, provided for convenience. It differs from
           <td class="paramtype">bool&nbsp;</td>
           <td class="paramname"> <em>throwIfNoSiblings</em> = <code>true</code>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -944,7 +947,7 @@ Wrapper around <a class="el" href="classTiXmlNode.html#1b94d2f7fa7ab25a5a8e8d434
 
 </div>
 </div><p>
-<a class="anchor" name="92125bd82b04e1356cd48d6b257a5595"></a><!-- doxytag: member="ticpp::Node::NextSiblingElement" ref="92125bd82b04e1356cd48d6b257a5595" args="(const std::string &amp;value, bool throwIfNoSiblings=true)" -->
+<a class="anchor" name="affbacd8204fc8a1d86df59dc425adc3"></a><!-- doxytag: member="ticpp::Node::NextSiblingElement" ref="affbacd8204fc8a1d86df59dc425adc3" args="(const std::string &amp;value, bool throwIfNoSiblings=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -963,7 +966,7 @@ Wrapper around <a class="el" href="classTiXmlNode.html#1b94d2f7fa7ab25a5a8e8d434
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td width="100%"></td>
+          <td></td><td></td><td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -978,11 +981,11 @@ This is an overloaded member function, provided for convenience. It differs from
     <tr><td valign="top"></td><td valign="top"><em>throwIfNoSiblings</em>&nbsp;</td><td>[DEF] If true, will throw an exception if there are no sibling elements. </td></tr>
   </table>
 </dl>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Node.html#3a56de862f7010fdd58e6cf73d7bf726" title="Navigate to a sibling element.">NextSiblingElement( bool throwIfNoSiblings )</a> </dd></dl>
+<dl class="see" compact><dt><b>See also:</b></dt><dd>NextSiblingElement( bool throwIfNoSiblings ) </dd></dl>
 
 </div>
 </div><p>
-<a class="anchor" name="78fede114cf3c4608162891411db0c56"></a><!-- doxytag: member="ticpp::Node::FirstChildElement" ref="78fede114cf3c4608162891411db0c56" args="(bool throwIfNoChildren=true)" -->
+<a class="anchor" name="138ee39e8b946412603bb39d6a7047cd"></a><!-- doxytag: member="ticpp::Node::FirstChildElement" ref="138ee39e8b946412603bb39d6a7047cd" args="(bool throwIfNoChildren=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -992,7 +995,7 @@ This is an overloaded member function, provided for convenience. It differs from
           <td class="paramtype">bool&nbsp;</td>
           <td class="paramname"> <em>throwIfNoChildren</em> = <code>true</code>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -1016,7 +1019,7 @@ The first child element of this node.
 
 </div>
 </div><p>
-<a class="anchor" name="d58152decbd0f980f32c5d3453834cb6"></a><!-- doxytag: member="ticpp::Node::FirstChildElement" ref="d58152decbd0f980f32c5d3453834cb6" args="(const std::string &amp;value, bool throwIfNoChildren=true)" -->
+<a class="anchor" name="93b41d1dfe94d4f7c62858cae67c9fe7"></a><!-- doxytag: member="ticpp::Node::FirstChildElement" ref="93b41d1dfe94d4f7c62858cae67c9fe7" args="(const std::string &amp;value, bool throwIfNoChildren=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1035,7 +1038,7 @@ The first child element of this node.
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td width="100%"></td>
+          <td></td><td></td><td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -1050,11 +1053,11 @@ This is an overloaded member function, provided for convenience. It differs from
     <tr><td valign="top"></td><td valign="top"><em>throwIfNoChildren</em>&nbsp;</td><td>[DEF] If true, will throw an exception if there are no element children.</td></tr>
   </table>
 </dl>
-<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Node.html#78fede114cf3c4608162891411db0c56" title="The first child element of this node.">FirstChildElement</a>( const char* value, bool throwIfNoChildren = true ) </dd></dl>
+<dl class="see" compact><dt><b>See also:</b></dt><dd><a class="el" href="classticpp_1_1Node.html#138ee39e8b946412603bb39d6a7047cd" title="The first child element of this node.">FirstChildElement</a>( const char* value, bool throwIfNoChildren = true ) </dd></dl>
 
 </div>
 </div><p>
-<a class="anchor" name="0c8756a10a6ce7ea8bcadbb616433cc5"></a><!-- doxytag: member="ticpp::Node::GetDocument" ref="0c8756a10a6ce7ea8bcadbb616433cc5" args="(bool throwIfNoDocument=true)" -->
+<a class="anchor" name="d7ada2a5c33f33d6454c24239bda8e1d"></a><!-- doxytag: member="ticpp::Node::GetDocument" ref="d7ada2a5c33f33d6454c24239bda8e1d" args="(bool throwIfNoDocument=true) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1064,7 +1067,7 @@ This is an overloaded member function, provided for convenience. It differs from
           <td class="paramtype">bool&nbsp;</td>
           <td class="paramname"> <em>throwIfNoDocument</em> = <code>true</code>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -1087,7 +1090,7 @@ Return a pointer to the <a class="el" href="classticpp_1_1Document.html" title="
 
 </div>
 </div><p>
-<a class="anchor" name="674ee8739b63d7584783a4043a916fde"></a><!-- doxytag: member="ticpp::Node::NoChildren" ref="674ee8739b63d7584783a4043a916fde" args="()" -->
+<a class="anchor" name="0cba2335c5b03a617154237f4b4ed433"></a><!-- doxytag: member="ticpp::Node::NoChildren" ref="0cba2335c5b03a617154237f4b4ed433" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1096,7 +1099,7 @@ Return a pointer to the <a class="el" href="classticpp_1_1Document.html" title="
           <td>(</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -1109,7 +1112,7 @@ Check if this node has no children.
 
 </div>
 </div><p>
-<a class="anchor" name="240c4f81eb424bc89e08aece992a0643"></a><!-- doxytag: member="ticpp::Node::To" ref="240c4f81eb424bc89e08aece992a0643" args="()" -->
+<a class="anchor" name="d72e8212eec3829ae3ad7916ca86c35c"></a><!-- doxytag: member="ticpp::Node::To" ref="d72e8212eec3829ae3ad7916ca86c35c" args="() const " -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -1120,7 +1123,7 @@ template&lt;class T&gt; </div>
           <td>(</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"><code> [inline]</code></td>
+          <td width="100%"> const<code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -1138,7 +1141,7 @@ Pointer conversion ( NOT OBJECT CONVERSION ) - replaces <a class="el" href="clas
 
 </div>
 </div><p>
-<a class="anchor" name="31e872b8730d04c118d17fbe32c5a6bf"></a><!-- doxytag: member="ticpp::Node::ToDocument" ref="31e872b8730d04c118d17fbe32c5a6bf" args="()" -->
+<a class="anchor" name="b3a00d9f53aa80deef8e7989e38f4f69"></a><!-- doxytag: member="ticpp::Node::ToDocument" ref="b3a00d9f53aa80deef8e7989e38f4f69" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1147,7 +1150,7 @@ Pointer conversion ( NOT OBJECT CONVERSION ) - replaces <a class="el" href="clas
           <td>(</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -1164,7 +1167,7 @@ Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#8a4cda4b15
 
 </div>
 </div><p>
-<a class="anchor" name="94a6905d63524337ce785eefbad17b71"></a><!-- doxytag: member="ticpp::Node::ToElement" ref="94a6905d63524337ce785eefbad17b71" args="()" -->
+<a class="anchor" name="ce4841203b8c290705ab4d0e5a4175b5"></a><!-- doxytag: member="ticpp::Node::ToElement" ref="ce4841203b8c290705ab4d0e5a4175b5" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1173,7 +1176,7 @@ Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#8a4cda4b15
           <td>(</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -1190,7 +1193,7 @@ Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#72abed96dc
 
 </div>
 </div><p>
-<a class="anchor" name="07760643d0de3b6cf3a93eca34353700"></a><!-- doxytag: member="ticpp::Node::ToComment" ref="07760643d0de3b6cf3a93eca34353700" args="()" -->
+<a class="anchor" name="e00b3aadd1fc783c129061c1a1262cd0"></a><!-- doxytag: member="ticpp::Node::ToComment" ref="e00b3aadd1fc783c129061c1a1262cd0" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1199,7 +1202,7 @@ Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#72abed96dc
           <td>(</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -1216,7 +1219,7 @@ Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#a0a5086f9e
 
 </div>
 </div><p>
-<a class="anchor" name="d6102382660a85e189bb64cccddbfc4a"></a><!-- doxytag: member="ticpp::Node::ToText" ref="d6102382660a85e189bb64cccddbfc4a" args="()" -->
+<a class="anchor" name="1629b80782f9f2fce869b814e07ca670"></a><!-- doxytag: member="ticpp::Node::ToText" ref="1629b80782f9f2fce869b814e07ca670" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1225,7 +1228,7 @@ Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#a0a5086f9e
           <td>(</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -1242,7 +1245,7 @@ Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#95a46a52c5
 
 </div>
 </div><p>
-<a class="anchor" name="04a7f6b96d767a0230ed96685cef928e"></a><!-- doxytag: member="ticpp::Node::ToDeclaration" ref="04a7f6b96d767a0230ed96685cef928e" args="()" -->
+<a class="anchor" name="a04a236fe3f03869ccb6e42119a6cc36"></a><!-- doxytag: member="ticpp::Node::ToDeclaration" ref="a04a236fe3f03869ccb6e42119a6cc36" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1251,7 +1254,7 @@ Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#95a46a52c5
           <td>(</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -1268,7 +1271,7 @@ Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#9f43e6984f
 
 </div>
 </div><p>
-<a class="anchor" name="d8e77c805c8a47a34a7e6542aabf3058"></a><!-- doxytag: member="ticpp::Node::ToStylesheetReference" ref="d8e77c805c8a47a34a7e6542aabf3058" args="()" -->
+<a class="anchor" name="ccff2b3358553f7281839928d232e544"></a><!-- doxytag: member="ticpp::Node::ToStylesheetReference" ref="ccff2b3358553f7281839928d232e544" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1277,7 +1280,7 @@ Pointer conversion - replaces <a class="el" href="classTiXmlNode.html#9f43e6984f
           <td>(</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
+          <td width="100%"> const</td>
         </tr>
       </table>
 </div>
@@ -1315,7 +1318,7 @@ Create an exact duplicate of this node and return it.
 <dl class="note" compact><dt><b>Note:</b></dt><dd>Using auto_ptr to manage the memory declared on the heap by <a class="el" href="classTiXmlNode.html#4508cc3a2d7a98e96a54cc09c37a78a4" title="Create an exact duplicate of this node and return it.">TiXmlNode::Clone</a>. <div class="fragment"><pre class="fragment">        <span class="comment">// Now using clone</span>
         <a class="code" href="classticpp_1_1Document.html" title="Wrapper around TiXmlDocument.">ticpp::Document</a> doc( <span class="stringliteral">"C:\\Test.xml"</span> );
         <a class="code" href="classticpp_1_1Node.html" title="Wrapper around TiXmlNode.">ticpp::Node</a>* sectionToClone;
-        sectionToClone = doc.<a class="code" href="classticpp_1_1Node.html#782363515dcd6adc9a15d27affab9539" title="The first child of this node.">FirstChild</a>( <span class="stringliteral">"settings"</span> );
+        sectionToClone = doc.<a class="code" href="classticpp_1_1Node.html#294dfb91eb14702d202aa7bcf1b2c53d" title="The first child of this node.">FirstChild</a>( <span class="stringliteral">"settings"</span> );
         std::auto_ptr&lt; ticpp::Node &gt; clonedNode = sectionToClone-&gt;<a class="code" href="classticpp_1_1Node.html#d0a99a2695aa8ea8f3d9cde03acad20c" title="Create an exact duplicate of this node and return it.">Clone</a>();
         <span class="comment">// Now you can use the clone.</span>
         <a class="code" href="classticpp_1_1Node.html" title="Wrapper around TiXmlNode.">ticpp::Node</a>* node2 = clonedNode-&gt;FirstChildElement()-&gt;FirstChild();
@@ -1326,9 +1329,32 @@ Create an exact duplicate of this node and return it.
 
 </div>
 </div><p>
+<a class="anchor" name="2c824efce23cbacff9cff249414b9db2"></a><!-- doxytag: member="ticpp::Node::Accept" ref="2c824efce23cbacff9cff249414b9db2" args="(TiXmlVisitor *visitor) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ticpp::Node::Accept           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTiXmlVisitor.html">TiXmlVisitor</a> *&nbsp;</td>
+          <td class="paramname"> <em>visitor</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Accept a hierchical visit the nodes in the TinyXML DOM. 
+<p>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>The boolean returned by the visitor. </dd></dl>
+
+</div>
+</div><p>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="ticpp_8h-source.html">ticpp.h</a></ul>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Oct 1 10:13:30 2007 for TinyXml by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue Oct 2 10:39:50 2007 for TinyXml by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.3 </small></address>
 </body>

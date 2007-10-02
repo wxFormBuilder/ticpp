@@ -231,3 +231,39 @@ Changes in version 2.1.5
   should be throwing an error and wasn't.
 - Steve Hyatt suggested the QueryValueAttribute method, which is now implemented.
 - DavidA identified a chunk of dead code.
+- Andrew Baxter sent in some compiler warnings that were good clean up points.
+
+2.5
+- Added the Visit() API. Many thanks to both Andrew Ellerton and John-Philip for all their
+  work, code, suggestion, and just general pushing that it should be done.
+- Removed existing streaming code and use TiXmlPrinter instead.
+- [ tinyxml-Bugs-1527079 ] Compile error in tinystr.cpp fixed, thanks to Paul Suggs
+- [ tinyxml-Bugs-1522890 ] SaveFile has no error checks fixed, thanks to Ivan Dobrokotov
+- Ivan Dobrokotov also reported redundant memory allocation in the Attribute() method, which
+  upon investigation was a mess. The attribute should now be fixed for both const char* and 
+  std::string, and the return types match the input parameters.
+- Feature [ 1511105 ] Make TiXmlComment constructor accept a string / char*, implemented.
+  Thanks to Karl Itschen for the feedback.
+- [ 1480108 ] Stream parsing fails when CDATA contains tags was found by Tobias Grimm, who also
+  submitted a test case and patch. A significant bug in CDATA streaming (operator>>) has now
+  been fixed.
+
+2.5.2
+- Lieven, and others, pointed out a missing const-cast that upset the Open Watcom compiler.
+  Should now be fixed.
+- ErrorRow and ErrorCol should have been const, and weren't. Fixed thanks to Dmitry Polutov.
+
+2.5.3
+- zloe_zlo identified a missing string specialization for QueryValueAttribute() [ 1695429 ]. Worked
+  on this bug, but not sure how to fix it in a safe, cross-compiler way.
+- increased warning level to 4 and turned on detect 64 bit portability issues for VC2005.
+  May address [ 1677737 ] VS2005: /Wp64 warnings
+- grosheck identified several problems with the Document copy. Many thanks for [ 1660367 ]
+- Nice catch, and suggested fix, be Gilad Novik on the Printer dropping entities.
+  "[ 1600650 ] Bug when printing xml text" is now fixed.
+- A subtle fix from Nicos Gollan in the tinystring initializer: 
+  [ 1581449 ] Fix initialiser of TiXmlString::nullrep_
+- Great catch, although there isn't a submitter for the bug. [ 1475201 ] TinyXML parses entities in comments. 
+  Comments should not, in fact, parse entities. Fixed the code path and added tests.
+- We were not catching all the returns from ftell. Thanks to Bernard for catching that.
+  

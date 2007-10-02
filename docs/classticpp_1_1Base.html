@@ -57,23 +57,23 @@ Inheritance diagram for ticpp::Base:</div>
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;class T&gt; </td></tr>
-<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Base.html#bc9d7966ac6660cc4217f9deca1c9ad2">ToString</a> (const T &amp;value)</td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Base.html#a338c3a707c523b6c9a75e13b21cd951">ToString</a> (const T &amp;value) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Converts any class with a proper overload of the &lt;&lt; opertor to a std::string.  <a href="#bc9d7966ac6660cc4217f9deca1c9ad2"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Converts any class with a proper overload of the &lt;&lt; opertor to a std::string.  <a href="#a338c3a707c523b6c9a75e13b21cd951"></a><br></td></tr>
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;class T&gt; </td></tr>
-<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Base.html#24dd413d4a13d7367f7584b85759c1e5">FromString</a> (const std::string &amp;temp, T *out)</td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classticpp_1_1Base.html#2b923a8ea0ed4182d5ba38ca09265256">FromString</a> (const std::string &amp;temp, T *out) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Converts a std::string to any class with a proper overload of the &gt;&gt; opertor.  <a href="#24dd413d4a13d7367f7584b85759c1e5"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="8125235e6c16566237b7b4bed7b4871b"></a><!-- doxytag: member="ticpp::Base::FromString" ref="8125235e6c16566237b7b4bed7b4871b" args="(const std::string &amp;temp, std::string *out)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Base.html#8125235e6c16566237b7b4bed7b4871b">FromString</a> (const std::string &amp;temp, std::string *out)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Converts a std::string to any class with a proper overload of the &gt;&gt; opertor.  <a href="#2b923a8ea0ed4182d5ba38ca09265256"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="8b5d058570b7666a19b11e953deaba3b"></a><!-- doxytag: member="ticpp::Base::FromString" ref="8b5d058570b7666a19b11e953deaba3b" args="(const std::string &amp;temp, std::string *out) const " -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Base.html#8b5d058570b7666a19b11e953deaba3b">FromString</a> (const std::string &amp;temp, std::string *out) const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Specialization for std::string. <br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Base.html#00f376c6b6e3ed6b565584e15fc7908a">Row</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Base.html#8885214075201b31dd888125ceb802eb">Row</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return the position, in the original source file, of this node or attribute.  <a href="#00f376c6b6e3ed6b565584e15fc7908a"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Base.html#8838e86b844f24c20f1a701d6dfd1185">Column</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return the position, in the original source file, of this node or attribute.  <a href="#8885214075201b31dd888125ceb802eb"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Base.html#1cc41396ee20fc4cc37f8b368c571a69">Column</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return the position, in the original source file, of this node or attribute.  <a href="#8838e86b844f24c20f1a701d6dfd1185"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return the position, in the original source file, of this node or attribute.  <a href="#1cc41396ee20fc4cc37f8b368c571a69"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="7308b645a0fb75234fc1e6ae3cbf12e6"></a><!-- doxytag: member="ticpp::Base::~Base" ref="7308b645a0fb75234fc1e6ae3cbf12e6" args="()" -->
 virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classticpp_1_1Base.html#7308b645a0fb75234fc1e6ae3cbf12e6">~Base</a> ()</td></tr>
 
@@ -89,7 +89,7 @@ TiCppRCImp *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 Wrapper around <a class="el" href="classTiXmlBase.html" title="TiXmlBase is a base class for every class in TinyXml.">TiXmlBase</a>. <hr><h2>Member Function Documentation</h2>
-<a class="anchor" name="bc9d7966ac6660cc4217f9deca1c9ad2"></a><!-- doxytag: member="ticpp::Base::ToString" ref="bc9d7966ac6660cc4217f9deca1c9ad2" args="(const T &amp;value)" -->
+<a class="anchor" name="a338c3a707c523b6c9a75e13b21cd951"></a><!-- doxytag: member="ticpp::Base::ToString" ref="a338c3a707c523b6c9a75e13b21cd951" args="(const T &amp;value) const " -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -101,7 +101,7 @@ template&lt;class T&gt; </div>
           <td class="paramtype">const T &amp;&nbsp;</td>
           <td class="paramname"> <em>value</em>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"><code> [inline]</code></td>
+          <td width="100%"> const<code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -123,7 +123,7 @@ Converts any class with a proper overload of the &lt;&lt; opertor to a std::stri
 
 </div>
 </div><p>
-<a class="anchor" name="24dd413d4a13d7367f7584b85759c1e5"></a><!-- doxytag: member="ticpp::Base::FromString" ref="24dd413d4a13d7367f7584b85759c1e5" args="(const std::string &amp;temp, T *out)" -->
+<a class="anchor" name="2b923a8ea0ed4182d5ba38ca09265256"></a><!-- doxytag: member="ticpp::Base::FromString" ref="2b923a8ea0ed4182d5ba38ca09265256" args="(const std::string &amp;temp, T *out) const " -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -144,7 +144,7 @@ template&lt;class T&gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td width="100%"><code> [inline]</code></td>
+          <td></td><td></td><td width="100%"> const<code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -167,7 +167,7 @@ Converts a std::string to any class with a proper overload of the &gt;&gt; opert
 
 </div>
 </div><p>
-<a class="anchor" name="00f376c6b6e3ed6b565584e15fc7908a"></a><!-- doxytag: member="ticpp::Base::Row" ref="00f376c6b6e3ed6b565584e15fc7908a" args="()" -->
+<a class="anchor" name="8885214075201b31dd888125ceb802eb"></a><!-- doxytag: member="ticpp::Base::Row" ref="8885214075201b31dd888125ceb802eb" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -176,7 +176,7 @@ Converts a std::string to any class with a proper overload of the &gt;&gt; opert
           <td>(</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"><code> [inline]</code></td>
+          <td width="100%"> const<code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -188,7 +188,7 @@ Return the position, in the original source file, of this node or attribute.
 Wrapper around <a class="el" href="classTiXmlBase.html#024bceb070188df92c2a8d8852dd0853" title="Return the position, in the original source file, of this node or attribute.">TiXmlBase::Row()</a> 
 </div>
 </div><p>
-<a class="anchor" name="8838e86b844f24c20f1a701d6dfd1185"></a><!-- doxytag: member="ticpp::Base::Column" ref="8838e86b844f24c20f1a701d6dfd1185" args="()" -->
+<a class="anchor" name="1cc41396ee20fc4cc37f8b368c571a69"></a><!-- doxytag: member="ticpp::Base::Column" ref="1cc41396ee20fc4cc37f8b368c571a69" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -197,7 +197,7 @@ Wrapper around <a class="el" href="classTiXmlBase.html#024bceb070188df92c2a8d885
           <td>(</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"><code> [inline]</code></td>
+          <td width="100%"> const<code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -229,7 +229,7 @@ NodeFactory, FirstChildElement, etc. )
 </div><p>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="ticpp_8h-source.html">ticpp.h</a></ul>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Oct 1 10:13:30 2007 for TinyXml by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue Oct 2 10:39:50 2007 for TinyXml by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.3 </small></address>
 </body>

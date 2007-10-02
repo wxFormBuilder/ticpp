@@ -111,7 +111,7 @@ virtual <a class="el" href="classTiXmlNode.html">TiXmlNode</a> *&nbsp;</td><td c
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a new Element and returns it - the returned element is a copy. <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlElement.html#fbf52736e70fc91ec9d760721d6f4fd2">Print</a> (FILE *cfile, int depth) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">All TinyXml classes can print themselves to a filestream.  <a href="#fbf52736e70fc91ec9d760721d6f4fd2"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">All TinyXml classes can print themselves to a filestream or the string class (TiXmlString in non-STL mode, std::string in STL mode.  <a href="#fbf52736e70fc91ec9d760721d6f4fd2"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c5b8d0e25fa23fd9acbb6d146082901c"></a><!-- doxytag: member="TiXmlElement::ToElement" ref="c5b8d0e25fa23fd9acbb6d146082901c" args="() const " -->
 virtual const <br>
 <a class="el" href="classTiXmlElement.html">TiXmlElement</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlElement.html#c5b8d0e25fa23fd9acbb6d146082901c">ToElement</a> () const </td></tr>
@@ -121,6 +121,10 @@ virtual const <br>
 virtual <a class="el" href="classTiXmlElement.html">TiXmlElement</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlElement.html#9def86337ea7a755eb41cac980f60c7a">ToElement</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cast to a more defined type. Will return null not of the requested type. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="71a81b2afb0d42be1543d1c404dee6f5"></a><!-- doxytag: member="TiXmlElement::Accept" ref="71a81b2afb0d42be1543d1c404dee6f5" args="(TiXmlVisitor *visitor) const " -->
+virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlElement.html#71a81b2afb0d42be1543d1c404dee6f5">Accept</a> (<a class="el" href="classTiXmlVisitor.html">TiXmlVisitor</a> *visitor) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Walk the XML tree visiting this node and all of its children. <br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 The element is a container class. 
@@ -250,6 +254,7 @@ template&lt;typename T&gt; </div>
 Template form of the attribute query which will try to read the attribute into the specified type. 
 <p>
 Very easy, very powerful, but be careful to make sure to call this with the correct type.<p>
+NOTE: This method doesn't work correctly for 'string' types.<p>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>TIXML_SUCCESS, TIXML_WRONG_TYPE, or TIXML_NO_ATTRIBUTE </dd></dl>
 
 </div>
@@ -409,7 +414,7 @@ Note that this function can be misleading. If the element foo was created from t
 then the value of str would be null. The first child node isn't a text node, it is another element. From this XML: <div class="fragment"><pre class="fragment">
 		&lt;foo&gt;This is &lt;b&gt;text&lt;/b&gt;&lt;/foo&gt;
 		</pre></div> <a class="el" href="classTiXmlElement.html#f3282294986cdb216646ea1f67af2c87" title="Convenience function for easy access to the text inside an element.">GetText()</a> will return "This is ".<p>
-WARNING: <a class="el" href="classTiXmlElement.html#f3282294986cdb216646ea1f67af2c87" title="Convenience function for easy access to the text inside an element.">GetText()</a> accesses a child node - don't become confused with the similarly named <a class="el" href="classTiXmlHandle.html#9fc739c8a18d160006f82572fc143d13" title="Return the handle as a TiXmlText. This may return null.">TiXmlHandle::Text()</a> and <a class="el" href="classTiXmlNode.html#3ddfbcac78fbea041fad57e5c6d60a03" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToText()</a> which are safe type casts on the referenced node. 
+WARNING: <a class="el" href="classTiXmlElement.html#f3282294986cdb216646ea1f67af2c87" title="Convenience function for easy access to the text inside an element.">GetText()</a> accesses a child node - don't become confused with the similarly named <a class="el" href="classTiXmlHandle.html#9fc739c8a18d160006f82572fc143d13">TiXmlHandle::Text()</a> and <a class="el" href="classTiXmlNode.html#3ddfbcac78fbea041fad57e5c6d60a03" title="Cast to a more defined type. Will return null if not of the requested type.">TiXmlNode::ToText()</a> which are safe type casts on the referenced node. 
 </div>
 </div><p>
 <a class="anchor" name="fbf52736e70fc91ec9d760721d6f4fd2"></a><!-- doxytag: member="TiXmlElement::Print" ref="fbf52736e70fc91ec9d760721d6f4fd2" args="(FILE *cfile, int depth) const " -->
@@ -438,8 +443,9 @@ WARNING: <a class="el" href="classTiXmlElement.html#f3282294986cdb216646ea1f67af
 <div class="memdoc">
 
 <p>
-All TinyXml classes can print themselves to a filestream. 
+All TinyXml classes can print themselves to a filestream or the string class (TiXmlString in non-STL mode, std::string in STL mode. 
 <p>
+) Either or both cfile and str can be null.<p>
 This is a formatted print, and will insert tabs and newlines.<p>
 (For an unformatted stream, use the &lt;&lt; operator.) 
 <p>Implements <a class="el" href="classTiXmlBase.html#0de56b3f2ef14c65091a3b916437b512">TiXmlBase</a>.</p>
@@ -448,7 +454,7 @@ This is a formatted print, and will insert tabs and newlines.<p>
 </div><p>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="tinyxml_8h-source.html">tinyxml.h</a></ul>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Oct 1 10:13:30 2007 for TinyXml by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue Oct 2 10:39:50 2007 for TinyXml by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.3 </small></address>
 </body>

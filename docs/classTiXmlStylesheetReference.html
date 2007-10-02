@@ -65,10 +65,9 @@ const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual <a class="el" href="classTiXmlNode.html">TiXmlNode</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlStylesheetReference.html#0ffc6f99c150562ce6e20242fe8581e3">Clone</a> () const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a copy of this StylesheetReference and returns it. <br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="49db8b6b92877c4afec7d20c307b9c6b"></a><!-- doxytag: member="TiXmlStylesheetReference::Print" ref="49db8b6b92877c4afec7d20c307b9c6b" args="(FILE *cfile, int depth) const " -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlStylesheetReference.html#49db8b6b92877c4afec7d20c307b9c6b">Print</a> (FILE *cfile, int depth) const </td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlStylesheetReference.html#49db8b6b92877c4afec7d20c307b9c6b">Print</a> (FILE *cfile, int depth) const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Print this declaration to a FILE stream. <br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">All TinyXml classes can print themselves to a filestream or the string class (TiXmlString in non-STL mode, std::string in STL mode.  <a href="#49db8b6b92877c4afec7d20c307b9c6b"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="70888be188ba04f5548159de36216dc1"></a><!-- doxytag: member="TiXmlStylesheetReference::ToStylesheetReference" ref="70888be188ba04f5548159de36216dc1" args="() const " -->
 virtual const <br>
 <a class="el" href="classTiXmlStylesheetReference.html">TiXmlStylesheetReference</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlStylesheetReference.html#70888be188ba04f5548159de36216dc1">ToStylesheetReference</a> () const </td></tr>
@@ -79,6 +78,10 @@ virtual <br>
 <a class="el" href="classTiXmlStylesheetReference.html">TiXmlStylesheetReference</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlStylesheetReference.html#4fe14deb538559208b1fb95eb57df408">ToStylesheetReference</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cast to a more defined type. Will return null not of the requested type. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="ba4b0846455cabe80f44d8c15992f5ab"></a><!-- doxytag: member="TiXmlStylesheetReference::Accept" ref="ba4b0846455cabe80f44d8c15992f5ab" args="(TiXmlVisitor *visitor) const " -->
+virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlStylesheetReference.html#ba4b0846455cabe80f44d8c15992f5ab">Accept</a> (<a class="el" href="classTiXmlVisitor.html">TiXmlVisitor</a> *visitor) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Walk the XML tree visiting this node and all of its children. <br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 A stylesheet reference looks like this:. 
@@ -86,9 +89,45 @@ A stylesheet reference looks like this:.
 <div class="fragment"><pre class="fragment">
 		&lt;?xml-stylesheet type="text/xsl" href="style.xsl"?&gt;
 	</pre></div><p>
-Note: In this version of the code, the attributes are handled as special cases, not generic attributes, simply because there can only be at most 2 and they are always the same. <hr>The documentation for this class was generated from the following file:<ul>
+Note: In this version of the code, the attributes are handled as special cases, not generic attributes, simply because there can only be at most 2 and they are always the same. <hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="49db8b6b92877c4afec7d20c307b9c6b"></a><!-- doxytag: member="TiXmlStylesheetReference::Print" ref="49db8b6b92877c4afec7d20c307b9c6b" args="(FILE *cfile, int depth) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void TiXmlStylesheetReference::Print           </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>cfile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>depth</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+All TinyXml classes can print themselves to a filestream or the string class (TiXmlString in non-STL mode, std::string in STL mode. 
+<p>
+) Either or both cfile and str can be null.<p>
+This is a formatted print, and will insert tabs and newlines.<p>
+(For an unformatted stream, use the &lt;&lt; operator.) 
+<p>Implements <a class="el" href="classTiXmlBase.html#0de56b3f2ef14c65091a3b916437b512">TiXmlBase</a>.</p>
+
+</div>
+</div><p>
+<hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="tinyxml_8h-source.html">tinyxml.h</a></ul>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Oct 1 10:13:30 2007 for TinyXml by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue Oct 2 10:39:50 2007 for TinyXml by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.3 </small></address>
 </body>

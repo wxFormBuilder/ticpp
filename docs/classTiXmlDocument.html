@@ -81,12 +81,6 @@ bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#3d4fae0463f3f03679ba0b7cf6f2df52">SaveFile</a> (const std::string &amp;filename) const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">&lt; STL std::string version. <br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#d629de5d75448cddfde65f02abc1aedf">GetAsString</a> ()</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write the document to a string using formatted printing ("pretty print").  <a href="#d629de5d75448cddfde65f02abc1aedf"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#ff644bf75bb3a986c7427d3976f92e2d">GetAsCharBuffer</a> (char *buffer, size_t bufferSize)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write the document to a string using formatted printing ("pretty print").  <a href="#ff644bf75bb3a986c7427d3976f92e2d"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#17ebabe36926ef398e78dec0d0ad0378">Parse</a> (const char *p, TiXmlParsingData *data=0, TiXmlEncoding encoding=TIXML_DEFAULT_ENCODING)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Parse the given null terminated block of xml data.  <a href="#17ebabe36926ef398e78dec0d0ad0378"></a><br></td></tr>
@@ -103,22 +97,22 @@ const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#f96fc2f3f9ec6422782bfe916c9e778f">ErrorId</a> () const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Generally, you probably want the error string ( <a class="el" href="classTiXmlDocument.html#9d0f689f6e09ea494ea547be8d79c25e" title="Contains a textual (english) description of the error if one occurs.">ErrorDesc()</a> ).  <a href="#f96fc2f3f9ec6422782bfe916c9e778f"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#156383ee53a7add46fe2c56c704b919a">ErrorRow</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#f30efc75e804aa2e92fb8be3a8cb676e">ErrorRow</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the location (if known) of the error.  <a href="#156383ee53a7add46fe2c56c704b919a"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="ea0408a06f03081ca091a39bba6dd7b1"></a><!-- doxytag: member="TiXmlDocument::ErrorCol" ref="ea0408a06f03081ca091a39bba6dd7b1" args="()" -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#ea0408a06f03081ca091a39bba6dd7b1">ErrorCol</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the location (if known) of the error.  <a href="#f30efc75e804aa2e92fb8be3a8cb676e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a90bc630ee5203c6109ca5fad3323649"></a><!-- doxytag: member="TiXmlDocument::ErrorCol" ref="a90bc630ee5203c6109ca5fad3323649" args="() const " -->
+int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#a90bc630ee5203c6109ca5fad3323649">ErrorCol</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The column where the error occured. See <a class="el" href="classTiXmlDocument.html#156383ee53a7add46fe2c56c704b919a" title="Returns the location (if known) of the error.">ErrorRow()</a>. <br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The column where the error occured. See <a class="el" href="classTiXmlDocument.html#f30efc75e804aa2e92fb8be3a8cb676e" title="Returns the location (if known) of the error.">ErrorRow()</a>. <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#51dac56316f89b35bdb7d0d433ba988e">SetTabSize</a> (int _tabsize)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classTiXmlDocument.html#51dac56316f89b35bdb7d0d433ba988e" title="SetTabSize() allows the error reporting functions (ErrorRow() and ErrorCol()) to...">SetTabSize()</a> allows the error reporting functions (<a class="el" href="classTiXmlDocument.html#156383ee53a7add46fe2c56c704b919a" title="Returns the location (if known) of the error.">ErrorRow()</a> and <a class="el" href="classTiXmlDocument.html#ea0408a06f03081ca091a39bba6dd7b1" title="The column where the error occured. See ErrorRow().">ErrorCol()</a>) to report the correct values for row and column.  <a href="#51dac56316f89b35bdb7d0d433ba988e"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classTiXmlDocument.html#51dac56316f89b35bdb7d0d433ba988e" title="SetTabSize() allows the error reporting functions (ErrorRow() and ErrorCol()) to...">SetTabSize()</a> allows the error reporting functions (<a class="el" href="classTiXmlDocument.html#f30efc75e804aa2e92fb8be3a8cb676e" title="Returns the location (if known) of the error.">ErrorRow()</a> and <a class="el" href="classTiXmlDocument.html#a90bc630ee5203c6109ca5fad3323649" title="The column where the error occured. See ErrorRow().">ErrorCol()</a>) to report the correct values for row and column.  <a href="#51dac56316f89b35bdb7d0d433ba988e"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#c66b8c28db86363315712a3574e87c35">ClearError</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">If you have handled the error, it can be reset with this call.  <a href="#c66b8c28db86363315712a3574e87c35"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#f08389ec70ee9b2de7f800e206a18510">Print</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Dump the document to standard out.  <a href="#f08389ec70ee9b2de7f800e206a18510"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write the document to standard out using formatted printing ("pretty print").  <a href="#f08389ec70ee9b2de7f800e206a18510"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="8701fda1fa31b25abbc9c0df42da10e8"></a><!-- doxytag: member="TiXmlDocument::Print" ref="8701fda1fa31b25abbc9c0df42da10e8" args="(FILE *cfile, int depth=0) const " -->
 virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#8701fda1fa31b25abbc9c0df42da10e8">Print</a> (FILE *cfile, int depth=0) const </td></tr>
 
@@ -132,6 +126,10 @@ virtual const <br>
 virtual <a class="el" href="classTiXmlDocument.html">TiXmlDocument</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#1025d942a1f328fd742d545e37efdd42">ToDocument</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cast to a more defined type. Will return null not of the requested type. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a545aae325d9752ad64120bc4ecf939a"></a><!-- doxytag: member="TiXmlDocument::Accept" ref="a545aae325d9752ad64120bc4ecf939a" args="(TiXmlVisitor *content) const " -->
+virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#a545aae325d9752ad64120bc4ecf939a">Accept</a> (<a class="el" href="classTiXmlVisitor.html">TiXmlVisitor</a> *content) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Walk the XML tree visiting this node and all of its children. <br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual <a class="el" href="classTiXmlNode.html">TiXmlNode</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlDocument.html#4968661cab4a1f44a23329c6f8db1907">Clone</a> () const </td></tr>
 
@@ -228,66 +226,6 @@ STL std::string version. </td></tr>
 </dl>
 </div>
 </div><p>
-<a class="anchor" name="d629de5d75448cddfde65f02abc1aedf"></a><!-- doxytag: member="TiXmlDocument::GetAsString" ref="d629de5d75448cddfde65f02abc1aedf" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string TiXmlDocument::GetAsString           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td width="100%"></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-Write the document to a string using formatted printing ("pretty print"). 
-<p>
-<dl class="return" compact><dt><b>Returns:</b></dt><dd>the document as a formatted standard string. </dd></dl>
-
-</div>
-</div><p>
-<a class="anchor" name="ff644bf75bb3a986c7427d3976f92e2d"></a><!-- doxytag: member="TiXmlDocument::GetAsCharBuffer" ref="ff644bf75bb3a986c7427d3976f92e2d" args="(char *buffer, size_t bufferSize)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TiXmlDocument::GetAsCharBuffer           </td>
-          <td>(</td>
-          <td class="paramtype">char *&nbsp;</td>
-          <td class="paramname"> <em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&nbsp;</td>
-          <td class="paramname"> <em>bufferSize</em></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td width="100%"></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-Write the document to a string using formatted printing ("pretty print"). 
-<p>
-<dl compact><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>buffer</em>&nbsp;</td><td>A character buffer that should be big enough to hold your document. </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>bufferSize</em>&nbsp;</td><td>The size of <code>buffer</code>.</td></tr>
-  </table>
-</dl>
-<dl class="return" compact><dt><b>Returns:</b></dt><dd>True if the document could be copied into <code>buffer</code>, else false. </dd></dl>
-
-</div>
-</div><p>
 <a class="anchor" name="17ebabe36926ef398e78dec0d0ad0378"></a><!-- doxytag: member="TiXmlDocument::Parse" ref="17ebabe36926ef398e78dec0d0ad0378" args="(const char *p, TiXmlParsingData *data=0, TiXmlEncoding encoding=TIXML_DEFAULT_ENCODING)" -->
 <div class="memitem">
 <div class="memproto">
@@ -367,7 +305,7 @@ In well formed XML, there should only be one. TinyXml is tolerant of multiple el
 If an error occurs, Error will be set to true. 
 <p>
 Also,<ul>
-<li>The <a class="el" href="classTiXmlDocument.html#f96fc2f3f9ec6422782bfe916c9e778f" title="Generally, you probably want the error string ( ErrorDesc() ).">ErrorId()</a> will contain the integer identifier of the error (not generally useful)</li><li>The <a class="el" href="classTiXmlDocument.html#9d0f689f6e09ea494ea547be8d79c25e" title="Contains a textual (english) description of the error if one occurs.">ErrorDesc()</a> method will return the name of the error. (very useful)</li><li>The <a class="el" href="classTiXmlDocument.html#156383ee53a7add46fe2c56c704b919a" title="Returns the location (if known) of the error.">ErrorRow()</a> and <a class="el" href="classTiXmlDocument.html#ea0408a06f03081ca091a39bba6dd7b1" title="The column where the error occured. See ErrorRow().">ErrorCol()</a> will return the location of the error (if known) </li></ul>
+<li>The <a class="el" href="classTiXmlDocument.html#f96fc2f3f9ec6422782bfe916c9e778f" title="Generally, you probably want the error string ( ErrorDesc() ).">ErrorId()</a> will contain the integer identifier of the error (not generally useful)</li><li>The <a class="el" href="classTiXmlDocument.html#9d0f689f6e09ea494ea547be8d79c25e" title="Contains a textual (english) description of the error if one occurs.">ErrorDesc()</a> method will return the name of the error. (very useful)</li><li>The <a class="el" href="classTiXmlDocument.html#f30efc75e804aa2e92fb8be3a8cb676e" title="Returns the location (if known) of the error.">ErrorRow()</a> and <a class="el" href="classTiXmlDocument.html#a90bc630ee5203c6109ca5fad3323649" title="The column where the error occured. See ErrorRow().">ErrorCol()</a> will return the location of the error (if known) </li></ul>
 
 </div>
 </div><p>
@@ -392,7 +330,7 @@ Generally, you probably want the error string ( <a class="el" href="classTiXmlDo
 But if you prefer the ErrorId, this function will fetch it. 
 </div>
 </div><p>
-<a class="anchor" name="156383ee53a7add46fe2c56c704b919a"></a><!-- doxytag: member="TiXmlDocument::ErrorRow" ref="156383ee53a7add46fe2c56c704b919a" args="()" -->
+<a class="anchor" name="f30efc75e804aa2e92fb8be3a8cb676e"></a><!-- doxytag: member="TiXmlDocument::ErrorRow" ref="f30efc75e804aa2e92fb8be3a8cb676e" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -401,7 +339,7 @@ But if you prefer the ErrorId, this function will fetch it.
           <td>(</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td width="100%"><code> [inline]</code></td>
+          <td width="100%"> const<code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -432,7 +370,7 @@ The first column is column 1, and the first row is row 1. A value of 0 means the
 <div class="memdoc">
 
 <p>
-<a class="el" href="classTiXmlDocument.html#51dac56316f89b35bdb7d0d433ba988e" title="SetTabSize() allows the error reporting functions (ErrorRow() and ErrorCol()) to...">SetTabSize()</a> allows the error reporting functions (<a class="el" href="classTiXmlDocument.html#156383ee53a7add46fe2c56c704b919a" title="Returns the location (if known) of the error.">ErrorRow()</a> and <a class="el" href="classTiXmlDocument.html#ea0408a06f03081ca091a39bba6dd7b1" title="The column where the error occured. See ErrorRow().">ErrorCol()</a>) to report the correct values for row and column. 
+<a class="el" href="classTiXmlDocument.html#51dac56316f89b35bdb7d0d433ba988e" title="SetTabSize() allows the error reporting functions (ErrorRow() and ErrorCol()) to...">SetTabSize()</a> allows the error reporting functions (<a class="el" href="classTiXmlDocument.html#f30efc75e804aa2e92fb8be3a8cb676e" title="Returns the location (if known) of the error.">ErrorRow()</a> and <a class="el" href="classTiXmlDocument.html#a90bc630ee5203c6109ca5fad3323649" title="The column where the error occured. See ErrorRow().">ErrorCol()</a>) to report the correct values for row and column. 
 <p>
 It does not change the output or input in any way.<p>
 By calling this method, with a tab size greater than 0, the row and column of each node and attribute is stored when the file is loaded. Very useful for tracking the DOM back in to the source file.<p>
@@ -484,7 +422,7 @@ The error state is automatically cleared if you Parse a new XML block.
 <div class="memdoc">
 
 <p>
-Dump the document to standard out. 
+Write the document to standard out using formatted printing ("pretty print"). 
 <p>
 
 </div>
@@ -514,7 +452,7 @@ The memory must be deleted by the caller.
 </div><p>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="tinyxml_8h-source.html">tinyxml.h</a></ul>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Oct 1 10:13:30 2007 for TinyXml by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue Oct 2 10:39:50 2007 for TinyXml by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.3 </small></address>
 </body>

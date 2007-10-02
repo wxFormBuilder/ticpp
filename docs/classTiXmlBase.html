@@ -50,7 +50,7 @@ Inheritance diagram for TiXmlBase:</div>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlBase.html#0de56b3f2ef14c65091a3b916437b512">Print</a> (FILE *cfile, int depth) const =0</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">All TinyXml classes can print themselves to a filestream.  <a href="#0de56b3f2ef14c65091a3b916437b512"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">All TinyXml classes can print themselves to a filestream or the string class (TiXmlString in non-STL mode, std::string in STL mode.  <a href="#0de56b3f2ef14c65091a3b916437b512"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlBase.html#024bceb070188df92c2a8d8852dd0853">Row</a> () const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return the position, in the original source file, of this node or attribute.  <a href="#024bceb070188df92c2a8d8852dd0853"></a><br></td></tr>
@@ -58,6 +58,18 @@ Inheritance diagram for TiXmlBase:</div>
 int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlBase.html#b54bfb9b70fe6dd276e7b279cab7f003">Column</a> () const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">See <a class="el" href="classTiXmlBase.html#024bceb070188df92c2a8d8852dd0853" title="Return the position, in the original source file, of this node or attribute.">Row()</a>. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c6b3e0f790930d4970ec30764e937b5d"></a><!-- doxytag: member="TiXmlBase::SetUserData" ref="c6b3e0f790930d4970ec30764e937b5d" args="(void *user)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlBase.html#c6b3e0f790930d4970ec30764e937b5d">SetUserData</a> (void *user)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set a pointer to arbitrary user data. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="6559a530ca6763fc301a14d77ed28c17"></a><!-- doxytag: member="TiXmlBase::GetUserData" ref="6559a530ca6763fc301a14d77ed28c17" args="()" -->
+void *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlBase.html#6559a530ca6763fc301a14d77ed28c17">GetUserData</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get a pointer to arbitrary user data. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="d0120210e4680ef2088601753ce0ede4"></a><!-- doxytag: member="TiXmlBase::GetUserData" ref="d0120210e4680ef2088601753ce0ede4" args="() const " -->
+const void *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlBase.html#d0120210e4680ef2088601753ce0ede4">GetUserData</a> () const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get a pointer to arbitrary user data. <br></td></tr>
 <tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlBase.html#0f799ec645bfb8d8a969e83478f379c1">SetCondenseWhiteSpace</a> (bool condense)</td></tr>
 
@@ -66,6 +78,9 @@ int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlBase.html#d4b1472531c647a25b1840a87ae42438">IsWhiteSpaceCondensed</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return the current white space setting. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlBase.html#6bd8c315c1acb09e34107b8736505948">EncodeString</a> (const TIXML_STRING &amp;str, TIXML_STRING *out)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Expands entities in a string.  <a href="#6bd8c315c1acb09e34107b8736505948"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="b242c01590191f644569fa89a080d97c"></a><!-- doxytag: member="TiXmlBase::userData" ref="b242c01590191f644569fa89a080d97c" args="" -->
 void *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiXmlBase.html#b242c01590191f644569fa89a080d97c">userData</a></td></tr>
@@ -127,8 +142,9 @@ In XML, the document and elements can contain other elements and other types of 
 <div class="memdoc">
 
 <p>
-All TinyXml classes can print themselves to a filestream. 
+All TinyXml classes can print themselves to a filestream or the string class (TiXmlString in non-STL mode, std::string in STL mode. 
 <p>
+) Either or both cfile and str can be null.<p>
 This is a formatted print, and will insert tabs and newlines.<p>
 (For an unformatted stream, use the &lt;&lt; operator.) 
 <p>Implemented in <a class="el" href="classTiXmlAttribute.html#cc04956c1d5c4c31fe74f7a7528d109a">TiXmlAttribute</a>, <a class="el" href="classTiXmlElement.html#fbf52736e70fc91ec9d760721d6f4fd2">TiXmlElement</a>, <a class="el" href="classTiXmlComment.html#6b316527aaa8da0370cd68c22a5a0f5f">TiXmlComment</a>, <a class="el" href="classTiXmlText.html#0cafbf6f236c7f02d12b2bffc2b7976b">TiXmlText</a>, <a class="el" href="classTiXmlDeclaration.html#bf6303db4bd05b5be554036817ff1cb4">TiXmlDeclaration</a>, <a class="el" href="classTiXmlStylesheetReference.html#49db8b6b92877c4afec7d20c307b9c6b">TiXmlStylesheetReference</a>, <a class="el" href="classTiXmlUnknown.html#31ba089a40fb5a1869750fce09b0bacb">TiXmlUnknown</a>, and <a class="el" href="classTiXmlDocument.html#8701fda1fa31b25abbc9c0df42da10e8">TiXmlDocument</a>.</p>
@@ -154,7 +170,7 @@ This is a formatted print, and will insert tabs and newlines.<p>
 <p>
 The world does not agree on whether white space should be kept or not. 
 <p>
-In order to make everyone happy, these global, static functions are provided to set whether or not TinyXml will condense all white space into a single space or not. The default is to condense. Note changing this values is not thread safe. 
+In order to make everyone happy, these global, static functions are provided to set whether or not TinyXml will condense all white space into a single space or not. The default is to condense. Note changing this value is not thread safe. 
 </div>
 </div><p>
 <a class="anchor" name="024bceb070188df92c2a8d8852dd0853"></a><!-- doxytag: member="TiXmlBase::Row" ref="024bceb070188df92c2a8d8852dd0853" args="() const " -->
@@ -183,9 +199,40 @@ There is a minor performance cost to computing the row and column. Computation c
 
 </div>
 </div><p>
+<a class="anchor" name="6bd8c315c1acb09e34107b8736505948"></a><!-- doxytag: member="TiXmlBase::EncodeString" ref="6bd8c315c1acb09e34107b8736505948" args="(const TIXML_STRING &amp;str, TIXML_STRING *out)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void TiXmlBase::EncodeString           </td>
+          <td>(</td>
+          <td class="paramtype">const TIXML_STRING &amp;&nbsp;</td>
+          <td class="paramname"> <em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TIXML_STRING *&nbsp;</td>
+          <td class="paramname"> <em>out</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Expands entities in a string. 
+<p>
+Note this should not contian the tag's '&lt;', '&gt;', etc, or they will be transformed into entities! 
+</div>
+</div><p>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="tinyxml_8h-source.html">tinyxml.h</a></ul>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Oct 1 10:13:30 2007 for TinyXml by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue Oct 2 10:39:50 2007 for TinyXml by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.3 </small></address>
 </body>
