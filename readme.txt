@@ -1,13 +1,13 @@
 /** @mainpage
 
-<h1> TinyXml </h1>
+<h1> TinyXML </h1>
 
-TinyXml is a simple, small, C++ XML parser that can be easily 
-integrating into other programs.
+TinyXML is a simple, small, C++ XML parser that can be easily 
+integrated into other programs.
 
 <h2> What it does. </h2>
 	
-In brief, TinyXml parses an XML document, and builds from that a 
+In brief, TinyXML parses an XML document, and builds from that a 
 Document Object Model (DOM) that can be read, modified, and saved.
 
 XML stands for "eXtensible Markup Language." It allows you to create 
@@ -25,44 +25,38 @@ http://www.w3.org/TR/2004/REC-xml-20040204/</a>. An intro to XML
 <a href="http://skew.org/xml/tutorial/">http://skew.org/xml/tutorial</a>.
 
 There are different ways to access and interact with XML data.
-TinyXml uses a Document Object Model (DOM), meaning the XML data is parsed
+TinyXML uses a Document Object Model (DOM), meaning the XML data is parsed
 into a C++ objects that can be browsed and manipulated, and then 
-written to disk or another output stream. You can also construct an XML document from
-scratch with C++ objects and write this to disk or another output
+written to disk or another output stream. You can also construct an XML document 
+from scratch with C++ objects and write this to disk or another output
 stream.
 
-TinyXml is designed to be easy and fast to learn. It is two headers 
+TinyXML is designed to be easy and fast to learn. It is two headers 
 and four cpp files. Simply add these to your project and off you go. 
 There is an example file - xmltest.cpp - to get you started. 
 
-TinyXml is released under the ZLib license, 
+TinyXML is released under the ZLib license, 
 so you can use it in open source or commercial code. The details
 of the license are at the top of every source file.
 
-TinyXml attempts to be a flexible parser, but with truly correct and
-compliant XML output. TinyXml should compile on any reasonably C++
+TinyXML attempts to be a flexible parser, but with truly correct and
+compliant XML output. TinyXML should compile on any reasonably C++
 compliant system. It does not rely on exceptions or RTTI. It can be 
-compiled with or without STL support. TinyXml fully supports
+compiled with or without STL support. TinyXML fully supports
 the UTF-8 encoding, and the first 64k character entities.
 
-However, if you prefer to use exceptions, templates, and RTTI, there is a 
-wrapper for TinyXml called @subpage ticpp. Simply include the three extra files and
-you're ready to go. TiCpp uses exceptions for error handling, so you won't
-ever need to check a return value for an error code. It also uses templates
-that allow you to use one Get() or Set() function with automatic type 
-conversion.
 
 <h2> What it doesn't do. </h2>
 
-It doesnt parse or use DTDs (Document Type Definitions) or XSLs
+TinyXML doesn't parse or use DTDs (Document Type Definitions) or XSLs
 (eXtensible Stylesheet Language.) There are other parsers out there 
 (check out www.sourceforge.org, search for XML) that are much more fully
 featured. But they are also much bigger, take longer to set up in
 your project, have a higher learning curve, and often have a more
 restrictive license. If you are working with browsers or have more
-complete XML needs, TinyXml is not the parser for you.
+complete XML needs, TinyXML is not the parser for you.
 
-The following DTD syntax will not parse at this time in TinyXml:
+The following DTD syntax will not parse at this time in TinyXML:
 
 @verbatim
 	<!DOCTYPE Archiv [
@@ -70,40 +64,50 @@ The following DTD syntax will not parse at this time in TinyXml:
 	]>
 @endverbatim
 
-because TinyXml sees this as a !DOCTYPE node with an illegally 
+because TinyXML sees this as a !DOCTYPE node with an illegally 
 embedded !ELEMENT node. This may be addressed in the future.
 
 <h2> Tutorials. </h2>
 
-For the impatient, here are some tutorials to get you going. A great way to 
-get started, but it is worth your time to read this (very short) manual 
-completely.
+For the impatient, here are some tutorials to get you going. A great way to get started, 
+but it is worth your time to read this (very short) manual completely.
 
 - @subpage ticppTutorial
 - @subpage tutorial0
 
 <h2> Code Status.  </h2>
 
-TinyXml is mature, tested code. It is very stable. If you find
+TinyXML is mature, tested code. It is very stable. If you find
 bugs, please file a bug report on the sourceforge web site
-(www.sourceforge.net/projects/tinyxml).
-We'll get them straightened out as soon as possible.
+(www.sourceforge.net/projects/tinyxml). We'll get them straightened 
+out as soon as possible.
 
 There are some areas of improvement; please check sourceforge if you are
-interested in working on TinyXml.
+interested in working on TinyXML.
 
+<h2> Related Projects </h2>
+
+TinyXML projects you may find useful! (Descriptions provided by the projects.)
+
+<ul>
+<li> <b>TinyXPath</b> (http://tinyxpath.sourceforge.net). TinyXPath is a small footprint 
+     XPath syntax decoder, written in C++.</li>
+<li> <b>@subpage ticpp</b> (http://code.google.com/p/ticpp/). TinyXML++ is a completely new 
+     interface to TinyXML that uses MANY of the C++ strengths. Templates, 
+	 exceptions, and much better error handling.</li>
+</ul>
 
 <h2> Features </h2>
 
 <h3> Using STL </h3>
 
-TinyXml can be compiled to use or not use STL. When using STL, TinyXml
+TinyXML can be compiled to use or not use STL. When using STL, TinyXML
 uses the std::string class, and fully supports std::istream, std::ostream,
 operator<<, and operator>>. Many API methods have both 'const char*' and
 'const std::string&' forms.
 
-When STL support is compiled out, no STL files are included whatsover. All
-the string classes are implemented by TinyXml itself. API methods
+When STL support is compiled out, no STL files are included whatsoever. All
+the string classes are implemented by TinyXML itself. API methods
 all use the 'const char*' form for input.
 
 Use the compile time #define:
@@ -116,53 +120,52 @@ or set as the first line of "tinyxml.h".
 Note: If compiling the test code in Linux, setting the environment
 variable TINYXML_USE_STL=YES/NO will control STL compilation. In the
 Windows project file, STL and non STL targets are provided. In your project,
-its probably easiest to add the line "#define TIXML_USE_STL" as the first
+It's probably easiest to add the line "#define TIXML_USE_STL" as the first
 line of tinyxml.h.
 
 <h3> UTF-8 </h3>
 
-TinyXml supports UTF-8 allowing to manipulate XML files in any language. TinyXml
+TinyXML supports UTF-8 allowing to manipulate XML files in any language. TinyXML
 also supports "legacy mode" - the encoding used before UTF-8 support and
 probably best described as "extended ascii".
 
-Normally, TinyXml will try to detect the correct encoding and use it. However,
-by setting the value of TIXML_DEFAULT_ENCODING in the header file, TinyXml
+Normally, TinyXML will try to detect the correct encoding and use it. However,
+by setting the value of TIXML_DEFAULT_ENCODING in the header file, TinyXML
 can be forced to always use one encoding.
 
-TinyXml will assume Legacy Mode until one of the following occurs:
+TinyXML will assume Legacy Mode until one of the following occurs:
 <ol>
 	<li> If the non-standard but common "UTF-8 lead bytes" (0xef 0xbb 0xbf)
-		 begin the file or data stream, TinyXml will read it as UTF-8. </li>
+		 begin the file or data stream, TinyXML will read it as UTF-8. </li>
 	<li> If the declaration tag is read, and it has an encoding="UTF-8", then
-		 TinyXml will read it as UTF-8. </li>
-	<li> If the declaration tag is read, and it has no encoding specified, then
-		 TinyXml will read it as UTF-8. </li>
-	<li> If the declaration tag is read, and it has an encoding="something else", then
-		 TinyXml will read it as Legacy Mode. In legacy mode, TinyXml will 
-		 work as it did before. It's not clear what that mode does exactly, but 
-		 old content should keep working.</li>
-	<li> Until one of the above criteria is met, TinyXml runs in Legacy Mode.</li>
+		 TinyXML will read it as UTF-8. </li>
+	<li> If the declaration tag is read, and it has no encoding specified, then TinyXML will 
+		 read it as UTF-8. </li>
+	<li> If the declaration tag is read, and it has an encoding="something else", then TinyXML 
+		 will read it as Legacy Mode. In legacy mode, TinyXML will work as it did before. It's 
+		 not clear what that mode does exactly, but old content should keep working.</li>
+	<li> Until one of the above criteria is met, TinyXML runs in Legacy Mode.</li>
 </ol>
 
-What happens if the encoding is incorrectly set or detected? TinyXml will try
-to read and pass through text seen as improperly encoded. You may get some strange
-results or mangled characters. You may want to force TinyXml to the correct mode.
+What happens if the encoding is incorrectly set or detected? TinyXML will try
+to read and pass through text seen as improperly encoded. You may get some strange results or 
+mangled characters. You may want to force TinyXML to the correct mode.
 
-<b> You may force TinyXml to Legacy Mode by using LoadFile( TIXML_ENCODING_LEGACY ) or
+You may force TinyXML to Legacy Mode by using LoadFile( TIXML_ENCODING_LEGACY ) or
 LoadFile( filename, TIXML_ENCODING_LEGACY ). You may force it to use legacy mode all
 the time by setting TIXML_DEFAULT_ENCODING = TIXML_ENCODING_LEGACY. Likewise, you may 
-force it to TIXML_ENCODING_UTF8 with the same technique.</b>
+force it to TIXML_ENCODING_UTF8 with the same technique.
 
 For English users, using English XML, UTF-8 is the same as low-ASCII. You
 don't need to be aware of UTF-8 or change your code in any way. You can think
 of UTF-8 as a "superset" of ASCII.
 
 UTF-8 is not a double byte format - but it is a standard encoding of Unicode!
-TinyXml does not use or directly support wchar, TCHAR, or Microsofts _UNICODE at this time. 
+TinyXML does not use or directly support wchar, TCHAR, or Microsoft's _UNICODE at this time. 
 It is common to see the term "Unicode" improperly refer to UTF-16, a wide byte encoding
 of unicode. This is a source of confusion.
 
-For "high-ascii" languages - everything not English, pretty much - TinyXml can
+For "high-ascii" languages - everything not English, pretty much - TinyXML can
 handle all languages, at the same time, as long as the XML is encoded
 in UTF-8. That can be a little tricky, older programs and operating systems
 tend to use the "default" or "traditional" code page. Many apps (and almost all
@@ -170,7 +173,7 @@ modern ones) can output UTF-8, but older or stubborn (or just broken) ones
 still output text in the default code page. 
 
 For example, Japanese systems traditionally use SHIFT-JIS encoding. 
-Text encoded as SHIFT-JIS can not be read by tinyxml. 
+Text encoded as SHIFT-JIS can not be read by TinyXML. 
 A good text editor can import SHIFT-JIS and then save as UTF-8.
 
 The <a href="http://skew.org/xml/tutorial/">Skew.org link</a> does a great
@@ -183,12 +186,12 @@ if you don't have the correct fonts (Simplified Chinese or Russian) on your
 system, you won't see output that matches the GIF file even if you can parse
 it correctly. Also note that (at least on my Windows machine) console output
 is in a Western code page, so that Print() or printf() cannot correctly display
-the file. This is not a bug in TinyXml - just an OS issue. No data is lost or 
-destroyed by TinyXml. The console just doesn't render UTF-8.
+the file. This is not a bug in TinyXML - just an OS issue. No data is lost or 
+destroyed by TinyXML. The console just doesn't render UTF-8.
 
 
 <h3> Entities </h3>
-TinyXml recognizes the pre-defined "character entities", meaning special
+TinyXML recognizes the pre-defined "character entities", meaning special
 characters. Namely:
 
 @verbatim
@@ -208,17 +211,34 @@ UTF-8 equivalents. For instance, text with the XML of:
 
 will have the Value() of "Far & Away" when queried from the TiXmlText object,
 and will be written back to the XML stream/file as an ampersand. Older versions
-of TinyXml "preserved" character entities, but the newer versions will translate
+of TinyXML "preserved" character entities, but the newer versions will translate
 them into characters.
 
 Additionally, any character can be specified by its Unicode code point:
 The syntax "&#xA0;" or "&#160;" are both to the non-breaking space characher.
 
+<h3> Printing </h3>
+TinyXML can print output in several different ways that all have strengths and limitations.
+
+- Print( FILE* ). Output to a std-C stream, which includes all C files as well as stdout.
+	- "Pretty prints", but you don't have control over printing options.
+	- The output is streamed directly to the FILE object, so there is no memory overhead
+	  in the TinyXML code.
+	- used by Print() and SaveFile()
+
+- operator<<. Output to a c++ stream.
+	- Integrates with standart C++ iostreams.
+	- Outputs in "network printing" mode without line breaks. Good for network transmission
+	  and moving XML between C++ objects, but hard for a human to read.
+
+- TiXmlPrinter. Output to a std::string or memory buffer.
+	- API is less concise
+	- Future printing options will be put here.
+	- Printing may change slightly in future versions as it is refined and expanded.
 
 <h3> Streams </h3>
-With TIXML_USE_STL on,
-TiXml has been modified to support both C (FILE) and C++ (operator <<,>>) 
-streams. There are some differences that you may need to be aware of.
+With TIXML_USE_STL on TinyXML supports C++ streams (operator <<,>>) streams as well
+as C (FILE*) streams. There are some differences that you may need to be aware of.
 
 C style output:
 	- based on FILE*
@@ -235,7 +255,7 @@ C style input:
 
 	A fast, tolerant read. Use whenever you don't need the C++ streams.
 
-C++ style ouput:
+C++ style output:
 	- based on std::ostream
 	- operator<<
 
@@ -251,11 +271,11 @@ C++ style input:
 
 	Reads XML from a stream, making it useful for network transmission. The tricky
 	part is knowing when the XML document is complete, since there will almost
-	certainly be other data in the stream. TinyXml will assume the XML data is
+	certainly be other data in the stream. TinyXML will assume the XML data is
 	complete after it reads the root element. Put another way, documents that
 	are ill-constructed with more than one root element will not read correctly.
 	Also note that operator>> is somewhat slower than Parse, due to both 
-	implementation of the STL and limitations of TinyXml.
+	implementation of the STL and limitations of TinyXML.
 
 <h3> White space </h3>
 The world simply does not agree on whether white space should be kept, or condensed.
@@ -265,7 +285,7 @@ space. Some XML parsers do not, and will leave it as "Hello____world". (Remember
 to keep pretending the _ is a space.) Others suggest that __Hello___world__ should become
 Hello___world.
 
-It's an issue that hasn't been resolved to my satisfaction. TinyXml supports the
+It's an issue that hasn't been resolved to my satisfaction. TinyXML supports the
 first 2 approaches. Call TiXmlBase::SetCondenseWhiteSpace( bool ) to set the desired behavior.
 The default is to condense white space.
 
@@ -301,7 +321,7 @@ the previous code reduces to:
 
 @verbatim
 TiXmlHandle docHandle( &document );
-TiXmlElement* child2 = docHandle.FirstChild( "Document" ).FirstChild( "Element" ).Child( "Child", 1 ).Element();
+TiXmlElement* child2 = docHandle.FirstChild( "Document" ).FirstChild( "Element" ).Child( "Child", 1 ).ToElement();
 if ( child2 )
 {
 	// do something useful
@@ -316,7 +336,7 @@ in source files can be very important for some applications. Additionally,
 knowing where parsing errors occured in the original source can be very
 time saving.
 
-TinyXml can tracks the row and column origin of all nodes and attributes
+TinyXML can tracks the row and column origin of all nodes and attributes
 in a text file. The TiXmlBase::Row() and TiXmlBase::Column() methods return
 the origin of the node in the source text. The correct tabs can be 
 configured in TiXmlDocument::SetTabSize().
@@ -332,9 +352,9 @@ disk and generate output on the screen. It also tests walking the
 DOM by printing out the number of nodes found using different 
 techniques.
 
-The Linux makefile is very generic and will
-probably run on other systems, but is only tested on Linux. You no
-longer need to run 'make depend'. The dependecies have been
+The Linux makefile is very generic and runs on many systems - it 
+is currently tested on mingw and
+MacOSX. You do not need to run 'make depend'. The dependecies have been
 hard coded.
 
 <h3>Windows project file for VC6</h3>
@@ -345,7 +365,7 @@ hard coded.
 <li>tinyXmlTestSTL: test app, STL </li>
 </ul>
 
-<h3>Linux Make file</h3>
+<h3>Makefile</h3>
 At the top of the makefile you can set:
 
 PROFILE, DEBUG, and TINYXML_USE_STL. Details (such that they are) are in
@@ -361,10 +381,10 @@ file 'xmltest' will be created.
 Add tinyxml.cpp, tinyxml.h, tinyxmlerror.cpp, tinyxmlparser.cpp, tinystr.cpp, and tinystr.h to your
 project or make file. That's it! It should compile on any reasonably
 compliant C++ system. You do not need to enable exceptions or
-RTTI for TinyXml.
+RTTI for TinyXML.
 
 
-<h2> How TinyXml works.  </h2>
+<h2> How TinyXML works.  </h2>
 
 An example is probably the best way to go. Take:
 @verbatim
@@ -394,8 +414,8 @@ relate to the DOM.
 	TiXmlDeclaration class. It will be the first child of the
 	document node.
 	
-	This is the only directive/special tag parsed by by TinyXml.
-	Generally directive targs are stored in TiXmlUnknown so the 
+	This is the only directive/special tag parsed by by TinyXML.
+	Generally directive tags are stored in TiXmlUnknown so the 
 	commands wont be lost when it is saved back to disk.
 
 @verbatim
@@ -419,7 +439,9 @@ relate to the DOM.
 	This element has 1 attribute, with the name "priority" and the value 
 	"1".
 
-Go to the 
+@verbatim
+Go to the
+@endverbatim 
 
 	A TiXmlText. This is a leaf node and cannot contain other nodes. 
 	It is a child of the "Item" TiXmlElement.
@@ -435,15 +457,15 @@ Etc.
 
 Looking at the entire object tree, you end up with:
 @verbatim
-TiXmlDocument				"demo.xml"
-	TiXmlDeclaration		"version='1.0'" "standalone=no"
-	TiXmlComment			" Our to do list data"
-	TiXmlElement			"ToDo"
-		TiXmlElement		"Item"		Attribtutes: priority = 1
-			TiXmlText		"Go to the "
-			TiXmlElement    "bold"
-				TiXmlText	"Toy store!"
-		TiXmlElement			"Item"		Attributes: priority=2
+TiXmlDocument					"demo.xml"
+	TiXmlDeclaration			"version='1.0'" "standalone=no"
+	TiXmlComment				" Our to do list data"
+	TiXmlElement				"ToDo"
+		TiXmlElement			"Item" Attribtutes: priority = 1
+			TiXmlText			"Go to the "
+			TiXmlElement		"bold"
+				TiXmlText		"Toy store!"
+		TiXmlElement			"Item" Attributes: priority=2
 			TiXmlText			"Do bills"
 @endverbatim
 
@@ -454,7 +476,7 @@ configuration file.
 
 <h2> License </h2>
 
-TinyXml is released under the zlib license:
+TinyXML is released under the zlib license:
 
 This software is provided 'as-is', without any express or implied 
 warranty. In no event will the authors be held liable for any 
@@ -495,16 +517,15 @@ to the contributors on the web pages that keep it lively.
 So many people have sent in bugs and ideas, that rather than list here 
 we try to give credit due in the "changes.txt" file.
 
-TinyXml was originally written be Lee Thomason. (Often the "I" still
-in the documenation.) Lee reviews changes and releases new versions,
-with the help of Yves Berquin and the tinyXml community.
+TinyXML was originally written by Lee Thomason. (Often the "I" still
+in the documentation.) Lee reviews changes and releases new versions,
+with the help of Yves Berquin, Andrew Ellerton, and the tinyXml community.
 
 We appreciate your suggestions, and would love to know if you 
-use TinyXml. Hopefully you will enjoy it and find it useful. 
+use TinyXML. Hopefully you will enjoy it and find it useful. 
 Please post questions, comments, file bugs, or contact us at:
 
 www.sourceforge.net/projects/tinyxml
 
-Lee Thomason,
-Yves Berquin
+Lee Thomason, Yves Berquin, Andrew Ellerton
 */
