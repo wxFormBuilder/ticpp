@@ -25,13 +25,13 @@ supports creatation of build scripts for:
   # Place the Premake executable in the root directory of TiCPP or somewhere in your path.
   # To create the needed build files navigate to the TinyXML++ directory (ticpp) and type:
     * Code::Blocks Projects and workspace:
-    _Windows_ ||`premake --target cb-gcc [--unicode]`||
-    _Linux_   ||`premake --target cb-gcc [--unicode]`||
+    _Windows_ ||`premake --target cb-gcc [--unicode] [--shared] [--prefix PathToPutLibDll]`||
+    _Linux_   ||`premake --target cb-gcc [--unicode] [--shared] [--prefix PathToPutLibDll]`||
     * GNU makefiles:
-    _Windows_ ||`premake --target gnu [--unicode]`||
-    _Linux_   ||`premake --target gnu [--unicode]`||
-    * Visual Studio 2005 (8.0) [*Windows ONLY*]
-    _Windows_ ||`premake --target vs2005 [--unicode]`||
+    _Windows_ ||`premake --target gnu [--unicode] [--shared] [--prefix PathToPutLibDll]`||
+    _Linux_   ||`premake --target gnu [--unicode] [--shared] [--prefix PathToPutLibDll]`||
+    * Visual Studio 2005 (8.0) [ *Windows ONLY* ]
+    _Windows_ ||`premake --target vs2005 [--unicode] [--shared] [--prefix PathToPutLibDll]`||
   # Now use the build system of your choice.
     * For Code::Blocks, use the generated .cbp/.workspace
     * For GNU makefiles type:
