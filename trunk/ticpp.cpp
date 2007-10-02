@@ -29,6 +29,55 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using namespace ticpp;
 
+// In the following Visitor functions, casting away const should be safe, as the object can only be referred to by a const &
+bool Visitor::VisitEnter( const TiXmlDocument& doc )
+{
+	return VisitEnter( Document( const_cast< TiXmlDocument* >( &doc ) ) );
+}
+
+bool Visitor::VisitExit( const TiXmlDocument& doc )
+{
+	return VisitEnter( Document( const_cast< TiXmlDocument* >( &doc ) ) );
+}
+
+bool Visitor::VisitEnter( const TiXmlElement& element, const TiXmlAttribute* firstAttribute )
+{
+	if ( 0 != firstAttribute )
+	{
+		Attribute attribute( const_cast< TiXmlAttribute* >( firstAttribute ) );
+		return VisitEnter( Element( const_cast< TiXmlElement* >( &element ) ), &attribute );
+	}
+	else
+	{
+		return VisitEnter( Element( const_cast< TiXmlElement* >( &element ) ), 0 );
+	}
+}
+
+bool Visitor::VisitExit( const TiXmlElement& element )
+{
+	return VisitExit( Element( const_cast< TiXmlElement* >( &element ) ) );
+}
+
+bool Visitor::Visit( const TiXmlDeclaration& declaration )
+{
+	return Visit( Declaration( const_cast< TiXmlDeclaration* >( &declaration ) ) );
+}
+
+bool Visitor::Visit( const TiXmlStylesheetReference& stylesheet )
+{
+	return Visit( StylesheetReference( const_cast< TiXmlStylesheetReference* >( &stylesheet ) ) );
+}
+
+bool Visitor::Visit( const TiXmlText& text )
+{
+	return Visit( Text( const_cast< TiXmlText* >( &text ) ) );
+}
+
+bool Visitor::Visit( const TiXmlComment& comment )
+{
+	return Visit( Comment( const_cast< TiXmlComment* >( &comment ) ) );
+}
+
 Attribute::Attribute()
 {
 	SetTiXmlPointer( new TiXmlAttribute() );
@@ -76,19 +125,19 @@ Attribute::~Attribute()
 	m_impRC->DecRef();
 }
 
-std::string Attribute::Value()
+std::string Attribute::Value() const
 {
 	ValidatePointer();
 	return m_tiXmlPointer->ValueStr();
 }
 
-std::string Attribute::Name()
+std::string Attribute::Name() const
 {
 	ValidatePointer();
 	return m_tiXmlPointer->Name();
 }
 
-Attribute* Attribute::Next( bool throwIfNoAttribute )
+Attribute* Attribute::Next( bool throwIfNoAttribute ) const
 {
 	ValidatePointer();
 	TiXmlAttribute* attribute = m_tiXmlPointer->Next();
@@ -110,7 +159,7 @@ Attribute* Attribute::Next( bool throwIfNoAttribute )
 	return temp;
 }
 
-Attribute* Attribute::Previous( bool throwIfNoAttribute )
+Attribute* Attribute::Previous( bool throwIfNoAttribute ) const
 {
 	ValidatePointer();
 	TiXmlAttribute* attribute = m_tiXmlPointer->Previous();
@@ -132,17 +181,17 @@ Attribute* Attribute::Previous( bool throwIfNoAttribute )
 	return temp;
 }
 
-void Attribute::IterateNext( const std::string&, Attribute** next )
+void Attribute::IterateNext( const std::string&, Attribute** next ) const
 {
 	*next = Next( false );
 }
 
-void Attribute::IteratePrevious( const std::string&, Attribute** previous )
+void Attribute::IteratePrevious( const std::string&, Attribute** previous ) const
 {
 	*previous = Previous( false );
 }
 
-void Attribute::Print( FILE* file, int depth )
+void Attribute::Print( FILE* file, int depth ) const
 {
 	ValidatePointer();
 	m_tiXmlPointer->Print( file, depth );
@@ -209,7 +258,7 @@ Node* Node::NodeFactory( TiXmlNode* tiXmlNode, bool throwIfNull, bool rememberSp
 }
 
 
-std::string Node::Value()
+std::string Node::Value() const
 {
 	return GetTiXmlPointer()->ValueStr();
 }
@@ -219,7 +268,7 @@ void Node::Clear()
 	GetTiXmlPointer()->Clear();
 }
 
-Node* Node::Parent( bool throwIfNoParent )
+Node* Node::Parent( bool throwIfNoParent ) const
 {
 	TiXmlNode* parent = GetTiXmlPointer()->Parent();
 	if ( ( 0 == parent ) && throwIfNoParent )
@@ -230,17 +279,17 @@ Node* Node::Parent( bool throwIfNoParent )
 	return NodeFactory( parent, false );
 }
 
-Node* Node::FirstChild( bool throwIfNoChildren )
+Node* Node::FirstChild( bool throwIfNoChildren ) const
 {
 	return FirstChild( "", throwIfNoChildren );
 }
 
-Node* Node::FirstChild( const std::string& value, bool throwIfNoChildren )
+Node* Node::FirstChild( const std::string& value, bool throwIfNoChildren ) const
 {
 	return FirstChild( value.c_str(), throwIfNoChildren );
 }
 
-Node* Node::FirstChild( const char* value, bool throwIfNoChildren )
+Node* Node::FirstChild( const char* value, bool throwIfNoChildren ) const
 {
 	TiXmlNode* childNode;
 	if ( 0 == strlen( value ) )
@@ -260,17 +309,17 @@ Node* Node::FirstChild( const char* value, bool throwIfNoChildren )
 	return NodeFactory( childNode, false );
 }
 
-Node* Node::LastChild( bool throwIfNoChildren )
+Node* Node::LastChild( bool throwIfNoChildren ) const
 {
 	return LastChild( "", throwIfNoChildren );
 }
 
-Node* Node::LastChild( const std::string& value, bool throwIfNoChildren )
+Node* Node::LastChild( const std::string& value, bool throwIfNoChildren ) const
 {
 	return LastChild( value.c_str(), throwIfNoChildren );
 }
 
-Node* Node::LastChild( const char* value, bool throwIfNoChildren )
+Node* Node::LastChild( const char* value, bool throwIfNoChildren ) const
 {
 	TiXmlNode* childNode;
 	if ( 0 == strlen( value ) )
@@ -290,7 +339,7 @@ Node* Node::LastChild( const char* value, bool throwIfNoChildren )
 	return NodeFactory( childNode, false );
 }
 
-Node* Node::IterateChildren ( Node* previous )
+Node* Node::IterateChildren ( Node* previous ) const
 {
 	TiXmlNode* pointer;
 	if ( 0 == previous )
@@ -305,7 +354,7 @@ Node* Node::IterateChildren ( Node* previous )
 	return NodeFactory( pointer, false );
 }
 
-Node* Node::IterateChildren( const std::string& value, Node* previous )
+Node* Node::IterateChildren( const std::string& value, Node* previous ) const
 {
 	TiXmlNode* pointer;
 	if ( 0 == previous )
@@ -422,17 +471,17 @@ void Node::RemoveChild( Node* removeThis )
 	}
 }
 
-Node* Node::PreviousSibling( bool throwIfNoSiblings )
+Node* Node::PreviousSibling( bool throwIfNoSiblings ) const
 {
 	return PreviousSibling( "", throwIfNoSiblings );
 }
 
-Node* Node::PreviousSibling( const std::string& value, bool throwIfNoSiblings )
+Node* Node::PreviousSibling( const std::string& value, bool throwIfNoSiblings ) const
 {
 	return PreviousSibling( value.c_str(), throwIfNoSiblings );
 }
 
-Node* Node::PreviousSibling( const char* value, bool throwIfNoSiblings )
+Node* Node::PreviousSibling( const char* value, bool throwIfNoSiblings ) const
 {
 	TiXmlNode* sibling;
 	if ( 0 == strlen( value ) )
@@ -452,17 +501,17 @@ Node* Node::PreviousSibling( const char* value, bool throwIfNoSiblings )
 	return NodeFactory( sibling, false );
 }
 
-Node* Node::NextSibling( bool throwIfNoSiblings )
+Node* Node::NextSibling( bool throwIfNoSiblings ) const
 {
 	return NextSibling( "", throwIfNoSiblings );
 }
 
-Node* Node::NextSibling( const std::string& value, bool throwIfNoSiblings )
+Node* Node::NextSibling( const std::string& value, bool throwIfNoSiblings ) const
 {
 	return NextSibling( value.c_str(), throwIfNoSiblings );
 }
 
-Node* Node::NextSibling( const char* value, bool throwIfNoSiblings )
+Node* Node::NextSibling( const char* value, bool throwIfNoSiblings ) const
 {
 	TiXmlNode* sibling;
 	if ( 0 == strlen( value ) )
@@ -482,17 +531,17 @@ Node* Node::NextSibling( const char* value, bool throwIfNoSiblings )
 	return NodeFactory( sibling, false );
 }
 
-Element* Node::NextSiblingElement( bool throwIfNoSiblings )
+Element* Node::NextSiblingElement( bool throwIfNoSiblings ) const
 {
 	return NextSiblingElement( "", throwIfNoSiblings );
 }
 
-Element* Node::NextSiblingElement( const std::string& value, bool throwIfNoSiblings )
+Element* Node::NextSiblingElement( const std::string& value, bool throwIfNoSiblings ) const
 {
 	return NextSiblingElement( value.c_str(), throwIfNoSiblings );
 }
 
-Element* Node::NextSiblingElement( const char* value, bool throwIfNoSiblings )
+Element* Node::NextSiblingElement( const char* value, bool throwIfNoSiblings ) const
 {
 	TiXmlElement* sibling;
 	if ( 0 == strlen( value ) )
@@ -522,17 +571,17 @@ Element* Node::NextSiblingElement( const char* value, bool throwIfNoSiblings )
 	return temp;
 }
 
-Element* Node::FirstChildElement( bool throwIfNoChildren )
+Element* Node::FirstChildElement( bool throwIfNoChildren ) const
 {
 	return FirstChildElement( "", throwIfNoChildren );
 }
 
-Element* Node::FirstChildElement( const std::string& value, bool throwIfNoChildren )
+Element* Node::FirstChildElement( const std::string& value, bool throwIfNoChildren ) const
 {
 	return FirstChildElement( value.c_str(), throwIfNoChildren );
 }
 
-Element* Node::FirstChildElement( const char* value, bool throwIfNoChildren )
+Element* Node::FirstChildElement( const char* value, bool throwIfNoChildren ) const
 {
 	TiXmlElement* element;
 	if ( 0 == strlen( value ) )
@@ -562,12 +611,12 @@ Element* Node::FirstChildElement( const char* value, bool throwIfNoChildren )
 	return temp;
 }
 
-int Node::Type()
+int Node::Type() const
 {
 	return GetTiXmlPointer()->Type();
 }
 
-Document* Node::GetDocument( bool throwIfNoDocument )
+Document* Node::GetDocument( bool throwIfNoDocument ) const
 {
 	TiXmlDocument* doc = GetTiXmlPointer()->GetDocument();
 	if ( 0 == doc )
@@ -587,12 +636,12 @@ Document* Node::GetDocument( bool throwIfNoDocument )
 	return temp;
 }
 
-bool Node::NoChildren()
+bool Node::NoChildren() const
 {
 	return GetTiXmlPointer()->NoChildren();
 }
 
-Document* Node::ToDocument()
+Document* Node::ToDocument() const
 {
 	TiXmlDocument* doc = GetTiXmlPointer()->ToDocument();
 	if ( 0 == doc )
@@ -605,7 +654,7 @@ Document* Node::ToDocument()
 	return temp;
 }
 
-Element* Node::ToElement()
+Element* Node::ToElement() const
 {
 	TiXmlElement* doc = GetTiXmlPointer()->ToElement();
 	if ( 0 == doc )
@@ -618,7 +667,7 @@ Element* Node::ToElement()
 	return temp;
 }
 
-Comment* Node::ToComment()
+Comment* Node::ToComment() const
 {
 	TiXmlComment* doc = GetTiXmlPointer()->ToComment();
 	if ( 0 == doc )
@@ -631,7 +680,7 @@ Comment* Node::ToComment()
 	return temp;
 }
 
-Text* Node::ToText()
+Text* Node::ToText() const
 {
 	TiXmlText* doc = GetTiXmlPointer()->ToText();
 	if ( 0 == doc )
@@ -644,7 +693,7 @@ Text* Node::ToText()
 	return temp;
 }
 
-Declaration* Node::ToDeclaration()
+Declaration* Node::ToDeclaration() const
 {
 	TiXmlDeclaration* doc = GetTiXmlPointer()->ToDeclaration();
 	if ( 0 == doc )
@@ -657,7 +706,7 @@ Declaration* Node::ToDeclaration()
 	return temp;
 }
 
-StylesheetReference* Node::ToStylesheetReference()
+StylesheetReference* Node::ToStylesheetReference() const
 {
 	TiXmlStylesheetReference* doc = GetTiXmlPointer()->ToStylesheetReference();
 	if ( 0 == doc )
@@ -683,6 +732,11 @@ std::auto_ptr< Node > Node::Clone() const
 	temp->m_impRC->InitRef();
 
 	return temp;
+}
+
+bool Node::Accept( TiXmlVisitor* visitor ) const
+{
+	return GetTiXmlPointer()->Accept( visitor );
 }
 
 //*****************************************************************************
@@ -749,11 +803,6 @@ Document::Document( const std::string& documentName )
 : NodeImp< TiXmlDocument >( new TiXmlDocument( documentName ) )
 {
 	m_impRC->InitRef();
-}
-
-std::string Document::GetAsString()
-{
-	return m_tiXmlPointer->GetAsString();
 }
 
 void Document::LoadFile( TiXmlEncoding encoding )
@@ -830,7 +879,7 @@ Element::Element( TiXmlElement* element )
 {
 }
 
-Attribute* Element::FirstAttribute( bool throwIfNoAttributes )
+Attribute* Element::FirstAttribute( bool throwIfNoAttributes ) const
 {
 	ValidatePointer();
 	TiXmlAttribute* attribute = m_tiXmlPointer->FirstAttribute();
@@ -857,7 +906,7 @@ Attribute* Element::FirstAttribute( bool throwIfNoAttributes )
 	return temp;
 }
 
-Attribute* Element::LastAttribute( bool throwIfNoAttributes )
+Attribute* Element::LastAttribute( bool throwIfNoAttributes ) const
 {
 	ValidatePointer();
 	TiXmlAttribute* attribute = m_tiXmlPointer->LastAttribute();
@@ -884,7 +933,7 @@ Attribute* Element::LastAttribute( bool throwIfNoAttributes )
 	return temp;
 }
 
-std::string Element::GetAttributeOrDefault( const std::string& name, const std::string& defaultValue )
+std::string Element::GetAttributeOrDefault( const std::string& name, const std::string& defaultValue ) const
 {
 	std::string value;
 	if ( !GetAttributeImp( name, &value ) )
@@ -894,12 +943,12 @@ std::string Element::GetAttributeOrDefault( const std::string& name, const std::
 	return value;
 }
 
-std::string Element::GetAttribute( const std::string& name )
+std::string Element::GetAttribute( const std::string& name ) const
 {
 	return GetAttributeOrDefault( name, std::string() );
 }
 
-bool Element::GetAttributeImp( const std::string& name, std::string* value )
+bool Element::GetAttributeImp( const std::string& name, std::string* value ) const
 {
 	ValidatePointer();
 
@@ -918,7 +967,7 @@ bool Element::GetAttributeImp( const std::string& name, std::string* value )
 	}
 }
 
-bool Element::GetTextImp( std::string* value )
+bool Element::GetTextImp( std::string* value ) const
 {
 	ValidatePointer();
 
@@ -956,17 +1005,17 @@ Declaration::Declaration( const std::string& version, const std::string& encodin
 	m_impRC->InitRef();
 }
 
-std::string Declaration::Version( void )
+std::string Declaration::Version() const
 {
 	return m_tiXmlPointer->Version();
 }
 
-std::string Declaration::Encoding( void )
+std::string Declaration::Encoding() const
 {
 	return m_tiXmlPointer->Encoding();
 }
 
-std::string Declaration::Standalone( void )
+std::string Declaration::Standalone() const
 {
 	return m_tiXmlPointer->Standalone();
 }
@@ -990,12 +1039,12 @@ StylesheetReference::StylesheetReference( const std::string& type, const std::st
 	m_impRC->InitRef();
 }
 
-std::string StylesheetReference::Type( void )
+std::string StylesheetReference::Type() const
 {
 	return m_tiXmlPointer->Type();
 }
 
-std::string StylesheetReference::Href( void )
+std::string StylesheetReference::Href() const
 {
 	return m_tiXmlPointer->Href();
 }
