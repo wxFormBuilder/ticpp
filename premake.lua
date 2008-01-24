@@ -99,4 +99,5 @@ else
 --*********************************
 	-- Ignore resource files in Linux.
 	table.insert( package.excludes, matchrecursive( "*.rc" ) )
+	table.insert( package.buildoptions, "-fPIC" )
 end
