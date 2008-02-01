@@ -29,15 +29,15 @@ Build Steps:
 	   and type:
 	
 		* Code::Blocks Projects and workspace:
-			Windows:	premake --target cb-gcc [--unicode]
-			Linux:		premake --target cb-gcc [--unicode]
+			Windows:	premake --target cb-gcc [--unicode] [--dynamic-runtime] [--ticpp-shared]
+			Linux:		premake --target cb-gcc [--unicode] [--dynamic-runtime] [--ticpp-shared]
 			
 		* GNU makefiles:
-			Windows:	premake-win32 --target gnu [--unicode]
-			Linux:		premake-linux --target gnu [--unicode]
+			Windows:	premake-win32 --target gnu [--unicode] [--dynamic-runtime] [--ticpp-shared]
+			Linux:		premake-linux --target gnu [--unicode] [--dynamic-runtime] [--ticpp-shared]
 	
 		* Visual Studio 2005 (8.0) [Windows ONLY]
-			Windows:	premake-win32 --target vs2005 [--unicode]
+			Windows:	premake-win32 --target vs2005 [--unicode] [--dynamic-runtime] [--ticpp-shared]
 
 	5) Now use the build system of your choice.
 
