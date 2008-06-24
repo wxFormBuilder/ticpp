@@ -871,6 +871,7 @@ namespace ticpp
 		*/
 		bool NoChildren() const;
 
+		#ifndef TICPP_NO_RTTI
 		/**
 		Pointer conversion ( NOT OBJECT CONVERSION ) - replaces TiXmlNode::ToElement, TiXmlNode::ToDocument, TiXmlNode::ToComment, etc.
 
@@ -891,6 +892,7 @@ namespace ticpp
 			}
 			return pointer;
 		}
+		#endif
 
 		/**
 		Pointer conversion - replaces TiXmlNode::ToDocument.
@@ -1214,7 +1216,11 @@ namespace ticpp
 			// Check for NULL pointers
 			if ( 0 == tiXmlPointer )
 			{
-				TICPPTHROW( "Can not create a " << typeid( T ).name() );
+				#ifdef TICPP_NO_RTTI
+					TICPPTHROW( "Can not create TinyXML objext" );
+				#else
+					TICPPTHROW( "Can not create a " << typeid( T ).name() );
+				#endif
 			}
 			SetTiXmlPointer( tiXmlPointer );
 			m_impRC->IncRef();
