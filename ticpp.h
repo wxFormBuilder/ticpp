@@ -1685,6 +1685,37 @@ namespace ticpp
 		std::string GetAttributeOrDefault( const std::string& name, const std::string& defaultValue ) const;
 
 		/**
+		Returns an attribute of @a name from an element.
+		Uses FromString to convert the string to the type of choice.
+
+		@param name				The name of the attribute you are querying.
+		@param throwIfNotFound	[DEF]	If true, will throw an exception if the attribute doesn't exist
+		@throws Exception When the attribute doesn't exist and throwIfNotFound is true
+		@see GetAttributeOrDefault
+		*/
+		template < class T >
+			T GetAttribute( const std::string& name, bool throwIfNotFound = true ) const
+		{
+			// Get the attribute's value as a std::string
+			std::string temp;
+			T value;
+			if ( !GetAttributeImp( name, &temp ) )
+			{
+				if ( throwIfNotFound )
+				{
+					TICPPTHROW( "Attribute does not exist" );
+				}
+			}
+			else
+			{
+				// Stream the value from the string to T
+				FromString( temp, &value );
+			}
+
+			return value;
+		}
+
+		/**
 		Gets an attribute of @a name from an element.
 		Uses FromString to convert the string to the type of choice.
 
