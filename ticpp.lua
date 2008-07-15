@@ -62,7 +62,7 @@ addoption( "ticpp-shared", "Build the library as a dll" )
 package.language							= "c++"
 
 -- Set object output directory.
-if ( target == "cb-gcc" or target == "gnu" ) then
+if ( string.find( target, ".*-gcc" ) or target == "gnu" ) then
 	package.objdir							= ".obj"
 end
 
@@ -86,7 +86,7 @@ end
 if ( options["unicode"] ) then
 	table.insert( package.buildflags, "unicode" )
 end
-if ( target == "cb-gcc" or target == "gnu" ) then
+if ( string.find( target, ".*-gcc" ) or target == "gnu" ) then
 	table.insert( package.config["Debug"].buildoptions, "-O0" )
 end
 
