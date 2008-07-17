@@ -376,9 +376,6 @@ Node* Node::InsertEndChild( Node& addThis )
 		TICPPTHROW( "Node is a Document and can't be inserted" );
 	}
 
-	// Increment reference count when adding to the tree
-	addThis.m_impRC->IncRef();
-
 	TiXmlNode* pointer = GetTiXmlPointer()->InsertEndChild( *addThis.GetTiXmlPointer() );
 	if ( 0 == pointer )
 	{
