@@ -948,6 +948,18 @@ std::string Element::GetAttribute( const std::string& name ) const
 	return GetAttributeOrDefault( name, std::string() );
 }
 
+bool Element::HasAttribute( const std::string& name ) const
+{
+	ValidatePointer();
+	return ( 0 != m_tiXmlPointer->Attribute( name.c_str() ) );
+}
+
+void Element::RemoveAttribute( const std::string& name )
+{
+	ValidatePointer();
+	m_tiXmlPointer->RemoveAttribute( name.c_str() );
+}
+
 bool Element::GetAttributeImp( const std::string& name, std::string* value ) const
 {
 	ValidatePointer();
