@@ -221,13 +221,10 @@ namespace ticpp
 		*/
 		virtual ~Base()
 		{
-			DeleteSpawnedWrappers();
 		}
 
 	protected:
 		mutable TiCppRCImp* m_impRC;	/**< Holds status of internal TiXmlPointer - use this to determine if object has been deleted already */
-
-		mutable std::vector< Base* > m_spawnedWrappers; /**< Remember all wrappers that we've created with 'new' - ( e.g. NodeFactory, FirstChildElement, etc. )*/
 
 		/**
 		@internal
@@ -246,21 +243,7 @@ namespace ticpp
 			{
 				TICPPTHROW( "Internal TiXml Pointer is NULL" );
 			}
-		}
-
-		/**
-		@internal
-		Delete all container objects we've spawned with 'new'.
-		*/
-		void DeleteSpawnedWrappers()
-		{
-			std::vector< Base* >::reverse_iterator wrapper;
-			for ( wrapper = m_spawnedWrappers.rbegin(); wrapper != m_spawnedWrappers.rend(); ++wrapper )
-			{
-				delete *wrapper;
-			}
-			m_spawnedWrappers.clear();
-		}
+		}		
 
 		/**
 		@internal
@@ -1233,8 +1216,6 @@ namespace ticpp
 		*/
 		virtual void operator=( const NodeImp<T>& copy )
 		{
-			DeleteSpawnedWrappers();
-
 			// Dropping the reference to the old object
 			this->m_impRC->DecRef();
 
@@ -1267,8 +1248,6 @@ namespace ticpp
 		*/
 		virtual ~NodeImp()
 		{
-			// The spawnedWrappers need to be deleted before m_tiXmlPointer
-			DeleteSpawnedWrappers();
 			m_impRC->DecRef();
 		}
 	};
