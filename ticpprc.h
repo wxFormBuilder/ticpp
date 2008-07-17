@@ -25,6 +25,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #ifndef TICPPRC_INCLUDED
 #define TICPPRC_INCLUDED
 
+#include <vector>
 
 // Forward declare ticpp::Node, so it can be made a friend of TiCppRC
 namespace ticpp
@@ -61,6 +62,13 @@ public:
 	Decrements reference count
 	*/
 	virtual ~TiCppRC();
+	
+	std::vector< ticpp::Base* > m_spawnedWrappers; /**< Remember all wrappers that we've created with 'new' - ( e.g. NodeFactory, FirstChildElement, etc. )*/
+
+	/**
+	Delete all container objects we've spawned with 'new'.
+	*/
+	void DeleteSpawnedWrappers();
 };
 
 class TiCppRCImp
