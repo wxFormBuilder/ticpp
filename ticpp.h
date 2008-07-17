@@ -1758,6 +1758,21 @@ namespace ticpp
 		*/
 		std::string GetAttribute( const std::string& name ) const;
 
+		/**
+		Returns true, if attribute exists
+
+		@param name The name of the attribute you are checking.
+		@return Existence of attribute
+		*/
+		bool HasAttribute( const std::string& name ) const;
+
+		/**
+		Removes attribute from element.
+
+		@param name The name of the attribute to remove.
+		*/
+		void RemoveAttribute( const std::string& name );
+
 	private:
 
 		/**
