@@ -1066,8 +1066,8 @@ namespace ticpp
 		}
 
 		/// Constructor
-		Iterator( const Iterator& it, const std::string& value  = "" )
-			: m_p( it.m_p ), m_value( value )
+		Iterator( const Iterator& it )
+			: m_p( it.m_p ), m_value( it.m_value )
 		{
 		}
 
@@ -1084,6 +1084,7 @@ namespace ticpp
 		Iterator& operator=( const Iterator& it )
 		{
 			m_p = it.m_p;
+			m_value = it.m_value;
 			return *this;
 		}
 
@@ -1102,9 +1103,11 @@ namespace ticpp
 		}
 
 		/** Sets internal pointer to the Next Sibling, or Iterator::END, if there are no more siblings */
-		Iterator& operator++(int)
+		Iterator operator++(int)
 		{
-			return this->operator ++();
+			Iterator tmp(*this);
+			++(*this);
+			return tmp;
 		}
 
 		/** Sets internal pointer to the Previous Sibling, or Iterator::END, if there are no prior siblings */
@@ -1115,9 +1118,11 @@ namespace ticpp
 		}
 
 		/** Sets internal pointer to the Previous Sibling, or Iterator::END, if there are no prior siblings */
-		Iterator& operator--(int)
-		{
-			return this->operator --();
+		Iterator operator--(int)
+		{			
+			Iterator tmp(*this);
+			--(*this);
+			return tmp;
 		}
 
 		/** Compares internal pointer */
