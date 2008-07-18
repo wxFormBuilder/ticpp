@@ -847,7 +847,7 @@ void Document::Parse( const std::string& xml, bool throwIfParseError, TiXmlEncod
 	m_tiXmlPointer->Parse( xml.c_str(), 0, encoding );
 	if( throwIfParseError && m_tiXmlPointer->Error() )
 	{
-		TICPPTHROW( "Error parsing xml: " << m_tiXmlPointer->ErrorDesc() );
+		TICPPTHROW( "Error parsing xml." );
 	}
 }
 

@@ -90,6 +90,7 @@ namespace ticpp
 		std::string file( __FILE__ );										\
 		file = file.substr( file.find_last_of( "\\/" ) + 1 );				\
 		full_message << message << " <" << file << "@" << __LINE__ << ">";	\
+		full_message << BuildDetailedErrorString();							\
 		throw Exception( full_message.str() );								\
 	}
 
@@ -230,6 +231,32 @@ namespace ticpp
 		bool operator != ( const Base& rhs ) const
 		{
 			return ( GetBasePointer() != rhs.GetBasePointer() );
+		}
+		
+		/**
+		Builds detailed error string using TiXmlDocument::Error() and others
+		*/
+		std::string BuildDetailedErrorString() const
+		{
+			std::ostringstream full_message;
+			#ifndef TICPP_NO_RTTI
+			TiXmlNode* node = dynamic_cast< TiXmlNode* >( GetBasePointer() );
+			if ( node != 0 )
+			{
+				TiXmlDocument* doc = node->GetDocument();
+				if ( doc != 0 )
+				{
+					if ( doc->Error() )
+					{
+						full_message 	<< "\nDescription: " << doc->ErrorDesc()
+										<< "\nFile: " << (strlen( doc->Value() ) > 0 ? doc->Value() : "<unnamed-file>") 
+										<< "\nLine: " << doc->ErrorRow() 
+										<< "\nColumn: " << doc->ErrorCol();
+					}
+				}
+			}
+			#endif
+			return full_message.str();
 		}
 
 		/**
