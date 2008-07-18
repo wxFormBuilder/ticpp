@@ -217,6 +217,22 @@ namespace ticpp
 		}
 
 		/**
+		Compare internal TiXml pointers to determine is both are wrappers around the same node
+		*/
+		bool operator == ( const Base& rhs ) const
+		{
+			return ( GetBasePointer() == rhs.GetBasePointer() );
+		}
+		
+		/**
+		Compare internal TiXml pointers to determine is both are wrappers around the same node
+		*/
+		bool operator != ( const Base& rhs ) const
+		{
+			return ( GetBasePointer() != rhs.GetBasePointer() );
+		}
+
+		/**
 		Destructor
 		*/
 		virtual ~Base()
@@ -1126,27 +1142,43 @@ namespace ticpp
 		}
 
 		/** Compares internal pointer */
-		bool operator!=( T* p ) const
+		bool operator!=( const T* p ) const
 		{
-			return m_p != p;
+			if ( m_p == p )
+			{
+				return false;
+			}
+			if ( 0 == m_p || 0 == p )
+			{
+				return true;
+			}
+			return *m_p != *p;
 		}
 
 		/** Compares internal pointer */
 		bool operator!=( const Iterator& it ) const
 		{
-			return m_p != it.m_p;
+			return operator!=( it.m_p );
 		}
 
 		/** Compares internal pointer* */
 		bool operator==( T* p ) const
 		{
-			return m_p == p;
+			if ( m_p == p )
+			{
+				return true;
+			}
+			if ( 0 == m_p || 0 == p )
+			{
+				return false;
+			}
+			return *m_p == *p;
 		}
 
 		/** Compares internal pointer */
 		bool operator==( const Iterator& it ) const
 		{
-			return m_p == it.m_p;
+			return operator==( it.m_p );
 		}
 
 		/** So Iterator behaves like a STL iterator */
