@@ -10,10 +10,11 @@ Language=0x409 English (United States)
 Title=TinyXml
 
 [WINDOWS]
-main="TinyXml","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x387e,,,,,,,,0
+main="TinyXml","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x10387e,,,,,,,,0
 
 [FILES]
 index.html
+pages.html
 ticpp_8h-source.html
 ticpprc_8h-source.html
 tinystr_8h-source.html
@@ -129,7 +130,6 @@ classticpp_1_1Declaration-members.html
 classticpp_1_1StylesheetReference.html
 classticpp_1_1StylesheetReference-members.html
 files.html
-pages.html
 tabs.css
 tab_b.gif
 tab_l.gif

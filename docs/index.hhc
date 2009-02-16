@@ -19,6 +19,12 @@
     <UL>
     </UL>
   </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Deprecated List"><param name="Local" value="deprecated.html"><param name="ImageNumber" value="11"></OBJECT>
+  <UL>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Todo List"><param name="Local" value="todo.html"><param name="ImageNumber" value="11"></OBJECT>
+  <UL>
+  </UL>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Class List"><param name="Local" value="annotated.html"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="ticpp::Attribute"><param name="Local" value="classticpp_1_1Attribute.html"><param name="ImageNumber" value="11"></OBJECT>
@@ -56,7 +62,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Name" value="ticpp::Attribute"><param name="Local" value="classticpp_1_1Attribute.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="ticpp::Node"><param name="Local" value="classticpp_1_1Node.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="ticpp::NodeImp< T >"><param name="Local" value="classticpp_1_1NodeImp.html"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="ticpp::NodeImp< TiXmlComment >"><param name="Local" value="classticpp_1_1NodeImp.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="ticpp::Comment"><param name="Local" value="classticpp_1_1Comment.html"><param name="ImageNumber" value="11"></OBJECT>
@@ -81,6 +86,7 @@
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="ticpp::Text"><param name="Local" value="classticpp_1_1Text.html"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ticpp::NodeImp< T >"><param name="Local" value="classticpp_1_1NodeImp.html"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
     </UL>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="ticpp::Exception"><param name="Local" value="classticpp_1_1Exception.html"><param name="ImageNumber" value="11"></OBJECT>
@@ -119,13 +125,6 @@
   <LI><OBJECT type="text/sitemap"><param name="Name" value="tinystr.h"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="tinyxml.h"><param name="ImageNumber" value="11"></OBJECT>
   </UL>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="Related Pages"><param name="Local" value="pages.html"><param name="ImageNumber" value="1"></OBJECT>
-  <UL>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="Deprecated List"><param name="Local" value="deprecated.html"><param name="ImageNumber" value="11"></OBJECT>
-    <UL>
-    </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="Todo List"><param name="Local" value="todo.html"><param name="ImageNumber" value="11"></OBJECT>
-    <UL>
-    </UL>
-  </UL>
 </UL>
+</BODY>
+</HTML>
