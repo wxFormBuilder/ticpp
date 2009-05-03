@@ -3,7 +3,7 @@
 
 =Introduction=
 'TiCPP' is short for the official name TinyXML++. It is a completely new interface to
-TinyXML (http://http://www.grinninglizard.com/tinyxml/) that uses MANY of the C++
+TinyXML (http://www.grinninglizard.com/tinyxml/) that uses MANY of the C++
 strengths. Templates, exceptions, and much better error handling. It is also fully
 documented in doxygen. It is really cool because this version let's you interface tiny the
 exact same way as before or you can choose to use the new 'TiCPP' classes. All you need to
