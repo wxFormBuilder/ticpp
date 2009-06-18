@@ -26,6 +26,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "ticpprc.h"
 #include "tinyxml.h"
 #include <sstream>
+#include "ticpp_sugar.h"
 
 using namespace ticpp;
 
@@ -383,6 +384,22 @@ Node* Node::InsertEndChild( Node& addThis )
 	}
 
 	return NodeFactory( pointer );
+}
+
+Node& Node::Insert( Node& addThis )
+{
+    InsertEndChild(addThis);
+    return *this;
+}
+
+Node& Node::Insert( sugar::NodeCombiner& combiner )
+{
+    Iterator<Node> child;
+    for (child = child.begin(&combiner.RootNode()); child != child.end(); child++)
+    {
+        Insert(*child);
+    }
+    return *this;
 }
 
 Node* Node::LinkEndChild( Node* childNode )
