@@ -56,12 +56,17 @@ It throws exceptions, uses templates, is in its own name space, and
 <b>requires</b> STL (Standard Template Library). This is done to ease the use
 of getting values in and out of the xml.
 
-If you don't perfer to use some of the concepts just don't use it.
+If you don't prefer to use some of the concepts just don't use it.
 It is just a wrapper that extends TinyXML. It doesn't actually change
 any of TinyXML.
 */
 namespace ticpp
 {
+    namespace sugar
+    {
+        class NodeCombiner;
+    }
+
     /**
 	This is a ticpp exception class
 	*/
@@ -617,6 +622,10 @@ namespace ticpp
 		@see TiXmlNode::InsertEndChild
 		*/
 		Node* InsertEndChild( Node& addThis );
+
+        Node& Insert( Node& addThis );
+
+        Node& Insert( sugar::NodeCombiner& combiner );
 
 		/**
 		Adds a child past the LastChild.
@@ -1544,6 +1553,23 @@ namespace ticpp
 		}
 
 		/**
+		Syntactic sugar to add an attribute easily.
+		
+		Allow syntax like the following:
+		@code
+		ticpp::Element("name")("id", 4)("display_name", "Name");
+		@endcode
+		
+		@see SetAttribute
+		*/
+		template < class T >
+			Element & operator()(const std::string& name, const T& value)
+		{
+			SetAttribute(name, value);
+			return *this;
+		}
+		
+		/**
 		Gets the text of an Element.
 
 		@param throwIfNotFound	[DEF]	If true, will throw an exception if there is no text in this element
@@ -1665,9 +1691,10 @@ namespace ticpp
 		Uses ToString to convert the parameter to a string.
 
 		@param value The text to set.
+		@return Return the Element to allow method chaining.
 		*/
 		template < class T >
-			void SetText( const T& value )
+			Element& SetText( const T& value )
 		{
 			ValidatePointer();
 			std::string temp = ToString( value );
@@ -1688,6 +1715,7 @@ namespace ticpp
 					m_tiXmlPointer->FirstChild()->SetValue( temp );
 				}
 			}
+			return *this;
 		}
 
 		/**
