@@ -1397,11 +1397,12 @@ namespace ticpp
 		Document( const char* documentName );
 
 		/**
-		Constructor.
-		Create a document with a name. The name of the document is also the filename of the xml.
-
-		@param documentName Name to set in the Document.
-		*/
+		 * Constructor.
+		 * Create a document with a name. The name of the document is also the filename of the xml.
+		 * @param documentName Name to set in the Document.
+		 * @note LoadFile() needs to be called to actually load the data from the file specified by documentName
+		 * 		 SaveFile() needs to be called to save data to file specified by documentName.
+		 */
 		Document( const std::string& documentName );
 
 		/**
@@ -1746,7 +1747,8 @@ namespace ticpp
 			{
 				if ( throwIfNotFound )
 				{
-					TICPPTHROW( "Attribute does not exist" );
+					const std::string error( std::string( "Attribute '" ) + name + std::string( "' does not exist" ) );
+					TICPPTHROW( error );
 				}
 			}
 			else
@@ -1778,7 +1780,8 @@ namespace ticpp
 			{
 				if ( throwIfNotFound )
 				{
-					TICPPTHROW( "Attribute does not exist" );
+					const std::string error( std::string( "Attribute '" ) + name + std::string( "' does not exist" ) );
+					TICPPTHROW( error );
 				}
 				else
 				{
