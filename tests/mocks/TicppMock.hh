@@ -51,8 +51,13 @@ namespace ticpp
 			MOCK_METHOD0( SaveFile, void ( void ) );
 			MOCK_METHOD1( LoadFile, void ( const std::string& ) );
 			MOCK_METHOD1( Parse, void ( const std::string& ) );
+			MOCK_CONST_METHOD0( GetDocument, StrictMock< Document >* (void) );
 		};
 	}
+}
+inline std::ostream& operator << ( std::ostream& os, const ticpp::mock::Node& )
+{
+	return( os );
 }
 
 #endif // !defined ( __TINY_XML_MOCK__ )
