@@ -21,10 +21,11 @@ namespace ticpp
 			MOCK_METHOD1( SetIntText, void ( const unsigned int ) );
 			MOCK_METHOD1( RemoveChild, void ( Node* ) );
 			MOCK_CONST_METHOD0( ToElement, StrictMock< Element >* (void) );
-			MOCK_CONST_METHOD0( FirstChild, StrictMock< Node >* (void) );
-			MOCK_CONST_METHOD1( FirstChild, StrictMock< Node >* ( const std::string& value) );
-			MOCK_CONST_METHOD2( FirstChild, StrictMock< Node >* ( const std::string& value, bool ) );
+			MOCK_CONST_METHOD0( FirstChild, StrictMock< Node >* (void ) );
+			MOCK_CONST_METHOD1( FirstChild, StrictMock< Node >* ( const std::string& ) );
+			MOCK_CONST_METHOD2( FirstChild, StrictMock< Node >* ( const std::string&, bool ) );
 			MOCK_CONST_METHOD1( IterateChildren, StrictMock< Node >* ( StrictMock< Node >* ) );
+			MOCK_CONST_METHOD2( IterateChildren, StrictMock< Node >* ( const std::string, StrictMock< Node >* ) );
 			MOCK_CONST_METHOD0( FirstChildElement, StrictMock< Element >* () );
 			MOCK_CONST_METHOD1( FirstChildElement, StrictMock< Element >* ( bool ) );
 			MOCK_CONST_METHOD0( Value, std::string (void) );
