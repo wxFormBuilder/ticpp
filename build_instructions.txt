@@ -30,11 +30,11 @@ Build Steps:
 
 		* Code::Blocks Projects and workspace:
 			* Premake v3.x:	premake --target cb-gcc [--unicode] [--dynamic-runtime] [--ticpp-shared]
-			* Premake v4.x:	premake4 cb-gcc [--unicode] [--dynamic-runtime] [--ticpp-shared]
+			* Premake v4.x:	premake4 codeblocks [--unicode] [--dynamic-runtime] [--ticpp-shared]
 
 		* GNU makefiles:
 			* Premake v3.x:	premake --target gnu [--unicode] [--dynamic-runtime] [--ticpp-shared]
-			* Premake v4.x:	premake4 gnu [--unicode] [--dynamic-runtime] [--ticpp-shared]
+			* Premake v4.x:	premake4 gmake [--unicode] [--dynamic-runtime] [--ticpp-shared]
 
 		* Visual Studio 2005 (8.0) [Windows ONLY]
 			* Premake v3.x:	premake --target vs2005 [--unicode] [--dynamic-runtime] [--ticpp-shared]
