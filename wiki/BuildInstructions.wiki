@@ -29,7 +29,7 @@ supports creatation of build scripts for:
     _Premake v4.x:_   ||`premake4 codeblocks [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
     * GNU makefiles:
     _Premake v3.x:_ ||`premake --target gnu [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
-    _Premake v4.x:x_   ||`premake4 gmake [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
+    _Premake v4.x:_   ||`premake4 gmake [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
     * Visual Studio 2005 (8.0) *Windows ONLY*
     _Premake v3.x:_ ||`premake --target vs2005 [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
     _Premake v4.x:_ ||`premake4 vs2005 [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
