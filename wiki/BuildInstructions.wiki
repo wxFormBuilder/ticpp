@@ -8,7 +8,7 @@ strengths. Templates, exceptions, and much better error handling. It is also ful
 documented in doxygen. It is really cool because this version let's you interface tiny the
 exact same way as before or you can choose to use the new 'TiCPP' classes. All you need to
 do is define {{{TIXML_USE_TICPP}}}. It has been tested in VC 6.0, VC 7.0, VC 7.1, VC 8.0,MinGW
-gcc 3.4.5, and in Linux GNU gcc 3+.
+gcc 4.4.1+, and in Linux GNU gcc 4+.
 
 TinyXML++ uses Premake as the build system, so you won't find any project files because
 you generate them for your specific system. Premake is a build script generator. Premake
@@ -25,13 +25,14 @@ supports creatation of build scripts for:
   # Place the Premake executable in the root directory of TiCPP or somewhere in your path.
   # To create the needed build files navigate to the TinyXML++ directory (ticpp) and type:
     * Code::Blocks Projects and workspace:
-    _Windows_ ||`premake --target cb-gcc [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
-    _Linux_   ||`premake --target cb-gcc [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
+    _Premake v3.x:_ ||`premake --target cb-gcc [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
+    _Premake v4.x:_   ||`premake4 codeblocks [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
     * GNU makefiles:
-    _Windows_ ||`premake --target gnu [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
-    _Linux_   ||`premake --target gnu [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
+    _Premake v3.x:_ ||`premake --target gnu [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
+    _Premake v4.x:x_   ||`premake4 gmake [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
     * Visual Studio 2005 (8.0) [ *Windows ONLY* ]
-    _Windows_ ||`premake --target vs2005 [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
+    _Premake v3.x:_ ||`premake --target vs2005 [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
+    _Premake v4.x:_ ||`premake4 vs2005 [--unicode] [--ticpp-shared] [--dynamic-runtime]`||
   # Now use the build system of your choice.
     * For Code::Blocks, use the generated .cbp/.workspace
     * For GNU makefiles type:
