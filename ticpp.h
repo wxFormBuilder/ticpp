@@ -616,7 +616,7 @@ namespace ticpp
 		@see LinkEndChild
 		@see TiXmlNode::InsertEndChild
 		*/
-		Node* InsertEndChild( Node& addThis );
+		Node* InsertEndChild( const Node& addThis );
 
 		/**
 		Adds a child past the LastChild.
@@ -641,7 +641,7 @@ namespace ticpp
 		@see InsertAfterChild
 		@see TiXmlNode::InsertBeforeChild
 		*/
-		Node* InsertBeforeChild( Node* beforeThis, Node& addThis );
+		Node* InsertBeforeChild( Node* beforeThis, const Node& addThis );
 
 		/**
 		Adds a child after the specified child.
@@ -654,7 +654,7 @@ namespace ticpp
 		@see InsertBeforeChild
 		@see TiXmlNode::InsertAfterChild
 		*/
-		Node* InsertAfterChild( Node* afterThis, Node& addThis );
+		Node* InsertAfterChild( Node* afterThis, const Node& addThis );
 
 		/**
 		Replace a child of this node.
@@ -666,7 +666,7 @@ namespace ticpp
 
 		@see TiXmlNode::ReplaceChild
 		*/
-		Node* ReplaceChild( Node* replaceThis, Node& withThis );
+		Node* ReplaceChild( Node* replaceThis, const Node& withThis );
 
 		/**
 		Delete a child of this node.
