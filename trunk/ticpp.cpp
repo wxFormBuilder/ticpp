@@ -369,7 +369,7 @@ Node* Node::IterateChildren( const std::string& value, Node* previous ) const
 	return NodeFactory( pointer, false );
 }
 
-Node* Node::InsertEndChild( Node& addThis )
+Node* Node::InsertEndChild( const Node& addThis )
 {
 	if ( addThis.Type() == TiXmlNode::DOCUMENT )
 	{
@@ -403,7 +403,7 @@ Node* Node::LinkEndChild( Node* childNode )
 	return childNode;
 }
 
-Node* Node::InsertBeforeChild( Node* beforeThis, Node& addThis )
+Node* Node::InsertBeforeChild( Node* beforeThis, const Node& addThis )
 {
 	if ( addThis.Type() == TiXmlNode::DOCUMENT )
 	{
@@ -422,7 +422,7 @@ Node* Node::InsertBeforeChild( Node* beforeThis, Node& addThis )
 	return NodeFactory( pointer );
 }
 
-Node* Node::InsertAfterChild( Node* afterThis, Node& addThis )
+Node* Node::InsertAfterChild( Node* afterThis, const Node& addThis )
 {
 	if ( addThis.Type() == TiXmlNode::DOCUMENT )
 	{
@@ -441,7 +441,7 @@ Node* Node::InsertAfterChild( Node* afterThis, Node& addThis )
 	return NodeFactory( pointer );
 }
 
-Node* Node::ReplaceChild( Node* replaceThis, Node& withThis )
+Node* Node::ReplaceChild( Node* replaceThis, const Node& withThis )
 {
 	if ( withThis.Type() == TiXmlNode::DOCUMENT )
 	{

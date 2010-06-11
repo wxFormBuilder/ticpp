@@ -11,7 +11,7 @@ namespace ticpp
 		{
 			MOCK_METHOD0( Clear, void ( void ) );
 			MOCK_METHOD1( SetValue, void( const std::string& ) );
-			MOCK_METHOD1( InsertEndChild, void( StrictMock< Element >& ) );
+			MOCK_METHOD1( InsertEndChild, void( const StrictMock< Element >& ) );
 			MOCK_METHOD1( LinkEndChild, void( const StrictMock< Node >* ) );
 			MOCK_METHOD1( LinkEndChild, void( const StrictMock< Element >* ) );
 			MOCK_METHOD1( SetText, void ( const double ) );
