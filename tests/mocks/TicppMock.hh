@@ -67,8 +67,9 @@ namespace ticpp
 			{
 			}
 			MOCK_METHOD0( SaveFile, void ( void ) );
-			MOCK_METHOD1( LoadFile, void ( const std::string& ) );
+			MOCK_METHOD1( SaveFile, void ( const std::string& ) );
 			MOCK_METHOD0( LoadFile, void ( void ) );
+			MOCK_METHOD1( LoadFile, void ( const std::string& ) );
 			MOCK_METHOD1( Parse, void ( const std::string& ) );
 			MOCK_CONST_METHOD0( GetDocument, StrictMock< Document >* ( void ) );
 		};
