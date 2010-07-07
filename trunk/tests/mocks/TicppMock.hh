@@ -6,6 +6,7 @@ namespace ticpp
 	namespace mock
 	{
 		struct Element;
+		struct Declaration;
 
 		struct Node
 		{
@@ -14,6 +15,7 @@ namespace ticpp
 			MOCK_METHOD1( InsertEndChild, void( const StrictMock< Element >& ) );
 			MOCK_METHOD1( LinkEndChild, void( const StrictMock< Node >* ) );
 			MOCK_METHOD1( LinkEndChild, void( const StrictMock< Element >* ) );
+			MOCK_METHOD1( LinkEndChild, void( const StrictMock< Declaration >* ) );
 			MOCK_METHOD1( SetText, void ( const double ) );
 			MOCK_METHOD1( SetText, void ( const std::string& ) );
 			MOCK_METHOD1( GetValue, void ( std::string* ) );
@@ -66,8 +68,23 @@ namespace ticpp
 			}
 			MOCK_METHOD0( SaveFile, void ( void ) );
 			MOCK_METHOD1( LoadFile, void ( const std::string& ) );
+			MOCK_METHOD0( LoadFile, void ( void ) );
 			MOCK_METHOD1( Parse, void ( const std::string& ) );
 			MOCK_CONST_METHOD0( GetDocument, StrictMock< Document >* ( void ) );
+		};
+		
+		struct Declaration : public Node
+		{
+			Declaration( void )
+			{
+			}
+			Declaration( const std::string&, const std::string&, const std::string& )
+			{
+			}
+		};
+		
+		struct Comment : public Node
+		{
 		};
 	}
 }
