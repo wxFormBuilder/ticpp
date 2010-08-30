@@ -38,7 +38,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 @todo add TYPECOUNT support. See ticpp::NodeFactory.
 @todo Add a quick reference
 */
-#ifdef TIXML_USE_TICPP
+#ifndef TIXML_USE_TICPP
+	#define TIXML_USE_TICPP
+#endif
 
 #ifndef TICPP_INCLUDED
 #define TICPP_INCLUDED
@@ -224,7 +226,7 @@ namespace ticpp
 		{
 			return ( GetBasePointer() == rhs.GetBasePointer() );
 		}
-		
+
 		/**
 		Compare internal TiXml pointers to determine is both are wrappers around the same node
 		*/
@@ -232,7 +234,7 @@ namespace ticpp
 		{
 			return ( GetBasePointer() != rhs.GetBasePointer() );
 		}
-		
+
 		/**
 		Builds detailed error string using TiXmlDocument::Error() and others
 		*/
@@ -249,8 +251,8 @@ namespace ticpp
 					if ( doc->Error() )
 					{
 						full_message 	<< "\nDescription: " << doc->ErrorDesc()
-										<< "\nFile: " << (strlen( doc->Value() ) > 0 ? doc->Value() : "<unnamed-file>") 
-										<< "\nLine: " << doc->ErrorRow() 
+										<< "\nFile: " << (strlen( doc->Value() ) > 0 ? doc->Value() : "<unnamed-file>")
+										<< "\nLine: " << doc->ErrorRow()
 										<< "\nColumn: " << doc->ErrorCol();
 					}
 				}
@@ -286,7 +288,7 @@ namespace ticpp
 			{
 				TICPPTHROW( "Internal TiXml Pointer is NULL" );
 			}
-		}		
+		}
 
 		/**
 		@internal
@@ -1162,7 +1164,7 @@ namespace ticpp
 
 		/** Sets internal pointer to the Previous Sibling, or Iterator::END, if there are no prior siblings */
 		Iterator operator--(int)
-		{			
+		{
 			Iterator tmp(*this);
 			--(*this);
 			return tmp;
@@ -1901,5 +1903,3 @@ namespace ticpp
 }
 
 #endif	// TICPP_INCLUDED
-
-#endif // TIXML_USE_TICPP
