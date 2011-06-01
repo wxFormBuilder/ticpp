@@ -25,43 +25,41 @@
 --*		- use the '/' slash for all paths.
 --*****************************************************************************
 
---******* Initial Setup ************
---*	Most of the setting are set here.
---**********************************
+
+--
+-- Package options
+--
+newoption
+{
+	trigger = "ticpp-shared",
+	description = "Build TinyXML++ as a dll"
+}
+
+ticpp = {}
+
+function ticpp.GetCustomValue( item )
+	local prj = project()
+	for _, block in pairs( prj.blocks ) do
+		if block[item] then
+			return block[item]
+		end
+	end
+	return nil
+end
 
 -- Set the name of your package.
 project "TiCPP"
-	-- Set this if you want a different name for your target than the projects's name.
-	outName						= "ticpp"
+
 	-- Set the files to include/exclude.
 	files						{ "*.cpp", "*.h" }
 	excludes					{ "xmltest.cpp" }
-	-- Setup the output directory options.
-	--		Note: Use 'libdir' for "lib" kind only.
-	--bindir					"../lib"
-	--libdir					"../lib"
+
 	-- Set the defines.
 	defines						{ "TIXML_USE_TICPP" }
 
---------------------------- DO NOT EDIT BELOW ----------------------------------
 	-- Common setup
 	language					"C++"
 	flags						{ "ExtraWarnings" }
-	--******* GENAERAL SETUP **********
-	--*	Settings that are not dependant
-	--*	on the operating system.
-	--*********************************
-
--- OPTIONS ---------------------------------------------------------------------
---
-	--
-	-- Package options
-	--
-	newoption
-	{
-		trigger = "ticpp-shared",
-		description = "Build TinyXML++ as a dll"
-	}
 
 	--
 	-- TinyXML++ dll
@@ -70,6 +68,9 @@ project "TiCPP"
 		kind 					"SharedLib"
 	else
 		kind 					"StaticLib"
+		if not ticpp.GetCustomValue( "targetdir" ) then
+			targetdir( solution().basedir .. "/lib" )
+		end
 	end
 
 	--
@@ -79,8 +80,16 @@ project "TiCPP"
 		flags					{ "StaticRuntime" }
 	end
 
--- CONFIGURATIONS -------------------------------------------------------------
---
+	--
+	-- Operating Systems specific
+	--
+	if os.is( "windows" ) then
+		defines					{ "WIN32", "_WINDOWS" }
+	else
+		excludes				{ "**.rc" }		-- Ignore resource files in Linux.
+		buildoptions			{ "-fPIC" }
+	end
+
 	--
 	-- Unicode
 	--
@@ -102,29 +111,21 @@ project "TiCPP"
 		-- Windows and Visual C++ 2005/2008
 		defines					{ "_CRT_SECURE_NO_DEPRECATE" }
 
+	configuration( "vs2008 or vs2010" )
+		-- multi-process building
+		flags( "NoMinimalRebuild" )
+		buildoptions( "/MP" )
+
 	--
 	-- Release/Debug
 	--
-	-- Set the default targetName if none is specified.
-	if #outName <= 0 then outName = project().name end
-	print( outName )
-	print( project().name )
+
 	-- Set the targets.
 	configuration "Release"
-		targetname				( outName )
+		targetname				( "ticpp" )
 		defines					{ "NDEBUG" }
 		flags					{ "OptimizeSpeed" }
 	configuration "Debug"
-		targetname 				( outName.."d" )
+		targetname 				( "ticppd" )
 		defines					{ "DEBUG", "_DEBUG" }
 		flags					{ "Symbols" }
-
-	--
-	-- Operating Systems specific
-	--
-	if configuration "windows" then
-		defines					{ "WIN32", "_WINDOWS" }
-	else
-		excludes				{ "**.rc" }		-- Ignore resource files in Linux.
-		buildoptions			{ "-fPIC" }
-	end
