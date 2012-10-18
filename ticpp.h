@@ -38,6 +38,13 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 @todo add TYPECOUNT support. See ticpp::NodeFactory.
 @todo Add a quick reference
 */
+
+ /*
+ * THIS FILE WAS ALTERED BY Matt Janisz, 12. October 2012.
+ *
+ * - added ticppapi.h include and TICPP_API dll-interface to support building DLL using VS200X
+ */
+ 
 #ifndef TIXML_USE_TICPP
 	#define TIXML_USE_TICPP
 #endif
@@ -45,6 +52,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #ifndef TICPP_INCLUDED
 #define TICPP_INCLUDED
 
+#include "ticppapi.h"
 #include "tinyxml.h"
 #include <sstream>
 #include <vector>
@@ -67,7 +75,7 @@ namespace ticpp
     /**
 	This is a ticpp exception class
 	*/
-	class Exception : public std::exception
+	class TICPP_API Exception : public std::exception
 	{
 	public:
 		/**
@@ -97,16 +105,16 @@ namespace ticpp
 	}
 
 	// Forward Declarations for Visitor, and others.
-	class Document;
-	class Element;
-	class Declaration;
-	class StylesheetReference;
-	class Text;
-	class Comment;
-	class Attribute;
+	class TICPP_API Document;
+	class TICPP_API Element;
+	class TICPP_API Declaration;
+	class TICPP_API StylesheetReference;
+	class TICPP_API Text;
+	class TICPP_API Comment;
+	class TICPP_API Attribute;
 
 	/** Wrapper around TiXmlVisitor */
-	class Visitor : public TiXmlVisitor
+	class TICPP_API Visitor : public TiXmlVisitor
 	{
 	public:
 		// Overload the TiXmlVisitor functions, wrap objects, call ticpp::Visitor functions
@@ -149,7 +157,7 @@ namespace ticpp
 	};
 
 	/** Wrapper around TiXmlBase */
-	class Base
+	class TICPP_API Base
 	{
 	public:
 
@@ -300,7 +308,7 @@ namespace ticpp
 	/**
 	Wrapper around TiXmlAttribute
 	*/
-	class Attribute : public Base
+	class TICPP_API Attribute : public Base
 	{
 	private:
 		TiXmlAttribute* m_tiXmlPointer;
@@ -467,7 +475,7 @@ namespace ticpp
 	/**
 	Wrapper around TiXmlNode
 	*/
-	class Node : public Base
+	class TICPP_API Node : public Base
 	{
 	public:
 
@@ -1319,7 +1327,7 @@ namespace ticpp
 	};
 
 	/** Wrapper around TiXmlComment */
-	class Comment : public NodeImp< TiXmlComment >
+	class TICPP_API Comment : public NodeImp< TiXmlComment >
 	{
 	public:
 
@@ -1340,7 +1348,7 @@ namespace ticpp
 	};
 
 	/** Wrapper around TiXmlText */
-	class Text : public NodeImp< TiXmlText >
+	class TICPP_API Text : public NodeImp< TiXmlText >
 	{
 	public:
 
@@ -1379,7 +1387,7 @@ namespace ticpp
 	};
 
 	/** Wrapper around TiXmlDocument */
-	class Document : public NodeImp< TiXmlDocument >
+	class TICPP_API Document : public NodeImp< TiXmlDocument >
 	{
 	public:
 		/**
@@ -1458,7 +1466,7 @@ namespace ticpp
 	};
 
 	/** Wrapper around TiXmlElement */
-	class Element : public NodeImp< TiXmlElement >
+	class TICPP_API Element : public NodeImp< TiXmlElement >
 	{
 	public:
 		/**
@@ -1837,7 +1845,7 @@ namespace ticpp
 	};
 
 	/** Wrapper around TiXmlDeclaration */
-	class Declaration : public NodeImp< TiXmlDeclaration >
+	class TICPP_API Declaration : public NodeImp< TiXmlDeclaration >
 	{
 	public:
 		/**
@@ -1872,7 +1880,7 @@ namespace ticpp
 	};
 
 	/** Wrapper around TiXmlStylesheetReference */
-	class StylesheetReference : public NodeImp< TiXmlStylesheetReference >
+	class TICPP_API StylesheetReference : public NodeImp< TiXmlStylesheetReference >
 	{
 	public:
 		/**
