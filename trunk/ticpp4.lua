@@ -66,6 +66,9 @@ project "TiCPP"
 	--
 	if _OPTIONS["ticpp-shared"] then
 		kind 					"SharedLib"
+        
+        -- Define BUILD_TICPP_DLL to provide dll-interface declarations.
+        defines						{ "BUILD_TICPP_DLL" }
 	else
 		kind 					"StaticLib"
 		if not ticpp.GetCustomValue( "targetdir" ) then

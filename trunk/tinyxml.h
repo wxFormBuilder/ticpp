@@ -22,6 +22,11 @@ must not be misrepresented as being the original software.
 distribution.
 */
 
+ /*
+ * THIS FILE WAS ALTERED BY Matt Janisz, 12. October 2012.
+ *
+ * - added ticppapi.h include and TICPP_API dll-interface to support building DLL using VS200X
+ */
 
 #ifndef TINYXML_INCLUDED
 #define TINYXML_INCLUDED
@@ -32,6 +37,7 @@ distribution.
 #pragma warning( disable : 4786 )
 #endif
 
+#include "ticppapi.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -88,15 +94,15 @@ distribution.
 	#endif
 #endif
 
-class TiXmlDocument;
-class TiXmlElement;
-class TiXmlComment;
-class TiXmlUnknown;
-class TiXmlAttribute;
-class TiXmlText;
-class TiXmlDeclaration;
-class TiXmlStylesheetReference;
-class TiXmlParsingData;
+class TICPP_API TiXmlDocument;
+class TICPP_API TiXmlElement;
+class TICPP_API TiXmlComment;
+class TICPP_API TiXmlUnknown;
+class TICPP_API TiXmlAttribute;
+class TICPP_API TiXmlText;
+class TICPP_API TiXmlDeclaration;
+class TICPP_API TiXmlStylesheetReference;
+class TICPP_API TiXmlParsingData;
 
 const int TIXML_MAJOR_VERSION = 2;
 const int TIXML_MINOR_VERSION = 5;
@@ -105,7 +111,7 @@ const int TIXML_PATCH_VERSION = 3;
 /*	Internal structure for tracking location of items
 	in the XML file.
 */
-struct TiXmlCursor
+struct TICPP_API TiXmlCursor
 {
 	TiXmlCursor()		{ Clear(); }
 	void Clear()		{ row = col = -1; }
@@ -133,7 +139,7 @@ struct TiXmlCursor
 
 	@sa TiXmlNode::Accept()
 */
-class TiXmlVisitor
+class TICPP_API TiXmlVisitor
 {
 public:
 	virtual ~TiXmlVisitor() {}
@@ -203,9 +209,9 @@ const TiXmlEncoding TIXML_DEFAULT_ENCODING = TIXML_ENCODING_UNKNOWN;
 */
 #ifdef TIXML_USE_TICPP
 #include "ticpprc.h"
-class TiXmlBase : public TiCppRC
+class TICPP_API TiXmlBase : public TiCppRC
 #else
-class TiXmlBase
+class TICPP_API TiXmlBase
 #endif
 {
 	friend class TiXmlNode;
@@ -435,7 +441,7 @@ private:
 	in a document, or stand on its own. The type of a TiXmlNode
 	can be queried, and it can be cast to its more defined type.
 */
-class TiXmlNode : public TiXmlBase
+class TICPP_API TiXmlNode : public TiXmlBase
 {
 	friend class TiXmlDocument;
 	friend class TiXmlElement;
@@ -794,7 +800,7 @@ private:
 		  part of the tinyXML document object model. There are other
 		  suggested ways to look at this problem.
 */
-class TiXmlAttribute : public TiXmlBase
+class TICPP_API TiXmlAttribute : public TiXmlBase
 {
 	friend class TiXmlAttributeSet;
 
@@ -918,7 +924,7 @@ private:
 		- I like circular lists
 		- it demonstrates some independence from the (typical) doubly linked list.
 */
-class TiXmlAttributeSet
+class TICPP_API TiXmlAttributeSet
 {
 public:
 	TiXmlAttributeSet();
@@ -958,7 +964,7 @@ private:
 	and can contain other elements, text, comments, and unknowns.
 	Elements also contain an arbitrary number of attributes.
 */
-class TiXmlElement : public TiXmlNode
+class TICPP_API TiXmlElement : public TiXmlNode
 {
 public:
 	/// Construct an element.
@@ -1168,7 +1174,7 @@ private:
 
 /**	An XML comment.
 */
-class TiXmlComment : public TiXmlNode
+class TICPP_API TiXmlComment : public TiXmlNode
 {
 public:
 	/// Constructs an empty comment.
@@ -1218,7 +1224,7 @@ private:
 	you generally want to leave it alone, but you can change the output mode with
 	SetCDATA() and query it with CDATA().
 */
-class TiXmlText : public TiXmlNode
+class TICPP_API TiXmlText : public TiXmlNode
 {
 	friend class TiXmlElement;
 public:
@@ -1291,7 +1297,7 @@ private:
 	handled as special cases, not generic attributes, simply
 	because there can only be at most 3 and they are always the same.
 */
-class TiXmlDeclaration : public TiXmlNode
+class TICPP_API TiXmlDeclaration : public TiXmlNode
 {
 public:
 	/// Construct an empty declaration.
@@ -1361,7 +1367,7 @@ private:
 	handled as special cases, not generic attributes, simply
 	because there can only be at most 2 and they are always the same.
 */
-class TiXmlStylesheetReference : public TiXmlNode
+class TICPP_API TiXmlStylesheetReference : public TiXmlNode
 {
 public:
 	/// Construct an empty declaration.
@@ -1424,7 +1430,7 @@ private:
 
 	DTD tags get thrown into TiXmlUnknowns.
 */
-class TiXmlUnknown : public TiXmlNode
+class TICPP_API TiXmlUnknown : public TiXmlNode
 {
 public:
 	TiXmlUnknown() : TiXmlNode( TiXmlNode::UNKNOWN )	{}
@@ -1463,7 +1469,7 @@ private:
 	XML pieces. It can be saved, loaded, and printed to the screen.
 	The 'value' of a document node is the xml file name.
 */
-class TiXmlDocument : public TiXmlNode
+class TICPP_API TiXmlDocument : public TiXmlNode
 {
 public:
 	/// Create an empty document, that has no name.
@@ -1712,7 +1718,7 @@ private:
 	}
 	@endverbatim
 */
-class TiXmlHandle
+class TICPP_API TiXmlHandle
 {
 public:
 	/// Create a handle from any node (at any depth of the tree.) This can be a null pointer.
@@ -1811,7 +1817,7 @@ private:
 	fprintf( stdout, "%s", printer.CStr() );
 	@endverbatim
 */
-class TiXmlPrinter : public TiXmlVisitor
+class TICPP_API TiXmlPrinter : public TiXmlVisitor
 {
 public:
 	TiXmlPrinter() : depth( 0 ), simpleTextPrint( false ),

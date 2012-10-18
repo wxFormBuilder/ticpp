@@ -34,11 +34,18 @@ distribution.
  * - added swap(), clear(), size(), capacity(), operator+().
  */
 
+ /*
+ * THIS FILE WAS ALTERED BY Matt Janisz, 12. October 2012.
+ *
+ * - added ticppapi.h include and TICPP_API dll-interface to support building DLL using VS200X
+ */
+
 #ifndef TIXML_USE_STL
 
 #ifndef TIXML_STRING_INCLUDED
 #define TIXML_STRING_INCLUDED
 
+#include "ticppapi.h"
 #include <assert.h>
 #include <string.h>
 
@@ -64,7 +71,7 @@ distribution.
    The buffer allocation is made by a simplistic power of 2 like mechanism : if we increase
    a string and there's no more room, we allocate a buffer twice as big as we need.
 */
-class TiXmlString
+class TICPP_API TiXmlString
 {
   public :
 	// The size type used
@@ -295,7 +302,7 @@ TiXmlString operator + (const char* a, const TiXmlString & b);
    TiXmlOutStream is an emulation of std::ostream. It is based on TiXmlString.
    Only the operators that we need for TinyXML have been developped.
 */
-class TiXmlOutStream : public TiXmlString
+class TICPP_API TiXmlOutStream : public TiXmlString
 {
 public :
 
