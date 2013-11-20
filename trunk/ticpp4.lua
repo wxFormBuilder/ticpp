@@ -35,6 +35,12 @@ newoption
 	description = "Build TinyXML++ as a dll"
 }
 
+newoption
+{
+   trigger     = "force-32bit",
+   description = "Forces GCC to build as a 32bit only"
+}
+
 ticpp = {}
 
 function ticpp.GetCustomValue( item )
@@ -61,6 +67,15 @@ project "TiCPP"
 	language					"C++"
 	flags						{ "ExtraWarnings" }
 
+	--
+	-- Compiler Flags
+	--
+	if _OPTIONS["force-32bit"] then
+		buildoptions( "-m32" )
+		linkoptions( "-m32" )
+		resoptions( "-F pe-i386" )
+	end
+	
 	--
 	-- TinyXML++ dll
 	--
