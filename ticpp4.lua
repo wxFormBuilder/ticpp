@@ -35,12 +35,6 @@ newoption
 	description = "Build TinyXML++ as a dll"
 }
 
-newoption
-{
-   trigger     = "force-32bit",
-   description = "Forces GCC to build as a 32bit only"
-}
-
 ticpp = {}
 
 function ticpp.GetCustomValue( item )
@@ -68,22 +62,10 @@ project "TiCPP"
 	flags						{ "ExtraWarnings" }
 
 	--
-	-- Compiler Flags
-	--
-	if _OPTIONS["force-32bit"] then
-		buildoptions( "-m32" )
-		linkoptions( "-m32" )
-		resoptions( "-F pe-i386" )
-	end
-	
-	--
 	-- TinyXML++ dll
 	--
 	if _OPTIONS["ticpp-shared"] then
 		kind 					"SharedLib"
-        
-        -- Define BUILD_TICPP_DLL to provide dll-interface declarations.
-        defines						{ "BUILD_TICPP_DLL" }
 	else
 		kind 					"StaticLib"
 		if not ticpp.GetCustomValue( "targetdir" ) then
@@ -129,7 +111,7 @@ project "TiCPP"
 		-- Windows and Visual C++ 2005/2008
 		defines					{ "_CRT_SECURE_NO_DEPRECATE" }
 
-	configuration( "vs2008 or vs2010" )
+	configuration( "not vs2005" )
 		-- multi-process building
 		flags( "NoMinimalRebuild" )
 		buildoptions( "/MP" )
