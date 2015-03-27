@@ -111,7 +111,7 @@ project "TiCPP"
 		-- Windows and Visual C++ 2005/2008
 		defines					{ "_CRT_SECURE_NO_DEPRECATE" }
 
-	configuration( "not vs2005" )
+	configuration( "vs*", "not vs2005" )
 		-- multi-process building
 		flags( "NoMinimalRebuild" )
 		buildoptions( "/MP" )
