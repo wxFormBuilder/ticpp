@@ -114,7 +114,7 @@ project "TiCPP"
 	configuration( "not vs2005" )
 		-- multi-process building
 		flags( "NoMinimalRebuild" )
-		buildoptions( "/MP" )
+		buildoptions( "-MP" )
 
 	--
 	-- Release/Debug
