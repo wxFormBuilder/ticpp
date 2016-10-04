@@ -1,0 +1,13 @@
+build_script:
+- cmd: >-
+    C:\msys64\usr\bin\bash -lc "pacman -S --needed --noconfirm mingw-w64-i686-premake mingw-w64-x86_64-premake"
+
+    set MSYSTEM=MINGW32
+
+    C:\msys64\usr\bin\bash -lc "cd '%cd%' && premake4 gmake && make && make config=release"
+
+    git clean -xfd
+
+    set MSYSTEM=MINGW64
+
+    C:\msys64\usr\bin\bash -lc "cd '%cd%' && premake4 gmake && make && make config=release"
