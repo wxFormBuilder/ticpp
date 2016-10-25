@@ -8,11 +8,16 @@ if(BUILD_SHARED_LIBS)
     add_definitions(-DBUILD_TICPP_DLL)
 endif(BUILD_SHARED_LIBS)
 
-add_definitions(-DTIXML_USE_TICPP)
 add_library(ticpp
     ticpp.cpp
     tinystr.cpp
     tinyxml.cpp
     tinyxmlerror.cpp
     tinyxmlparser.cpp
+)
+target_include_directories(ticpp
+    INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
+)
+target_compile_definitions(ticpp
+    PUBLIC TIXML_USE_TICPP
 )
