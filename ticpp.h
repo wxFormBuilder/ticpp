@@ -44,7 +44,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  * - added ticppapi.h include and TICPP_API dll-interface to support building DLL using VS200X
  */
- 
+
 #ifndef TIXML_USE_TICPP
 	#define TIXML_USE_TICPP
 #endif
@@ -975,13 +975,13 @@ namespace ticpp
 		/**
 		Create an exact duplicate of this node and return it.
 
-		@note Using auto_ptr to manage the memory declared on the heap by TiXmlNode::Clone.
+		@note Using unique_ptr to manage the memory declared on the heap by TiXmlNode::Clone.
 		@code
 		// Now using clone
 		ticpp::Document doc( "C:\\Test.xml" );
 		ticpp::Node* sectionToClone;
 		sectionToClone = doc.FirstChild( "settings" );
-		std::auto_ptr< ticpp::Node > clonedNode = sectionToClone->Clone();
+		std::unique_ptr< ticpp::Node > clonedNode = sectionToClone->Clone();
 		// Now you can use the clone.
 		ticpp::Node* node2 = clonedNode->FirstChildElement()->FirstChild();
 		...
@@ -989,7 +989,7 @@ namespace ticpp
 		@endcode
 		@return Pointer the duplicate node.
 		*/
-		std::auto_ptr< Node > Clone() const;
+		std::unique_ptr< Node > Clone() const;
 
 		/**
 		Accept a hierchical visit the nodes in the TinyXML DOM.

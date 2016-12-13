@@ -23,7 +23,7 @@ namespace ticpp
 			MOCK_METHOD1( GetValue, void ( std::string* ) );
 			MOCK_METHOD1( SetIntText, void ( const unsigned int ) );
 			MOCK_METHOD1( RemoveChild, void ( Node* ) );
-			MOCK_CONST_METHOD0( Clone, const Node& ( void ) );		//This is done because auto_ptr's copy constructor is declared explicit and generates a compiler error inside googlemock.
+			MOCK_CONST_METHOD0( Clone, const Node& ( void ) );		//This is done because unique_ptr's copy constructor is deleted and generates a compiler error inside googlemock.
 			MOCK_CONST_METHOD0( ToElement, Element*( void ) );
 			MOCK_CONST_METHOD0( NoChildren, bool ( void ) );
 			MOCK_CONST_METHOD0( FirstChild, Node*( void ) );
@@ -41,7 +41,7 @@ namespace ticpp
 
 		struct Node : public StrictMock< NodeBase >
 		{
-			//This is the work around for the Clone method not returning auto_ptr.
+			//This is the work around for the Clone method not returning unique_ptr.
 			const Node* release( void ) const
 			{
 				return this;
