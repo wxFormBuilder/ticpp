@@ -716,14 +716,14 @@ StylesheetReference* Node::ToStylesheetReference() const
 	return temp;
 }
 
-std::auto_ptr< Node > Node::Clone() const
+std::unique_ptr< Node > Node::Clone() const
 {
 	TiXmlNode* node = GetTiXmlPointer()->Clone();
 	if ( 0 == node )
 	{
 		TICPPTHROW( "Node could not be cloned" );
 	}
-	std::auto_ptr< Node > temp( NodeFactory( node, false, false ) );
+	std::unique_ptr< Node > temp( NodeFactory( node, false, false ) );
 
 	// Take ownership of the memory from TiXml
 	temp->m_impRC->InitRef();
@@ -1093,11 +1093,11 @@ void TiCppRC::DeleteSpawnedWrappers()
 	}
 	m_spawnedWrappers.clear();
 }
-		
+
 TiCppRC::~TiCppRC()
-{	
+{
 	DeleteSpawnedWrappers();
-	
+
 	// Set pointer held by reference counter to NULL
 	this->m_tiRC->Nullify();
 

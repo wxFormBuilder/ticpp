@@ -26,6 +26,7 @@ solution "TinyXML++"
 	targetdir "lib"
 	implibdir "lib"
 	configurations { "Debug", "Release" }
+	buildoptions { "-std=c++14" }
 
 -- This is for including other Premake scripts.
 dofile( "ticpp4.lua" )
