@@ -4,6 +4,10 @@ cmake_minimum_required(VERSION 2.8.7 FATAL_ERROR)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_DEBUG_POSTFIX "d")
 
+if(CMAKE_COMPILER_IS_GNUCXX)
+    add_definitions(-std=c++11)
+endif()
+
 if(BUILD_SHARED_LIBS)
     add_definitions(-DBUILD_TICPP_DLL)
 endif(BUILD_SHARED_LIBS)
