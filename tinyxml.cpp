@@ -1604,6 +1604,7 @@ void TiXmlAttributeSet::Add( TiXmlAttribute* addMe )
 
 void TiXmlAttributeSet::Remove( TiXmlAttribute* removeMe )
 {
+	assert(removeMe);
 	TiXmlAttribute* node;
 
 	for( node = sentinel.next; node != &sentinel; node = node->next )
