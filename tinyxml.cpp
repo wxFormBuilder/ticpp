@@ -23,7 +23,7 @@ distribution.
 */
 #include "tinyxml.h"
 
-#include <ctype.h>
+#include <cctype>
 
 #ifdef TIXML_USE_STL
 #include <sstream>
