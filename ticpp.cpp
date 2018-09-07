@@ -23,9 +23,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #ifdef TIXML_USE_TICPP
 
 #include "ticpp.h"
-#include "ticpprc.h"
-#include "tinyxml.h"
-#include <sstream>
 
 using namespace ticpp;
 
@@ -97,18 +94,6 @@ Attribute::Attribute( const std::string& name, const std::string& value )
 }
 
 void Attribute::operator=( const Attribute& copy )
-{
-	// Dropping the reference to the old object
-	this->m_impRC->DecRef();
-
-	// Pointing to the new Object
-	SetTiXmlPointer( copy.m_tiXmlPointer );
-
-	// The internal tixml pointer changed in the above line
-	this->m_impRC->IncRef();
-}
-
-Attribute::Attribute( const Attribute& copy ) : Base()
 {
 	// Dropping the reference to the old object
 	this->m_impRC->DecRef();

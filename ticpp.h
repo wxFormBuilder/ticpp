@@ -52,13 +52,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #ifndef TICPP_INCLUDED
 #define TICPP_INCLUDED
 
-#include "ticppapi.h"
 #include "tinyxml.h"
-#include <sstream>
-#include <vector>
+
 #include <memory>
-#include <exception>
-#include <typeinfo>
 
 /**
 @subpage ticpp is a TinyXML wrapper that uses a lot more C++ ideals.
@@ -416,11 +412,7 @@ namespace ticpp
 		*/
 		void operator=( const Attribute& copy );
 
-		/**
-		@internal
-		Updates the reference count for the old and new pointers.
-		*/
-		Attribute( const Attribute& copy );
+		Attribute( const Attribute& copy ) = delete;
 
 		/*
 		Decrements reference count.
