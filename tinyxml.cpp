@@ -130,9 +130,7 @@ void TiXmlBase::EncodeString( const TIXML_STRING& str, TIXML_STRING* outString )
 	}
 }
 
-
-TiXmlNode::TiXmlNode( NodeType _type ) : TiXmlBase()
-{
+TiXmlNode::TiXmlNode(NodeType _type) {
 	parent = 0;
 	type = _type;
 	firstChild = 0;
