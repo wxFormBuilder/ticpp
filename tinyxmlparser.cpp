@@ -24,6 +24,8 @@ distribution.
 
 #include "tinyxml.h"
 
+#include <cstddef>
+
 //#define DEBUG_PARSER
 #if defined( DEBUG_PARSER )
 #	if defined( DEBUG ) && defined( _MSC_VER )
