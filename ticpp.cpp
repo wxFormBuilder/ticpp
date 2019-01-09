@@ -746,8 +746,7 @@ void Document::LoadFile( TiXmlEncoding encoding )
 	}
 }
 
-void Document::SaveFile( void ) const
-{
+void Document::SaveFile() const {
 	if ( !m_tiXmlPointer->SaveFile() )
 	{
 		TICPPTHROW( "Couldn't save " << m_tiXmlPointer->Value() );
