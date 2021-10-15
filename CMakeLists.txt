@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 3.21)
 
 project(ticpp VERSION 2.5.3 LANGUAGES CXX)
 
+get_property(isMultiConfig GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
 if(PROJECT_IS_TOP_LEVEL)
   set(buildTypes "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
   set(defaultBuildType "Debug")
-  get_property(isMultiConfig GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
   if(NOT isMultiConfig)
     if(NOT CMAKE_BUILD_TYPE)
       message(STATUS "Setting build type to '${defaultBuildType}' as none was specified.")
@@ -46,6 +46,7 @@ target_sources(ticpp_ticpp
     tinyxmlerror.cpp
     tinyxmlparser.cpp
 )
+
 target_compile_definitions(ticpp_ticpp
   PUBLIC
     TIXML_USE_TICPP
@@ -53,7 +54,7 @@ target_compile_definitions(ticpp_ticpp
 )
 target_include_directories(ticpp_ticpp
   INTERFACE
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
 )
 
 install(TARGETS ticpp_ticpp
