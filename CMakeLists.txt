@@ -62,11 +62,18 @@ target_include_directories(ticpp_ticpp
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
 )
 
+if(PROJECT_IS_TOP_LEVEL)
+  set(excludeFromAllTag "")
+else()
+  set(excludeFromAllTag EXCLUDE_FROM_ALL)
+endif()
+
 install(TARGETS ticpp_ticpp
   RUNTIME
     DESTINATION ${CMAKE_INSTALL_BINDIR}
   LIBRARY
     DESTINATION ${CMAKE_INSTALL_LIBDIR}
   ARCHIVE
-    EXCLUDE_FROM_ALL
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ${excludeFromAllTag}
 )
