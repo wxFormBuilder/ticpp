@@ -27,6 +27,11 @@ if (NOT DEFINED CMAKE_CXX_EXTENSIONS)
   set(CMAKE_CXX_EXTENSIONS OFF)
 endif()
 
+if(MSVC)
+  # Disable warnings about standard conformant code that is not conform to Microsoft standards
+  add_compile_definitions(_CRT_SECURE_NO_WARNINGS _SCL_SECURE_NO_WARNINGS)
+endif()
+
 add_library(ticpp_ticpp)
 add_library(ticpp::ticpp ALIAS ticpp_ticpp)
 set_target_properties(ticpp_ticpp PROPERTIES
