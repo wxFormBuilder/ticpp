@@ -15,11 +15,13 @@ if(PROJECT_IS_TOP_LEVEL)
       message(FATAL_ERROR "Unknown build type: '${CMAKE_BUILD_TYPE}'")
     endif()
   endif()
+  unset(defaultBuildType)
+  unset(buildTypes)
 endif()
 
 if(NOT DEFINED CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 17)
-elseif(CMAKE_CXX_STANDARD LESS 17)
+elseif(CMAKE_CXX_STANDARD LESS 17 OR CMAKE_CXX_STANDARD GREATER_EQUAL 98)
   message(FATAL_ERROR "The CMAKE_CXX_STANDARD value needs to be at least 17, current value: ${CMAKE_CXX_STANDARD}")
 endif()
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -40,16 +42,16 @@ set_target_properties(ticpp_ticpp PROPERTIES
 
 target_sources(ticpp_ticpp
   PRIVATE
-    ticpp.h
     ticpp.cpp
+    ticpp.h
     ticppapi.h
     ticpprc.h
-    tinystr.h
     tinystr.cpp
-    tinyxml.h
+    tinystr.h
     tinyxml.cpp
-    tinyxmlerror.cpp
+    tinyxml.h
     tinyxmlparser.cpp
+    tinyxmlerror.cpp
 )
 
 target_compile_definitions(ticpp_ticpp
@@ -67,7 +69,6 @@ if(PROJECT_IS_TOP_LEVEL)
 else()
   set(excludeFromAllTag EXCLUDE_FROM_ALL)
 endif()
-
 install(TARGETS ticpp_ticpp
   RUNTIME
     DESTINATION ${CMAKE_INSTALL_BINDIR}
@@ -77,3 +78,4 @@ install(TARGETS ticpp_ticpp
     DESTINATION ${CMAKE_INSTALL_LIBDIR}
     ${excludeFromAllTag}
 )
+unset(excludeFromAllTag)
