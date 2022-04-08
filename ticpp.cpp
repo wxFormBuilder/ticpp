@@ -724,6 +724,7 @@ Document::Document()
 Document::Document( TiXmlDocument* document )
 : NodeImp< TiXmlDocument >( document )
 {
+	m_impRC->InitRef();
 }
 
 Document::Document( const char* documentName )
